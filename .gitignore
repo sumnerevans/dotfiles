@@ -10,6 +10,9 @@ programming
 projects
 school
 
+!README.md
+.config/*
+
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
@@ -20,7 +23,7 @@ school
 !.vim/colors/*
 .vim/colors/lanox-vim-theme
 !.vim/tern-complete/*
-!.vim/.vimrc
+!.vim/vimrc
 
 !.vimperator/colors/*
 
