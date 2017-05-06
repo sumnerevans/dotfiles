@@ -16,13 +16,13 @@ school
 
 !.urxvt/*
 
+.vim/bundle/*
 !.vim/colors/*
+.vim/colors/lanox-vim-theme
 !.vim/tern-complete/*
 !.vim/.vimrc
 
 !.vimperator/colors/*
-
-!texmf/**
 
 !.clang-format
 !.ideavimrc

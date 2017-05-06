@@ -1,0 +1,214 @@
+" Plugin Management
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'aklt/plantuml-syntax'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'alvan/vim-closetag'
+Plugin 'aperezdc/vim-template'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'ervandew/supertab'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'krisajenkins/vim-postgresql-syntax'
+Plugin 'lervag/vimtex'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'reewr/vim-monokai-phoenix'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-scripts/mips.vim'
+Plugin 'vim-scripts/SQLUtilities'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Color Scheme
+colorscheme monokai-phoenix
+
+" NERDTree Config
+let g:NERDTreeIndicatorMapCustom = {
+            \"Modified": "✹", "Staged": "✚", "Untracked": "✭", "Renamed": "➜", "Unmerged": "═",
+            \"Deleted": "✖", "Dirty": "✗", "Clean": "✔︎", "Unknown": "?" }
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=[
+            \'.git$[[dir]]',
+            \'.sass-cache$[[dir]]', '__pycache__$[[dir]]',
+            \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
+            \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]'
+            \]
+let g:NERDTreeWinSize=45
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_synchronize_view = 0
+
+" Tabs
+set showtabline=2
+map <c-h> :tabp<CR>
+map <c-l> :tabn<CR>
+map <c-t> :tabnew<CR>
+map <c-n> :tabnew<CR>
+
+" Navigation between buffers in tab
+set splitbelow
+set splitright
+if $TERM == 'rxvt-unicode-256color' && !has('gui_running')
+    map <Esc>k <C-W><C-K>
+    map <Esc>j <C-W><C-J>
+    map <Esc>h <C-W><C-H>
+    map <Esc>l <C-W><C-L>
+else
+    map <A-k> <C-W><C-K>
+    map <A-j> <C-W><C-J>
+    map <A-h> <C-W><C-H>
+    map <A-l> <C-W><C-L>
+endif
+
+" History
+set history=1000
+set undolevels=1000
+
+set wildignore=*.swp,*.bak,*.pyc,*.out,*.git
+set title
+set noerrorbells
+set dir=~/.vim/swap//
+set undodir=~/.vim/undo//
+set undofile
+
+" Editing
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=4
+set smarttab
+set autoindent
+set number
+set mouse=a
+syntax enable
+set backspace=indent,eol,start
+set scrolloff=5
+set virtualedit=onemore
+set t_Co=256
+noremap j gj
+noremap k gk
+
+" Search
+set hlsearch
+set incsearch
+set ic
+
+set colorcolumn=80,100,120
+highlight ColorColumn term=reverse ctermbg=8 guibg=#303030
+
+set autoread
+au CursorHold * checktime
+
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_rust_src_path = '/home/sumner/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src'
+nnoremap <F12> :YcmCompleter GoTo<CR>
+
+set clipboard=unnamedplus
+vnoremap <C-c> "+yy
+
+highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
+match Over100Length /\%101v.\+/
+
+" Automatically break lines at 80 characters on TeX/LaTeX files
+" Enable spell check on TeX/LaTeX files
+autocmd BufNewFile,BufRead *.tex setlocal tw=80
+autocmd BufNewFile,BufRead *.tex setlocal spell spelllang=en_gb
+
+" associate *.tex with tex filetype (instead of plaintex)
+au BufRead,BufNewFile *.tex set filetype=tex
+
+" Associate .s and .spim files with MIPS
+au BufRead,BufNewFile *.s set filetype=mips
+au BufRead,BufNewFile *.spim set filetype=mips
+
+" Automatically break lines at 80 characters when writing Markdown files
+" Enable spell check on Markdown files
+autocmd BufNewFile,BufRead *.md setlocal tw=80
+autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
+
+" Automatically break lines at 80 characters when writing Markdown files
+" Enable spell check on Markdown files
+autocmd BufNewFile,BufRead *.txt setlocal tw=80
+autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_gb
+
+" Automatically break lines at 100 characters when writing HTML files
+" Enable spell check on HTML and PUG files
+autocmd BufNewFile,BufRead *.html setlocal tw=100
+autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
+
+" Automatically break lines at 80 characters when writing emails in mutt
+" Enable spell check for emails in mutt
+autocmd BufRead /tmp/mutt-* setlocal tw=80
+autocmd BufRead /tmp/mutt-* setlocal spell spelllang=en_gb
+
+" Highlight unwanted whitespace
+set list listchars=tab:\▶\ ,trail:␣,nbsp:␣
+
+" Jump to the main editor
+autocmd tabenter * wincmd p
+
+" AutoFormatter Settings
+" au BufWrite * :Autoformat
+noremap <C-S-f> :Autoformat<CR>
+
+set encoding=utf8
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+let g:airline_powerline_fonts = 1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+noremap :w<CR> :w<CR>:SyntasticCheck<CR>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_rust_checkers = ['cargo']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_cs_checkers = ['code_checker']
+
+" OmniSharp
+let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
+let g:OmniSharp_server_type = 'roslyn'
+
+" CtrlP
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache)$',
+            \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2)$',
+            \ 'link': '',
+            \ }
+
+" Commenting
+noremap <F8> :Commentary<CR>
+
+" Vim LaTeX
+let g:vimtex_view_method = 'zathura'
+autocmd Filetype tex,latex nnoremap <F5> :VimtexCompile<CR>
+autocmd Filetype tex,latex nnoremap <F11> :VimtexTocToggle<CR>
+autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
+command WC :VimtexCountWords " Word Count
