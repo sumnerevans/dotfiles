@@ -11,13 +11,12 @@ projects
 school
 
 !README.md
-.config/*
 
+.config/*
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
 
-!.urxvt/*
 
 .vim/bundle/*
 !.vim/colors/*
@@ -25,16 +24,17 @@ school
 !.vim/tern-complete/*
 !.vim/vimrc
 
-!.vimperator/colors/*
-
 !.clang-format
 !.ideavimrc
 !.jsbeautifyrc
 !.jshintrc
+!.urxvt/*
+!.vimperator/colors/*
 !.vimperatorrc
 !.xbindkeysrc
 !.xinitrc
 !.Xmodmap
 !.Xresources
 !.ycm_extra_conf.py
+!.config/zathura
 !.zshrc
