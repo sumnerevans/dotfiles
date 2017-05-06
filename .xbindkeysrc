@@ -1,0 +1,44 @@
+# Screen Brightness Controls
+"gmux_backlight -100"
+    m:0x10 + c:232
+    Mod2 + XF86MonBrightnessDown
+
+"gmux_backlight +100"
+    m:0x10 + c:233
+    Mod2 + XF86MonBrightnessUp
+
+# Keyboard Brightness Controls
+"kbdlight down 10"
+    m:0x0 + c:237
+    XF86KbdBrightnessUp
+
+"kbdlight up 10"
+    m:0x0 + c:238
+    XF86KbdBrightnessDown
+
+# Media Controls
+"playerctl previous"
+    m:0x10 + c:173
+    Mod2 + XF86AudioPrev
+
+"playerctl play-pause"
+    m:0x10 + c:172
+    Mod2 + XF86AudioPrev
+
+"playerctl next"
+    m:0x10 + c:171
+    Mod2 + XF86AudioNext
+
+# Volume Conrols
+"amixer set Master toggle && pkill -RTMIN+1 i3blocks"
+    m:0x0 + c:121
+    XF86AudioMute
+
+"amixer set Master playback 5%- && pkill -RTMIN+1 i3blocks"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"amixer set Master playback 5%+ && pkill -RTMIN+1 i3blocks"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
