@@ -28,6 +28,8 @@ school
 !.ideavimrc
 !.jsbeautifyrc
 !.jshintrc
+!.gvimrc
+!.pylintrc
 !.urxvt/*
 !.vimperator/colors/*
 !.vimperatorrc
