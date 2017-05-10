@@ -164,7 +164,7 @@ bar {
     font pango:Iosevka, FontAwesome 12
     position top
     #status_command i3status
-    status_command bumblebee-status -m nic disk memory weather pasink sensors time battery -p nic.exclude=lo,vnet,virbr0 time.format="%a, %Y-%m-%d %H:%M" -t solarized-powerline
+    status_command bumblebee-status -m nic disk memory pasink sensors time battery -p nic.exclude=lo,vnet,virbr0 time.format="%a, %Y-%m-%d %H:%M" -t solarized-powerline
 }
 
 # Custom Keybindings

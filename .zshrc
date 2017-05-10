@@ -93,7 +93,6 @@ hash -d proj=~/projects
 hash -d tmp=~/tmp
 
 # Projects
-hash -d angle=~proj/angle
 hash -d gchal=~proj/google-challenge
 hash -d pray=~proj/pray-app
 hash -d res=~proj/resumes
@@ -105,11 +104,8 @@ hash -d tef=~proj/the-evans.family
 # School
 hash -d sch=~/school
 hash -d csci341=~sch/csci341
-hash -d csci403=~sch/csci403
 hash -d csci406=~sch/csci406
-hash -d csci496b=~sch/csci496b
 hash -d math201=~sch/math201
-hash -d te=~/school/csci496b/TeamEpsilon
 
 # ===== ALIASES =====
 alias tar="bsdtar"
