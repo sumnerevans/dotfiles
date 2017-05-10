@@ -49,6 +49,14 @@ URxvt.keysym.C-Down:                    font-size:decrease
 URxvt.keysym.C-S-Up:                    font-size:incglobal
 URxvt.keysym.C-S-Down:                  font-size:decglobal
 
+! Xterm
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.foreground: white
+XTerm.vt100.background: black
+XTerm.vt100.faceName: Iosevka Term:size=10
+XTerm.vt100.font: 7x13
+
 ! Scrensaver
 xscreensaver.logFile:/var/log/xscreensaver.log
 xscreensaver.verbose:true

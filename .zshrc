@@ -90,6 +90,7 @@ hash -d dl=~/Downloads
 hash -d gd=~/Google\ Drive
 hash -d pics=~/Pictures
 hash -d proj=~/projects
+hash -d pres=~doc/presentations
 hash -d tmp=~/tmp
 
 # Projects
@@ -103,8 +104,6 @@ hash -d tef=~proj/the-evans.family
 
 # School
 hash -d sch=~/school
-hash -d csci341=~sch/csci341
-hash -d csci406=~sch/csci406
 hash -d math201=~sch/math201
 
 # ===== ALIASES =====

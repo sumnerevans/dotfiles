@@ -1,5 +1,6 @@
 " Cool Other .vimrcs to look at
 " - http://www.lukesmith.xyz/conf/.vimrc
+" - https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
 
 " Plugin Management
 set nocompatible              " be iMproved, required
@@ -16,11 +17,13 @@ Plugin 'aklt/plantuml-syntax'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
+Plugin 'atweiden/vim-dragvisuals'
 Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'ervandew/supertab'
+Plugin 'gioele/vim-autoswap'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'krisajenkins/vim-postgresql-syntax'
@@ -30,6 +33,7 @@ Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'reewr/vim-monokai-phoenix'
 Plugin 'scrooloose/nerdtree'
+Plugin 'sumnerevans/vim-listtrans'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
@@ -99,9 +103,7 @@ set undodir=~/.vim/undo//
 set undofile
 
 " Navigating with guides
-inoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
-inoremap <Space><Backspace> (<>) 
-vnoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
+map <Space><Backspace> a(<>) <Esc>
 map <Space><Space> <Esc>/(<>)<Enter>"_c4l
 inoremap ;gui (<>)
 
@@ -241,3 +243,13 @@ autocmd FileType tex inoremap \min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{mi
 " Math
 autocmd FileType tex inoremap \int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap \sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+
+" Drag visuals
+vmap <expr> <S-LEFT>  DVB_Drag('left')
+vmap <expr> <S-RIGHT> DVB_Drag('right')
+vmap <expr> <S-DOWN>  DVB_Drag('down')
+vmap <expr> <S-UP>    DVB_Drag('up')
+
+" List Trans
+nmap  <S-L> :call ListTrans_toggle_format()<CR>
+vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
