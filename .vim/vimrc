@@ -186,11 +186,13 @@ autocmd tabenter * wincmd p
 " AutoFormatter Settings
 " au BufWrite * :Autoformat
 noremap <C-S-f> :Autoformat<CR>
+let g:formatdef_autopep8 = '"autopep8 -a -a --max-line-length 100"'
+let g:formatters_python = ['autopep8']
 
 set encoding=utf8
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 let g:airline_powerline_fonts = 1
-%
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -230,14 +232,13 @@ command WC :VimtexCountWords " Word Count
 autocmd FileType tex inoremap \\bf \textbf{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap \\it \textit{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap \\tt \texttt{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \\t \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-autocmd FileType tex inoremap \\tab \begin{table}[H]<Enter>(<>)<Enter>\end{table}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap \\ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
 autocmd FileType tex inoremap \\ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
 autocmd FileType tex inoremap \\ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
 autocmd FileType tex inoremap \\sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
 autocmd FileType tex inoremap \\ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
 autocmd FileType tex inoremap \\sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \\be \begin{DELRN}<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
+autocmd FileType tex inoremap \\be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
 autocmd FileType tex inoremap \\min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
 
 " Math

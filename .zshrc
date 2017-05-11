@@ -104,7 +104,6 @@ hash -d tef=~proj/the-evans.family
 
 # School
 hash -d sch=~/school
-hash -d math201=~sch/math201
 
 # ===== ALIASES =====
 alias tar="bsdtar"
