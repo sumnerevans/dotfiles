@@ -227,22 +227,22 @@ autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
 command WC :VimtexCountWords " Word Count
 
 " Shortcuts for the things I use a lot
-autocmd FileType tex inoremap \bf \textbf{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \it \textit{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \tt \texttt{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \t \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-autocmd FileType tex inoremap \tab \begin{table}[H]<Enter>(<>)<Enter>\end{table}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-autocmd FileType tex inoremap \ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
-autocmd FileType tex inoremap \ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
-autocmd FileType tex inoremap \sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \be \begin{DELRN}<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
-autocmd FileType tex inoremap \min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap \\bf \textbf{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap \\it \textit{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap \\tt \texttt{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap \\t \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap \\tab \begin{table}[H]<Enter>(<>)<Enter>\end{table}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap \\ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
+autocmd FileType tex inoremap \\ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
+autocmd FileType tex inoremap \\sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap \\ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap \\sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap \\be \begin{DELRN}<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
+autocmd FileType tex inoremap \\min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
 
 " Math
-autocmd FileType tex inoremap \int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap \\int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap \\sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
 
 " Drag visuals
 vmap <expr> <S-LEFT>  DVB_Drag('left')

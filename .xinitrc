@@ -38,7 +38,7 @@ fi
 
 # sound
 amixer sset Master unmute
-unclutter -idle 3 -keystroke &
+unclutter &
 
 xrandr --dpi 160x160
 
