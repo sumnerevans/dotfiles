@@ -39,6 +39,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -185,7 +186,7 @@ autocmd tabenter * wincmd p
 
 " AutoFormatter Settings
 " au BufWrite * :Autoformat
-noremap <C-S-f> :Autoformat<CR>
+noremap <S-F> :Autoformat<CR>
 let g:formatdef_autopep8 = '"autopep8 -a -a --max-line-length 100"'
 let g:formatters_python = ['autopep8']
 
@@ -252,5 +253,5 @@ vmap <expr> <S-DOWN>  DVB_Drag('down')
 vmap <expr> <S-UP>    DVB_Drag('up')
 
 " List Trans
-nmap  <S-L> :call ListTrans_toggle_format()<CR>
-vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
+nmap  <S-A-L> :call ListTrans_toggle_format()<CR>
+vmap  <S-A-L> :call ListTrans_toggle_format('visual')<CR>

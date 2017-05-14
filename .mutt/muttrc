@@ -1,0 +1,85 @@
+set spoolfile           = "+Personal/INBOX"
+
+source ~/.mutt/accounts/personal
+
+folder-hook Personal/*  source ~/.mutt/accounts/personal
+folder-hook Mines/*     source ~/.mutt/accounts/mines
+
+set mail_check = 0
+set envelope_from
+
+# Paths
+set alias_file       = ~/.mutt/alias         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set signature        = ~/.mutt/sig           # my signature file
+
+unset move           # gmail does that
+set delete           # don't ask, just do
+unset confirmappend  # don't ask, just do!
+set quit             # don't ask, just do!!
+unset mark_old       # read/new is good enough for me
+
+# Sort
+set sort                = threads
+set sort_aux            = reverse-last-date-received
+set sort_re
+
+# Set up the mailboxes
+set imap_check_subscribed=yes
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+
+# move to trash
+unset confirmappend # don't ask, just do
+
+# Look and feel
+set pager_index_lines   = 12
+set pager_context       = 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
+
+# HTML
+set mailcap_path        = ~/.mutt/mailcap
+auto_view text/html
+
+# Composing
+set editor              = `echo \$EDITOR`
+set fcc_attach
+unset mime_forward
+set forward_format      = "Fwd: %s"
+set include
+set forward_quote
+set sig_on_top = yes 
+
+# vim keys for pager
+bind pager j next-line
+bind pager k previous-line
+
+# colors
+color hdrdefault brightwhite black
+color quoted cyan black
+color signature cyan black
+color attachment yellow black
+color prompt yellow black
+color message white black
+color error red black
+color indicator black yellow
+color status brightwhite blue
+color tree magenta black
+color normal white black
+color markers brightyellow black
+color search white black
+color tilde white black
+color index red black ~F # flagged
+color index brightwhite black "~N|~O" # new | old
+
+# Contacts
+bind editor <Tab> complete-query
+set query_command="goobook query %s"
+macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"

@@ -1,0 +1,11 @@
+text/html; elinks -dump %s; copiousoutput;
+
+# PDF documents
+application/pdf; zathura %s
+
+# Images
+image/jpg; feh %s
+image/jpeg; feh %s
+image/pjpeg; feh %s
+image/png; feh %s
+image/gif; feh %s

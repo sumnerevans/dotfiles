@@ -18,6 +18,8 @@ school
 !.config/i3blocks/*
 !.config/i3status/*
 
+!.mutt/**
+.mutt/temp
 
 .vim/bundle/*
 !.vim/colors/*
