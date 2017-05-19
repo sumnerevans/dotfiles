@@ -55,7 +55,6 @@ unset mime_forward
 set forward_format      = "Fwd: %s"
 set include
 set forward_quote
-set sig_on_top = yes 
 
 # vim keys for pager
 bind pager j next-line

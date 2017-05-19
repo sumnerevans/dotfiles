@@ -13,10 +13,12 @@ school
 
 !README.md
 
-.config/*
+.config/chromium/*
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
+!.config/ranger/rc.conf
+!.config/pgcli/config
 
 !.mutt/**
 .mutt/temp

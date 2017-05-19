@@ -137,6 +137,7 @@ alias grhh="git reset --hard HEAD"
 
 # Config
 alias i3conf="vim ~/.config/i3/config"
+alias muttrc='vim ~/.mutt/muttrc'
 alias reload=". ~/.zshrc && echo 'ZSH Config Reloaded from ~/.zshrc'"
 alias sshconf="vim ~/.ssh/config"
 alias vimrc="vim ~/.vim/vimrc"
