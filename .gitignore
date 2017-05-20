@@ -28,6 +28,7 @@ school
 .vim/colors/lanox-vim-theme
 !.vim/tern-complete/*
 !.vim/vimrc
+!.vim/shortcuts
 
 !.clang-format
 !.ideavimrc

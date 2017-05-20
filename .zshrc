@@ -101,6 +101,7 @@ hash -d stw=~proj/summation-tech-website
 hash -d sat=~proj/show-and-tell
 hash -d sws=~proj/sumner-website
 hash -d tef=~proj/the-evans.family
+hash -d widb=~proj/wireless-debugging
 
 # School
 hash -d sch=~/school

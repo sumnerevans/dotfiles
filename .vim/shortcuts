@@ -1,0 +1,42 @@
+" vim: ft=vim
+
+" LaTeX
+autocmd FileType tex inoremap ;bf \textbf{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap ;it \textit{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap ;tt \texttt{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
+autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap ;int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap ;sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+
+" HTML
+autocmd FileType html,xhtml inoremap ;b <b></b><Space>(<>)<Esc>FbT>i
+autocmd FileType html,xhtml inoremap ;i <em></em><Space>(<>)<Esc>FeT>i
+autocmd FileType html,xhtml inoremap ;h1 <h1></h1><Enter><Enter><p>(<>)<Esc>2k2hi
+autocmd FileType html,xhtml inoremap ;h2 <h2></h2><Enter><Enter><p>(<>)<Esc>2k2hi
+autocmd FileType html,xhtml inoremap ;h3 <h3></h3><Enter><Enter><p>(<>)<Esc>2k2hi
+autocmd FileType html,xhtml inoremap ;p <p></p><Enter><Enter>(<>)<Esc>02kf>a
+autocmd FileType html,xhtml inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
+autocmd FileType html,xhtml inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter>(<>)<Esc>03k2f<i
+autocmd FileType html,xhtml inoremap ;li <Esc>o<li></li><Esc>F>a
+autocmd FileType html,xhtml inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter>(<>)<Esc>03k2f<i
+autocmd FileType html,xhtml inoremap ;div <div class=""><Enter>(<>)<Enter></div><Enter><Enter>(<>)<Esc>04kf"a
+autocmd FileType html,xhtml inoremap ;t <DELRN (<>)><Enter>(<>)<Enter></DELRN><Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
+
+" Python
+autocmd FileType python inoremap ;def def ():<Enter><Space><Space><Space><Space>(<>)<Esc>0kf(i
+
+" JavaScript
+autocmd FileType javascript inoremap ;cl console.log();<Enter>(<>)<Esc>0kf(a
+autocmd FileType javascript inoremap ;af () => {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;fn function() {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;if if () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;for for () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;$ $().(<>)<Enter>(<>)<Esc>$k2F(a
+autocmd FileType javascript inoremap ;l let  = (<>);<Esc>F=hi

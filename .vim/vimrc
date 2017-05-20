@@ -112,7 +112,6 @@ inoremap ;gui (<>)
 set tabstop=8
 set softtabstop=0
 set expandtab
-set shiftwidth=4
 set smarttab
 set autoindent
 set number
@@ -124,6 +123,10 @@ set virtualedit=onemore
 set t_Co=256
 noremap j gj
 noremap k gk
+
+" Tab Width
+set shiftwidth=4
+autocmd FileType javascript,xhtml,html,scss set shiftwidth=2
 
 " Search
 set hlsearch
@@ -187,7 +190,7 @@ autocmd tabenter * wincmd p
 " AutoFormatter Settings
 " au BufWrite * :Autoformat
 noremap <S-F> :Autoformat<CR>
-let g:formatdef_autopep8 = '"autopep8 -a -a --max-line-length 100"'
+"let g:formatdef_autopep8 = '"autopep8 -a -a --max-line-length 100"'
 let g:formatters_python = ['autopep8']
 
 set encoding=utf8
@@ -230,21 +233,7 @@ autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
 command WC :VimtexCountWords " Word Count
 
 " Shortcuts for the things I use a lot
-autocmd FileType tex inoremap \\bf \textbf{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \\it \textit{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \\tt \texttt{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \\ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-autocmd FileType tex inoremap \\ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
-autocmd FileType tex inoremap \\ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
-autocmd FileType tex inoremap \\sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \\ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \\sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap \\be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
-autocmd FileType tex inoremap \\min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-
-" Math
-autocmd FileType tex inoremap \\int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap \\sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+source $HOME/.vim/shortcuts
 
 " Drag visuals
 vmap <expr> <S-LEFT>  DVB_Drag('left')
@@ -253,5 +242,5 @@ vmap <expr> <S-DOWN>  DVB_Drag('down')
 vmap <expr> <S-UP>    DVB_Drag('up')
 
 " List Trans
-nmap  <S-A-L> :call ListTrans_toggle_format()<CR>
-vmap  <S-A-L> :call ListTrans_toggle_format('visual')<CR>
+nmap  <S-L> :call ListTrans_toggle_format()<CR>
+vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
