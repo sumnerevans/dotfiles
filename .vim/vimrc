@@ -141,6 +141,7 @@ au CursorHold * checktime
 
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/sumner/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src'
+let g:ycm_python_binary_path = '/usr/bin/python3'
 nnoremap <F12> :YcmCompleter GoTo<CR>
 
 set clipboard=unnamedplus

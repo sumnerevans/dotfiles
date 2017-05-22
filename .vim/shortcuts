@@ -33,8 +33,8 @@ autocmd FileType html,xhtml inoremap ;t <DELRN (<>)><Enter>(<>)<Enter></DELRN><E
 autocmd FileType python inoremap ;def def ():<Enter><Space><Space><Space><Space>(<>)<Esc>0kf(i
 
 " JavaScript
-autocmd FileType javascript inoremap ;cl console.log();<Enter>(<>)<Esc>0kf(a
-autocmd FileType javascript inoremap ;af () => {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;cl console.log();<Esc>F(a
+autocmd FileType javascript inoremap ;af () => {<Enter>(<>)<Enter>}<Enter><Esc>3k$F(a
 autocmd FileType javascript inoremap ;fn function() {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
 autocmd FileType javascript inoremap ;if if () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
 autocmd FileType javascript inoremap ;for for () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
