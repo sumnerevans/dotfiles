@@ -54,6 +54,7 @@ setopt histignorespace
 # Misc Options
 setopt autopushd
 setopt nobeep
+setopt extendedglob
 
 # Auto-Completion
 setopt autocd
@@ -79,9 +80,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# Globbing Settings
-setopt extendedglob
 
 # Directory Hashes
 hash -d doc=~/Documents
@@ -135,6 +133,12 @@ alias hlpr='lpr -o Duplex=None'
 # Git
 alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
 alias grhh="git reset --hard HEAD"
+alias gca="git commit -a"
+alias gd="git diff"
+alias gs="git status"
+alias gpull="git pull"
+alias gpush="git push"
+alias gch="git checkout"
 
 # Config
 alias i3conf="vim ~/.config/i3/config"
@@ -142,15 +146,14 @@ alias muttrc='vim ~/.mutt/muttrc'
 alias reload=". ~/.zshrc && echo 'ZSH Config Reloaded from ~/.zshrc'"
 alias sshconf="vim ~/.ssh/config"
 alias vimrc="vim ~/.vim/vimrc"
+alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
 
 alias ohea='echo "You need to either wake up or go to bed!"'
-alias antioffice='libreoffice --headless --invisible --convert-to pdf'
 alias asmr='(vlc $(find $HOME/Documents/asmr -type f | shuf -n 1) &>/dev/null &)'
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
-alias pg403="pgcli postgresql://jonathanevans@flowers.mines.edu/csci403"
 alias extmon="xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5"
 alias gcall="g++ -Wall *.cpp -o a.out && ./a.out"
 alias iftop='sudo iftop'
