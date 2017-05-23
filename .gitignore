@@ -4,6 +4,7 @@
 # Unignore folders and gitignore
 !*/
 !.gitignore
+!.gitmodules
 
 # Re-ignore projects
 programming
