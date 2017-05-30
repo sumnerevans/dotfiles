@@ -1,5 +1,7 @@
 " vim: ft=vim
 
+inoremap ;g (<>)
+
 " LaTeX
 autocmd FileType tex inoremap ;bf \textbf{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap ;it \textit{}<Space>(<>)<Esc>T{i
@@ -31,6 +33,8 @@ autocmd FileType html,xhtml inoremap ;t <DELRN (<>)><Enter>(<>)<Enter></DELRN><E
 
 " Python
 autocmd FileType python inoremap ;def def ():<Enter><Space><Space><Space><Space>(<>)<Esc>0kf(i
+autocmd FileType python inoremap ;pr print()<Esc>F(a
+autocmd FileType python inoremap ;for for  in (<>):<Enter>(<>)<Esc>0kfrla
 
 " JavaScript
 autocmd FileType javascript inoremap ;cl console.log();<Esc>F(a

@@ -151,7 +151,6 @@ alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
 
-alias ohea='echo "You need to either wake up or go to bed!"'
 alias asmr='(vlc $(find $HOME/Documents/asmr -type f | shuf -n 1) &>/dev/null &)'
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
@@ -162,6 +161,7 @@ alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
 alias la="ls -a"
 alias ll="ls -lah"
+alias ohea='echo "You need to either wake up or go to bed!"'
 alias open="(thunar &> /dev/null &)"
 alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'

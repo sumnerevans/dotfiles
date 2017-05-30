@@ -1,8 +1,8 @@
-" Cool Other .vimrcs to look at
+" Cool Other vimrcs to look at
 " - http://www.lukesmith.xyz/conf/.vimrc
 " - https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
 
-" Plugin Management
+" ========== Vundle Plugin Management ==========
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -13,44 +13,50 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Language/Syntax Support
 Plugin 'aklt/plantuml-syntax'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'krisajenkins/vim-postgresql-syntax'
+Plugin 'lervag/vimtex'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
+Plugin 'ternjs/tern_for_vim'
+Plugin 'vim-scripts/mips.vim'
+Plugin 'vim-scripts/SQLUtilities'
+
+" UI
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'reewr/vim-monokai-phoenix'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Editing
 Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
 Plugin 'atweiden/vim-dragvisuals'
-Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'digitaltoad/vim-pug'
 Plugin 'ervandew/supertab'
 Plugin 'gioele/vim-autoswap'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'krisajenkins/vim-postgresql-syntax'
-Plugin 'lervag/vimtex'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
-Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'reewr/vim-monokai-phoenix'
-Plugin 'scrooloose/nerdtree'
 Plugin 'sumnerevans/vim-listtrans'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/mips.vim'
-Plugin 'vim-scripts/SQLUtilities'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Source other Vim files
+source $HOME/.vim/shortcuts " Shortcuts for the things I type a lot in insert mode
 
 " Color Scheme
 colorscheme monokai-phoenix
@@ -70,7 +76,7 @@ let g:NERDTreeWinSize=45
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_synchronize_view = 0
 
-" Tabs
+" Editor Tabs
 set showtabline=2
 map <c-h> :tabp<CR>
 map <c-l> :tabn<CR>
@@ -99,6 +105,12 @@ set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.out,*.git
 set title
 set noerrorbells
+
+" Make Vim the use the system clipboard
+set clipboard=unnamedplus
+vnoremap <C-c> "+yy
+
+" Put swap and undo files in .vim
 set dir=~/.vim/swap//
 set undodir=~/.vim/undo//
 set undofile
@@ -106,10 +118,9 @@ set undofile
 " Navigating with guides
 map <Space><Backspace> a(<>) <Esc>
 map <Space><Space> <Esc>/(<>)<Enter>"_c4l
-inoremap ;gui (<>)
 
 " Editing
-set tabstop=8
+set tabstop=4
 set softtabstop=0
 set expandtab
 set smarttab
@@ -133,44 +144,38 @@ set hlsearch
 set incsearch
 set ic
 
+" Column Guides
 set colorcolumn=80,100,120
 highlight ColorColumn term=reverse ctermbg=8 guibg=#303030
+
+" Highlight past 100 characters
+highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
+match Over100Length /\%101v.\+/
+
+" Highlight unwanted whitespace
+set list listchars=tab:\▶\ ,trail:␣,nbsp:␣
 
 set autoread
 au CursorHold * checktime
 
+" YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/sumner/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src'
 let g:ycm_python_binary_path = '/usr/bin/python3'
 nnoremap <F12> :YcmCompleter GoTo<CR>
 
-set clipboard=unnamedplus
-vnoremap <C-c> "+yy
+" Automatically break lines at 80 characters on TeX/LaTeX, Markdown, and text
+" files
+" Enable spell check on TeX/LaTeX, Markdown, and text files
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb
 
-highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
-match Over100Length /\%101v.\+/
-
-" Automatically break lines at 80 characters on TeX/LaTeX files
-" Enable spell check on TeX/LaTeX files
-autocmd BufNewFile,BufRead *.tex setlocal tw=80
-autocmd BufNewFile,BufRead *.tex setlocal spell spelllang=en_gb
-
-" associate *.tex with tex filetype (instead of plaintex)
+" Associate *.tex with tex filetype (instead of plaintex)
 au BufRead,BufNewFile *.tex set filetype=tex
 
 " Associate .s and .spim files with MIPS
 au BufRead,BufNewFile *.s set filetype=mips
 au BufRead,BufNewFile *.spim set filetype=mips
-
-" Automatically break lines at 80 characters when writing Markdown files
-" Enable spell check on Markdown files
-autocmd BufNewFile,BufRead *.md setlocal tw=80
-autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
-
-" Automatically break lines at 80 characters when writing Markdown files
-" Enable spell check on Markdown files
-autocmd BufNewFile,BufRead *.txt setlocal tw=80
-autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_gb
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML and PUG files
@@ -182,18 +187,16 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 autocmd BufRead /tmp/mutt-* setlocal tw=80
 autocmd BufRead /tmp/mutt-* setlocal spell spelllang=en_gb
 
-" Highlight unwanted whitespace
-set list listchars=tab:\▶\ ,trail:␣,nbsp:␣
-
 " Jump to the main editor
 autocmd tabenter * wincmd p
 
 " AutoFormatter Settings
-" au BufWrite * :Autoformat
-noremap <S-F> :Autoformat<CR>
-"let g:formatdef_autopep8 = '"autopep8 -a -a --max-line-length 100"'
-let g:formatters_python = ['autopep8']
+noremap <C-S-F> :Autoformat<CR>
+let g:formatter_yapf_style = 'google'
+" let g:formatdef_autopep8 = '"autopep8 -a -a "'
+let g:formatters_python = ['yapf']
 
+" Make Powerline work
 set encoding=utf8
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 let g:airline_powerline_fonts = 1
@@ -232,9 +235,6 @@ autocmd Filetype tex,latex nnoremap <F5> :VimtexCompile<CR>
 autocmd Filetype tex,latex nnoremap <F11> :VimtexTocToggle<CR>
 autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
 command WC :VimtexCountWords " Word Count
-
-" Shortcuts for the things I use a lot
-source $HOME/.vim/shortcuts
 
 " Drag visuals
 vmap <expr> <S-LEFT>  DVB_Drag('left')

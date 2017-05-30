@@ -13,9 +13,9 @@ set $mod Mod4
 set $term urxvt
 
 # gaps
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0
-gaps inner 15
+# hide_edge_borders both
+# for_window [class="^.*"] border pixel 0
+# gaps inner 15
 
 bindsym $mod+F3 gaps inner all set 0
 bindsym $mod+Shift+F3 gaps inner all set 15
@@ -195,6 +195,8 @@ exec xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 
 # Auto-Start Programs
 exec firefox
+exec slack
+exec open-mstdn-app
 exec --no-startup-id enpass
 exec "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec nm-applet
