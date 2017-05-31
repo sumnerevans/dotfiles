@@ -39,6 +39,7 @@ fi
 # sound
 amixer sset Master unmute
 unclutter &
+redshift-gtk &
 
 xrandr --dpi 160x160
 
