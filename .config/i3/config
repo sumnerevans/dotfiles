@@ -164,7 +164,7 @@ bar {
     font pango:Iosevka, FontAwesome 12
     position top
     #status_command i3status
-    status_command bumblebee-status -m nic disk memory pasink sensors time battery -p nic.exclude=lo,vnet,virbr0 time.format="%a, %Y-%m-%d %H:%M" -t solarized-powerline
+    status_command bumblebee-status -m nic disk memory cpu pasink sensors time battery -p nic.exclude=lo,vnet,virbr0 time.format="%a, %Y-%m-%d %H:%M" -t solarized-powerline
 }
 
 # Custom Keybindings
@@ -187,22 +187,22 @@ assign [instance="skype"] $workspace1
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
-exec xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
+exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 #exec xautolock -time 5 -locker 'xscreensaver-command --lock' &
 #exec xss-lock -- xscreensaver-command --lock &
 #exec ~/bin/xscreensaver-watch.sh &
 #exec xscreensaver -no-splash &
 
 # Auto-Start Programs
-exec firefox
-exec slack
-exec open-mstdn-app
+exec --no-startup-id firefox
+exec --no-startup-id slack
+exec --no-startup-id open-mstdn-app &
 exec --no-startup-id enpass
-exec "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
-exec nm-applet
-exec blueman-applet
-exec dropbox-cli start
-exec compton -fc --inactive-dim 0.25
+exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id dropbox-cli start
+exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background
 #exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/ --generate-lock-image

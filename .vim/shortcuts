@@ -38,8 +38,9 @@ autocmd FileType python inoremap ;for for  in (<>):<Enter>(<>)<Esc>0kfrla
 
 " JavaScript
 autocmd FileType javascript inoremap ;cl console.log();<Esc>F(a
-autocmd FileType javascript inoremap ;af () => {<Enter>(<>)<Enter>}<Enter><Esc>3k$F(a
+autocmd FileType javascript inoremap ;af () => (<>)<Esc>2F(a
 autocmd FileType javascript inoremap ;fn function() {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
+autocmd FileType javascript inoremap ;cf ((<>)) {<Enter>(<>)<Enter>}<Enter><Esc>03kf(i
 autocmd FileType javascript inoremap ;if if () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
 autocmd FileType javascript inoremap ;for for () {<Enter>(<>)<Enter>}<Enter><Esc>03kf(a
 autocmd FileType javascript inoremap ;$ $().(<>)<Enter>(<>)<Esc>$k2F(a

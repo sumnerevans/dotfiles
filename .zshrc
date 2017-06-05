@@ -95,6 +95,7 @@ hash -d tmp=~/tmp
 hash -d gchal=~proj/google-challenge
 hash -d pray=~proj/pray-app
 hash -d res=~proj/resumes
+hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
 hash -d sat=~proj/show-and-tell
 hash -d sws=~proj/sumner-website
@@ -137,6 +138,7 @@ alias ga="git add ."
 alias gca="git commit -a"
 alias gd="git diff"
 alias gs="git status"
+alias gfetch="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
 alias gch="git checkout"
@@ -191,6 +193,10 @@ function md2pdf() {
     [[ "$extension" != "md" ]] && echo "Must be markdown file" && return
 
     pandoc -V geometry:margin=1in -o $filename.pdf $1
+}
+
+function del() {
+    mv $* $HOME/tmp
 }
 
 # Custom Key Widgets

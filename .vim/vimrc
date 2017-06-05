@@ -20,6 +20,8 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/html5-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
 Plugin 'ternjs/tern_for_vim'
@@ -81,7 +83,6 @@ set showtabline=2
 map <c-h> :tabp<CR>
 map <c-l> :tabn<CR>
 map <c-t> :tabnew<CR>
-map <c-n> :tabnew<CR>
 
 " Navigation between buffers in tab
 set splitbelow
@@ -135,6 +136,12 @@ set t_Co=256
 noremap j gj
 noremap k gk
 
+" Fix Typos in Command Mode
+cnoremap " q
+cnoremap = w
+cnoremap } a
+cnoremap { e
+
 " Tab Width
 set shiftwidth=4
 autocmd FileType javascript,xhtml,html,scss set shiftwidth=2
@@ -163,6 +170,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/sumner/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src'
 let g:ycm_python_binary_path = '/usr/bin/python3'
 nnoremap <F12> :YcmCompleter GoTo<CR>
+nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
+nnoremap <F6> :YcmCompleter GetDoc<CR>
 
 " Automatically break lines at 80 characters on TeX/LaTeX, Markdown, and text
 " files
@@ -184,8 +193,8 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 
 " Automatically break lines at 80 characters when writing emails in mutt
 " Enable spell check for emails in mutt
-autocmd BufRead /tmp/mutt-* setlocal tw=80
-autocmd BufRead /tmp/mutt-* setlocal spell spelllang=en_gb
+autocmd BufRead $HOME/tmp/mutt-* setlocal tw=80
+autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb
 
 " Jump to the main editor
 autocmd tabenter * wincmd p
@@ -245,3 +254,6 @@ vmap <expr> <S-UP>    DVB_Drag('up')
 " List Trans
 nmap  <S-L> :call ListTrans_toggle_format()<CR>
 vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
+
+" Vim JavaScript
+let g:javascript_plugin_jsdoc = 1
