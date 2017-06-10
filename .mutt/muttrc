@@ -2,8 +2,12 @@ set spoolfile           = "+Personal/INBOX"
 
 source ~/.mutt/accounts/personal
 
+# Switching between accounts
 folder-hook Personal/*  source ~/.mutt/accounts/personal
 folder-hook Mines/*     source ~/.mutt/accounts/mines
+
+macro index M "<change-folder> =Mines/INBOX<enter>"  "go to Mines Inbox"
+macro index P "<change-folder> =Personal/INBOX<enter>"  "go to Personal Inbox"
 
 set mail_check = 0
 set envelope_from

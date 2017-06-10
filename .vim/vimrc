@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'keith/swift.vim'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'OmniSharp/omnisharp-vim'
@@ -59,6 +60,8 @@ filetype plugin indent on    " required
 
 " Source other Vim files
 source $HOME/.vim/shortcuts " Shortcuts for the things I type a lot in insert mode
+
+let s:os = system("uname -s")
 
 " Color Scheme
 colorscheme monokai-phoenix
@@ -108,7 +111,12 @@ set title
 set noerrorbells
 
 " Make Vim the use the system clipboard
-set clipboard=unnamedplus
+if s:os == "Linux\n"
+  set clipboard=unnamedplus
+else
+  set clipboard+=unnamed
+endif
+
 vnoremap <C-c> "+yy
 
 " Put swap and undo files in .vim

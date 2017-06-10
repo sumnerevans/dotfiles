@@ -68,7 +68,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+[[ $LINUX == 1 ]] && eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -182,7 +182,7 @@ function chpwd() {
 }
 
 function wgitignore() {
-    wget "https://www.gitignore.io/api/$1" -O .gitignore
+    wget "https://www.gitignore.io/api/$1" -O - >> .gitignore
 }
 
 function md2pdf() {
@@ -275,7 +275,11 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
 # Syntax Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ $LINUX == "1" ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $OSX == "1" ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Add to PATH
 export PATH="/usr/local/sbin:$PATH"
