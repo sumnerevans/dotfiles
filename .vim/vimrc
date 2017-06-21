@@ -46,6 +46,7 @@ Plugin 'atweiden/vim-dragvisuals'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ervandew/supertab'
 Plugin 'gioele/vim-autoswap'
+Plugin 'heavenshell/vim-jsdoc'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sumnerevans/vim-listtrans'
 Plugin 'terryma/vim-multiple-cursors'
@@ -239,7 +240,7 @@ let g:OmniSharp_server_type = 'roslyn'
 " CtrlP
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache)$',
-            \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2)$',
+            \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2|orig)$',
             \ 'link': '',
             \ }
 
@@ -265,3 +266,9 @@ vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
 
 " Vim JavaScript
 let g:javascript_plugin_jsdoc = 1
+
+" JSDoc
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_underscore_private = 1
+let g:jsdoc_enable_es6 = 1

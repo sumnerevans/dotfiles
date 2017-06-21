@@ -95,7 +95,9 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9"
+
+# Slack/Commutication
+set $workspace9 "9: &#xf198;"
 
 # Music
 set $workspace10 "10: &#xf001;"
@@ -164,8 +166,18 @@ bar {
     font pango:Iosevka, FontAwesome 12
     position top
     #status_command i3status
-    status_command bumblebee-status -m nic disk memory cpu pasink sensors time battery -p nic.exclude=lo,vnet,virbr0 time.format="%a, %Y-%m-%d %H:%M" -t solarized-powerline
+    status_command bumblebee-status -m nic disk memory pasink layout time sensors battery -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp time.format="%a, %Y-%m-%d %H:%M:%S" -t gruvbox-powerline
+
+    colors {
+        focused_workspace  #504945 #504945 #ffffff
+        urgent_workspace   #d79921 #d79921 #000000
+    }
 }
+
+# Titlebar colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #504945 #504945 #ffffff #2e9ef4   #504945
+client.urgent           #d79921 #d79921 #000000 #900000   #900000
 
 # Custom Keybindings
 bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
@@ -184,6 +196,7 @@ for_window [instance="enpass"] floating enable
 assign [class="Firefox"] $workspace1
 assign [class="Thunderbird"] $workspace9
 assign [instance="skype"] $workspace1
+for_window [class="Slack"] move container to workspace $workspace9
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
@@ -202,6 +215,7 @@ exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
+exec --no-startup-id telegram-desktop &
 exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background

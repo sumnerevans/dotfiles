@@ -23,6 +23,7 @@ school
 
 !.mutt/**
 .mutt/temp
+.mutt/aliases
 
 .vim/bundle/*
 !.vim/colors/*

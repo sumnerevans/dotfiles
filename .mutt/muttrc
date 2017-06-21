@@ -82,3 +82,6 @@ color index brightwhite black "~N|~O" # new | old
 bind editor <Tab> complete-query
 set query_command="goobook query %s"
 macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+
+# Aliases
+source ~/.mutt/aliases
