@@ -15,7 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Language/Syntax Support
 Plugin 'aklt/plantuml-syntax'
-Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'keith/swift.vim'
 Plugin 'krisajenkins/vim-postgresql-syntax'
@@ -74,7 +73,7 @@ let g:NERDTreeIndicatorMapCustom = {
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=[
             \'.git$[[dir]]',
-            \'.sass-cache$[[dir]]', '__pycache__$[[dir]]',
+            \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
             \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]'
             \]
@@ -205,9 +204,6 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 autocmd BufRead $HOME/tmp/mutt-* setlocal tw=80
 autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb
 
-" Jump to the main editor
-autocmd tabenter * wincmd p
-
 " AutoFormatter Settings
 noremap <C-S-F> :Autoformat<CR>
 let g:formatter_yapf_style = 'google'
@@ -272,3 +268,6 @@ let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 let g:jsdoc_underscore_private = 1
 let g:jsdoc_enable_es6 = 1
+
+" Jump to the main editor
+autocmd tabenter * wincmd p

@@ -167,17 +167,7 @@ bar {
     position top
     #status_command i3status
     status_command bumblebee-status -m nic disk memory pasink layout time sensors battery -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp time.format="%a, %Y-%m-%d %H:%M:%S" -t gruvbox-powerline
-
-    colors {
-        focused_workspace  #504945 #504945 #ffffff
-        urgent_workspace   #d79921 #d79921 #000000
-    }
 }
-
-# Titlebar colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #504945 #504945 #ffffff #2e9ef4   #504945
-client.urgent           #d79921 #d79921 #000000 #900000   #900000
 
 # Custom Keybindings
 bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
@@ -220,4 +210,4 @@ exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background
 #exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/ --generate-lock-image
-exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/
+exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/sierra.jpg
