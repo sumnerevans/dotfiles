@@ -1,0 +1,13 @@
+{
+  "hints.chars": "fusntroheaidywcjklg mv",
+  "mode.normal.scroll_half_page_down": "",
+  "mode.normal.scroll_half_page_up": "",
+  "mode.normal.tab_select_previous": "K    gT",
+  "mode.normal.tab_select_next": "J    gt",
+  "mode.normal.tab_close": "d",
+  "mode.normal.tab_restore": "u",
+  "mode.normal.follow_in_tab": "et",
+  "mode.normal.follow_in_focused_tab": "F",
+  "mode.normal.enter_mode_ignore": "I",
+  "mode.normal.quote": "i"
+}

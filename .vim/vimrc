@@ -43,7 +43,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
 Plugin 'atweiden/vim-dragvisuals'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'ervandew/supertab'
 Plugin 'gioele/vim-autoswap'
 Plugin 'heavenshell/vim-jsdoc'
@@ -53,7 +52,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale' " for formatting and linting
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -205,31 +204,10 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 autocmd BufRead $HOME/tmp/mutt-* setlocal tw=80
 autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb
 
-" AutoFormatter Settings
-noremap <C-S-F> :Autoformat<CR>
-let g:formatter_yapf_style = 'google'
-" let g:formatdef_autopep8 = '"autopep8 -a -a "'
-let g:formatters_python = ['yapf']
-
 " Make Powerline work
 set encoding=utf8
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 let g:airline_powerline_fonts = 1
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-noremap :w<CR> :w<CR>:SyntasticCheck<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_rust_checkers = ['cargo']
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_cs_checkers = ['code_checker']
-let g:syntastic_javascript_checkers = ['eslint']
 
 " OmniSharp
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
@@ -279,3 +257,13 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Vim Templates
 let g:templates_directory = '~/.vim/vim-templates'
+
+" ALE
+let g:ale_fixers = {
+            \ 'javascript': [
+            \     'eslint'
+            \ ]
+            \}
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+noremap <C-S-F> :ALEFix<CR>
