@@ -1,6 +1,6 @@
 # Determine OS
 [[ `uname` == 'Linux'  ]] && export LINUX=1 || export LINUX=
-[[ `uname` == 'Darwin'  ]] && export OSX=1 || export OSX=
+[[ `uname` == 'Darwin'  ]] && export MACOS=1 || export MACOS=
 
 # Prompt Setup
 autoload -Uz promptinit && promptinit
@@ -68,7 +68,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-[[ $LINUX == 1 ]] && eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -80,6 +79,10 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# Directory Colors
+[[ $LINUX == 1 ]] && eval "$(dircolors -b)"
+[[ $MACOS == 1 ]] && export CLICOLOR=1
 
 # Directory Hashes
 hash -d doc=~/Documents
@@ -278,7 +281,7 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 # Syntax Highlighting
 if [[ $LINUX == "1" ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-elif [[ $OSX == "1" ]]; then
+elif [[ $MACOS == "1" ]]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 

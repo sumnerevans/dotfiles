@@ -19,6 +19,7 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'keith/swift.vim'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'lervag/vimtex'
+Plugin 'mxw/vim-jsx'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/html5-syntax.vim'
@@ -112,9 +113,9 @@ set noerrorbells
 
 " Make Vim the use the system clipboard
 if s:os == "Linux\n"
-  set clipboard=unnamedplus
+    set clipboard=unnamedplus
 else
-  set clipboard+=unnamed
+    set clipboard+=unnamed
 endif
 
 vnoremap <C-c> "+yy
@@ -228,6 +229,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_rust_checkers = ['cargo']
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_cs_checkers = ['code_checker']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " OmniSharp
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
@@ -235,7 +237,7 @@ let g:OmniSharp_server_type = 'roslyn'
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache)$',
+            \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache|node_modules|coverage)$',
             \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2|orig)$',
             \ 'link': '',
             \ }
@@ -271,3 +273,9 @@ let g:jsdoc_enable_es6 = 1
 
 " Jump to the main editor
 autocmd tabenter * wincmd p
+
+" JSX
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Vim Templates
+let g:templates_directory = '~/.vim/vim-templates'
