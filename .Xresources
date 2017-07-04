@@ -18,11 +18,13 @@ rofi.color-normal:                      #002b37, #819396, #003643, #008ed4, #fff
 rofi.color-active:                      #002b37, #008ed4, #003643, #008ed4, #66c6ff
 rofi.color-urgent:                      #002b37, #da4281, #003643, #008ed4, #890661
 rofi.opacity:                           50
-rofi.lines:                             25
+rofi.lines:                             10
 rofi.width:                             30
 rofi.font:                              pango:Iosevka Term 20
 rofi.padding:                           10
 rofi.line-margin:                       7
+rofi.location:                          2
+rofi.yoffset:                           80
 
 ! URxvt
 URxvt*background:                       #0C0C0C
