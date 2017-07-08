@@ -166,12 +166,16 @@ bar {
     font pango:Iosevka, FontAwesome 12
     position top
     #status_command i3status
-    status_command bumblebee-status -m nic disk memory pasink layout time sensors battery -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp time.format="%a, %Y-%m-%d %H:%M:%S" -t gruvbox-powerline
+    status_command bumblebee-status -m nic disk memory pasink layout time sensors battery \
+        -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp \
+        time.format="%a, %Y-%m-%d %H:%M:%S" \
+        disk.warning=95 disk.critical=99 \
+        -t gruvbox-powerline
 }
 
 # Custom Keybindings
-bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
-#bindsym $mod+Shift+x exec "xscreensaver-command --lock"
+# bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
+bindsym $mod+Shift+x exec "xscreensaver-command --lock"
 bindsym --release $mod+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindsym $mod+m exec xrandr --auto
 
@@ -190,11 +194,11 @@ for_window [class="Slack"] move container to workspace $workspace9
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
-exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
-#exec xautolock -time 5 -locker 'xscreensaver-command --lock' &
-#exec xss-lock -- xscreensaver-command --lock &
-#exec ~/bin/xscreensaver-watch.sh &
-#exec xscreensaver -no-splash &
+# exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
+exec xautolock -time 5 -locker 'xscreensaver-command --lock' &
+exec xss-lock -- xscreensaver-command --lock &
+exec ~/bin/xscreensaver-watch.sh &
+exec xscreensaver -no-splash &
 
 # Auto-Start Programs
 exec --no-startup-id firefox
@@ -209,5 +213,4 @@ exec --no-startup-id telegram-desktop &
 exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background
-#exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/ --generate-lock-image
-exec_always ~/bin/set_bg.sh ~/Pictures/wallpapers/sierra.jpg
+exec_always ~/bin/set_bg.sh

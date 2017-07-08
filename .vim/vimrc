@@ -242,6 +242,7 @@ vmap  <S-L> :call ListTrans_toggle_format('visual')<CR>
 
 " Vim JavaScript
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
@@ -259,11 +260,22 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:templates_directory = '~/.vim/vim-templates'
 
 " ALE
+let g:ale_linters = {
+            \  'javascript': ['eslint', 'flow'],
+            \  'jsx': ['eslint', 'flow'],
+            \}
 let g:ale_fixers = {
-            \ 'javascript': [
-            \     'eslint'
-            \ ]
+            \ 'javascript': ['eslint'],
+            \ 'jsx': ['eslint'],
+            \ 'python': ['yapf'],
             \}
 let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
-noremap <C-S-F> :ALEFix<CR>
+
+" Map a shortcut to ALEFix
+if s:os == "Linux\n"
+    noremap <C-S-F> :ALEFix<CR>
+else
+    noremap <S-F> :ALEFix<CR>
+endif

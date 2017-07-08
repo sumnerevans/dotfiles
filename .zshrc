@@ -110,6 +110,10 @@ hash -d sch=~/school
 hash -d vr=~sch/vr-independent-study
 hash -d fs=~sch/field-session
 
+# Kenzan
+hash -d jest=~proj/jest
+hash -d rdt=~proj/react-devtools
+
 # ===== ALIASES =====
 alias tar="bsdtar"
 alias screen='screen -DR'
@@ -168,7 +172,8 @@ alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 alias la="ls -a"
 alias ll="ls -lah"
 alias ohea='echo "You need to either wake up or go to bed!"'
-alias open="(thunar &> /dev/null &)"
+[[ "$LINUX" == "1" ]] && alias open='(thunar &> /dev/null &)'
+[[ "$MACOS" == "1" ]] && alias open='open .'
 alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'
 
@@ -278,11 +283,13 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
-# Syntax Highlighting
+# Syntax Highlighting and Auto-suggestions
 if [[ $LINUX == "1" ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [[ $MACOS == "1" ]]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Add to PATH
