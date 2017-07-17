@@ -33,6 +33,7 @@ school
 !.vim/shortcuts
 
 !.clang-format
+!.eslintrc.js
 !fonts.config
 !.ideavimrc
 !.jsbeautifyrc
