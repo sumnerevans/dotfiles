@@ -80,6 +80,7 @@ let NERDTreeIgnore=[
 let g:NERDTreeWinSize=45
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_synchronize_view = 0
+let g:NERDTreeWinPos = "right"
 
 " Editor Tabs
 set showtabline=2
@@ -144,12 +145,6 @@ set t_Co=256
 noremap j gj
 noremap k gk
 
-" Fix Typos in Command Mode
-cnoremap " q
-cnoremap = w
-cnoremap } a
-cnoremap { e
-
 " Tab Width
 set shiftwidth=4
 autocmd FileType javascript,xhtml,html,scss set shiftwidth=2
@@ -185,7 +180,7 @@ nnoremap <F6> :YcmCompleter GetDoc<CR>
 " files
 " Enable spell check on TeX/LaTeX, Markdown, and text files
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
-autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb,es_es
 
 " Associate *.tex with tex filetype (instead of plaintex)
 au BufRead,BufNewFile *.tex set filetype=tex
@@ -197,12 +192,12 @@ au BufRead,BufNewFile *.spim set filetype=mips
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML and PUG files
 autocmd BufNewFile,BufRead *.html setlocal tw=100
-autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb,es_es
 
 " Automatically break lines at 80 characters when writing emails in mutt
 " Enable spell check for emails in mutt
 autocmd BufRead $HOME/tmp/mutt-* setlocal tw=80
-autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb
+autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb,es_es
 
 " Make Powerline work
 set encoding=utf8
@@ -219,6 +214,9 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2|orig)$',
             \ 'link': '',
             \ }
+let g:ctrlp_root_markers = ['node_modules', 'package.json']
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_open_new_file = 't'
 
 " Commenting
 noremap <F8> :Commentary<CR>
@@ -260,22 +258,15 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:templates_directory = '~/.vim/vim-templates'
 
 " ALE
-let g:ale_linters = {
-            \  'javascript': ['eslint', 'flow'],
-            \  'jsx': ['eslint', 'flow'],
-            \}
 let g:ale_fixers = {
-            \ 'javascript': ['eslint'],
+            \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
-            \ 'python': ['yapf'],
             \}
 let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
+noremap <S-F> :ALEFix<CR>
 
-" Map a shortcut to ALEFix
-if s:os == "Linux\n"
-    noremap <C-S-F> :ALEFix<CR>
-else
-    noremap <S-F> :ALEFix<CR>
-endif
+" Auto open the Quick Fix list after grep
+" https://stackoverflow.com/a/39010855/2319844
+autocmd QuickFixCmdPost [^l]* cwindow

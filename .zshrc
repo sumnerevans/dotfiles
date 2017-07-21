@@ -141,7 +141,7 @@ alias hlpr='lpr -o Duplex=None'
 # Git
 alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
 alias grhh="git reset --hard HEAD"
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit"
 alias gca="git commit -a"
 alias gd="git diff"
