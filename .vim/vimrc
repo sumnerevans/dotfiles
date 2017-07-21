@@ -265,7 +265,12 @@ let g:ale_fixers = {
 let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
-noremap <S-F> :ALEFix<CR>
+" Map a shortcut to ALEFix
+if s:os == "Linux\n"
+    noremap <C-S-F> :ALEFix<CR>
+else
+    noremap <S-F> :ALEFix<CR>
+endif
 
 " Auto open the Quick Fix list after grep
 " https://stackoverflow.com/a/39010855/2319844
