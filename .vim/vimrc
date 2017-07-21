@@ -7,7 +7,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -25,6 +25,7 @@ Plugin 'othree/html5.vim'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
+Plugin 'junegunn/vader.vim'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'vim-scripts/mips.vim'
 Plugin 'vim-scripts/SQLUtilities'
@@ -43,6 +44,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
 Plugin 'atweiden/vim-dragvisuals'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'ervandew/supertab'
 Plugin 'gioele/vim-autoswap'
 Plugin 'heavenshell/vim-jsdoc'
@@ -52,7 +54,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale' " for formatting and linting
+Plugin 'sumnerevans/ale' " for formatting and linting
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,15 +63,15 @@ filetype plugin indent on    " required
 " Source other Vim files
 source $HOME/.vim/shortcuts " Shortcuts for the things I type a lot in insert mode
 
-let s:os = system("uname -s")
+let s:os = system('uname -s')
 
 " Color Scheme
 colorscheme monokai-phoenix
 
 " NERDTree Config
 let g:NERDTreeIndicatorMapCustom = {
-            \"Modified": "✹", "Staged": "✚", "Untracked": "✭", "Renamed": "➜", "Unmerged": "═",
-            \"Deleted": "✖", "Dirty": "✗", "Clean": "✔︎", "Unknown": "?" }
+            \'Modified': '✹', 'Staged': '✚', 'Untracked': '✭', 'Renamed': '➜', 'Unmerged': '═',
+            \'Deleted': '✖', 'Dirty': '✗', 'Clean': '✔︎', 'Unknown': '?' }
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=[
             \'.git$[[dir]]',
@@ -80,7 +82,7 @@ let NERDTreeIgnore=[
 let g:NERDTreeWinSize=45
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_synchronize_view = 0
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = 'right'
 
 " Editor Tabs
 set showtabline=2
@@ -121,7 +123,7 @@ endif
 vnoremap <C-c> "+yy
 
 " Put swap and undo files in .vim
-set dir=~/.vim/swap//
+set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set undofile
 
@@ -152,7 +154,7 @@ autocmd FileType javascript,xhtml,html,scss set shiftwidth=2
 " Search
 set hlsearch
 set incsearch
-set ic
+set ignorecase
 
 " Column Guides
 set colorcolumn=80,100,120
@@ -259,6 +261,7 @@ let g:templates_directory = '~/.vim/vim-templates'
 
 " ALE
 let g:ale_fixers = {
+            \ 'html': ['remove_trailing_lines'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \}
@@ -267,9 +270,9 @@ let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
 " Map a shortcut to ALEFix
 if s:os == "Linux\n"
-    noremap <C-S-F> :ALEFix<CR>
+    noremap <C-S-F> :Autoformat<CR>:ALEFix<CR>
 else
-    noremap <S-F> :ALEFix<CR>
+    noremap <S-F> :Autoformat<CR>:ALEFix<CR>
 endif
 
 " Auto open the Quick Fix list after grep
