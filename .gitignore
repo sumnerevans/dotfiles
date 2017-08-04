@@ -15,6 +15,7 @@ school
 !README.md
 
 .config/chromium/*
+.config/discord/*
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
