@@ -1,6 +1,7 @@
 " Cool Other vimrcs to look at
 " - http://www.lukesmith.xyz/conf/.vimrc
 " - https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+" - https://github.com/jschomay/.vim/blob/master/vimrc
 
 " ========== Vundle Plugin Management ==========
 set nocompatible              " be iMproved, required
@@ -19,6 +20,7 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'keith/swift.vim'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'lervag/vimtex'
+Plugin 'moll/vim-node'
 Plugin 'mxw/vim-jsx'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'othree/html5.vim'
@@ -26,7 +28,6 @@ Plugin 'othree/html5-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jlevesy/rust.vim' " Had to use this because it's on cargo
 Plugin 'junegunn/vader.vim'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'vim-scripts/mips.vim'
 Plugin 'vim-scripts/SQLUtilities'
 
@@ -72,8 +73,8 @@ colorscheme monokai-phoenix
 let g:NERDTreeIndicatorMapCustom = {
             \'Modified': '✹', 'Staged': '✚', 'Untracked': '✭', 'Renamed': '➜', 'Unmerged': '═',
             \'Deleted': '✖', 'Dirty': '✗', 'Clean': '✔︎', 'Unknown': '?' }
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=[
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=[
             \'.git$[[dir]]',
             \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
             \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
@@ -93,7 +94,7 @@ map <c-t> :tabnew<CR>
 " Navigation between buffers in tab
 set splitbelow
 set splitright
-if $TERM == 'rxvt-unicode-256color' && !has('gui_running')
+if $TERM ==# 'rxvt-unicode-256color' && !has('gui_running')
     map <Esc>k <C-W><C-K>
     map <Esc>j <C-W><C-J>
     map <Esc>h <C-W><C-H>
@@ -114,7 +115,7 @@ set title
 set noerrorbells
 
 " Make Vim the use the system clipboard
-if s:os == "Linux\n"
+if s:os ==# "Linux\n"
     set clipboard=unnamedplus
 else
     set clipboard+=unnamed
@@ -149,7 +150,7 @@ noremap k gk
 
 " Tab Width
 set shiftwidth=4
-autocmd FileType javascript,xhtml,html,scss set shiftwidth=2
+autocmd FileType javascript,xhtml,html,scss,yaml set shiftwidth=2
 
 " Search
 set hlsearch
@@ -269,7 +270,7 @@ let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
 " Map a shortcut to ALEFix
-if s:os == "Linux\n"
+if s:os ==# "Linux\n"
     noremap <C-S-F> :Autoformat<CR>:ALEFix<CR>
 else
     noremap <S-F> :Autoformat<CR>:ALEFix<CR>
@@ -278,3 +279,10 @@ endif
 " Auto open the Quick Fix list after grep
 " https://stackoverflow.com/a/39010855/2319844
 autocmd QuickFixCmdPost [^l]* cwindow
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained * checktime
+
+" Save on focus lost
+au FocusLost * silent! :wa

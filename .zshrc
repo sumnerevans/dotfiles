@@ -45,8 +45,8 @@ export VIDEOVIEWER=vlc
 
 # History
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory
 setopt histignoredups
 setopt histignorespace
