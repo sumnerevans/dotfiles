@@ -217,7 +217,7 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2|orig)$',
             \ 'link': '',
             \ }
-let g:ctrlp_root_markers = ['node_modules', 'package.json']
+let g:ctrlp_root_markers = ['.git', 'node_modules', 'package.json']
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_open_new_file = 't'
 
