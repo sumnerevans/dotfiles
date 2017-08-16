@@ -95,9 +95,7 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-
-# Slack/Commutication
-set $workspace9 "9: &#xf198;"
+set $workspace9 "9"
 
 # Music
 set $workspace10 "10: &#xf001;"
@@ -170,13 +168,15 @@ bar {
         -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp \
         time.format="%a, %Y-%m-%d %H:%M:%S" \
         disk.warning=95 disk.critical=99 \
+        layout.lang="3l|us" \
         -t gruvbox-powerline
 }
 
 # Custom Keybindings
 # bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
 bindsym $mod+Shift+x exec "xscreensaver-command --lock"
-bindsym --release $mod+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
+bindsym --release $mod+c exec "CM_LAUNCHER=rofi clipmenu"
+bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindsym $mod+m exec xrandr --auto
 
 # Program classes
@@ -188,9 +188,7 @@ for_window [instance="enpass"] floating enable
 
 # Default Workspaces
 assign [class="Firefox"] $workspace1
-assign [class="Thunderbird"] $workspace9
-assign [instance="skype"] $workspace1
-for_window [class="Slack"] move container to workspace $workspace9
+assign [class="Rambox"] $workspace9
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
@@ -202,14 +200,12 @@ exec xscreensaver -no-splash &
 
 # Auto-Start Programs
 exec --no-startup-id firefox
-exec --no-startup-id slack
-exec --no-startup-id open-mstdn-app &
 exec --no-startup-id enpass
 exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
-exec --no-startup-id telegram-desktop &
+exec --no-startup-id rambox &
 exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background
