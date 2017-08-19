@@ -150,7 +150,7 @@ noremap k gk
 
 " Tab Width
 set shiftwidth=4
-autocmd FileType javascript,xhtml,html,scss,yaml set shiftwidth=2
+autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown set shiftwidth=2
 
 " Search
 set hlsearch
@@ -213,7 +213,7 @@ let g:OmniSharp_server_type = 'roslyn'
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache|node_modules|coverage)$',
+            \ 'dir':  '\v[\/](\.git|\.hg|\.svn|__pycache__|_minted-.*|\.sass-cache|node_modules|coverage|output)$',
             \ 'file': '\v\.(exe|so|dll|aux|log|pdf|svg|otf|eot|woff|ttf|woff2|orig)$',
             \ 'link': '',
             \ }
