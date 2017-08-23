@@ -185,6 +185,7 @@ for_window [instance="lxappearance"] floating enable
 for_window [instance="xscreensaver-demo"] floating enable
 for_window [instance="extcalc"] floating enable
 for_window [instance="enpass"] floating enable
+for_window [instance="pinentry"] floating enable
 
 # Default Workspaces
 assign [class="Firefox"] $workspace1

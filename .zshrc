@@ -101,14 +101,19 @@ hash -d res=~proj/resumes
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
 hash -d acm=~proj/acm-website
-hash -d sws=~proj/sumner-website
+hash -d sws=~proj/sumnerevans.github.io
 hash -d tef=~proj/the-evans.family
 hash -d widb=~proj/wireless-debugging
 
 # School
 hash -d sch=~/school
 hash -d vr=~sch/vr-independent-study
-hash -d fs=~sch/field-session
+hash -d ta=~sch/csci262-ta
+hash -d csci423=~sch/csci423
+hash -d csci441=~sch/csci441
+hash -d csci442=~sch/csci442
+hash -d csci475=~sch/csci475
+hash -d math307=~sch/math307
 
 # Kenzan
 hash -d jest=~proj/jest
