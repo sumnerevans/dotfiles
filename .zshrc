@@ -113,6 +113,7 @@ hash -d csci423=~sch/csci423
 hash -d csci441=~sch/csci441
 hash -d csci442=~sch/csci442
 hash -d csci475=~sch/csci475
+hash -d csci499=~sch/csci499
 hash -d math307=~sch/math307
 
 # Kenzan
@@ -303,6 +304,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
 
 # Do the thing so rust blows up verbosely
 export RUST_BACKTRACE=1

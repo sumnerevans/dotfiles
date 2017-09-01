@@ -13,9 +13,9 @@ set $mod Mod4
 set $term urxvt
 
 # gaps
-# hide_edge_borders both
-# for_window [class="^.*"] border pixel 0
-# gaps inner 15
+hide_edge_borders both
+for_window [class="^.*"] border pixel 0
+gaps inner 15
 
 bindsym $mod+F3 gaps inner all set 0
 bindsym $mod+Shift+F3 gaps inner all set 15
@@ -188,7 +188,7 @@ for_window [instance="enpass"] floating enable
 for_window [instance="pinentry"] floating enable
 
 # Default Workspaces
-assign [class="Firefox"] $workspace1
+assign [class="Pale moon"] $workspace1
 assign [class="Rambox"] $workspace9
 for_window [class="Spotify"] move container to workspace $workspace10
 
@@ -200,7 +200,7 @@ exec ~/bin/xscreensaver-watch.sh &
 exec xscreensaver -no-splash &
 
 # Auto-Start Programs
-exec --no-startup-id firefox
+exec --no-startup-id palemoon
 exec --no-startup-id enpass
 exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
