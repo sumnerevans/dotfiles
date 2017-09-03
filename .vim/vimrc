@@ -264,6 +264,7 @@ let g:templates_directory = '~/.vim/vim-templates'
 let g:ale_fixers = {
             \ 'html': ['remove_trailing_lines'],
             \ 'cpp': ['remove_trailing_lines'],
+            \ 'rust': ['remove_trailing_lines'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \}

@@ -52,3 +52,6 @@ autocmd FileType javascript inoremap ;let let  = (<>);<Esc>F=hi
 autocmd FileType javascript inoremap ;x extends<Space>
 autocmd FileType javascript inoremap ;im import  from '(<>)';<Esc>Ftla
 autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
+
+" Rust
+autocmd FileType rust inoremap ;pl println!("{}", );<Esc>hi
