@@ -199,8 +199,9 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb,es_es
 
 " Automatically break lines at 80 characters when writing emails in mutt
 " Enable spell check for emails in mutt
-autocmd BufRead $HOME/tmp/mutt-* setlocal tw=80
+autocmd BufRead $HOME/tmp/mutt-* setlocal tw=72
 autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb,es_es
+autocmd BufRead $HOME/tmp/mutt-* setlocal colorcolumn=72
 
 " Make Powerline work
 set encoding=utf8
@@ -265,6 +266,7 @@ let g:ale_fixers = {
             \ 'html': ['remove_trailing_lines'],
             \ 'cpp': ['remove_trailing_lines'],
             \ 'rust': ['remove_trailing_lines'],
+            \ 'tex': ['remove_trailing_lines'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \}
