@@ -43,4 +43,7 @@ redshift-gtk &
 
 xrandr --dpi 160x160
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 exec i3
