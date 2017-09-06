@@ -35,6 +35,7 @@ school
 !.vim/shortcuts
 
 !.clang-format
+!.pentadactylrc
 !.eslintrc.js
 !fonts.config
 !.ideavimrc

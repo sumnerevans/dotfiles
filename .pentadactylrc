@@ -1,0 +1,14 @@
+" See these other .pentadactylrc files for reference
+" https://gist.github.com/fd0/3246e276b29e442ef8e7
+
+" always open help in new tab
+set newtab+=help
+
+set hintkeys=fusntroheaidywcjklgmv
+set hlfind
+colorscheme solarized-dark
+
+map <S-J> :tabnext<CR>
+map <S-K> :tabprevious<CR>
+
+set complete=search,location,suggestion,file,bookmark,history
