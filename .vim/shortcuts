@@ -6,15 +6,15 @@ inoremap ;g (<>)
 autocmd FileType tex inoremap ;bf \textbf{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap ;it \textit{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap ;tt \texttt{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
-autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
-autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Esc>2kA{}<Esc>i
+autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>2kA\item<Space>
+autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>
 autocmd FileType tex inoremap ;li \item 
 autocmd FileType tex inoremap ;sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
 autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
 autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Enter><Enter>(<>)<Esc>4kfR:MultipleCursorsFind<Space>DELRN<Enter>c
-autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Esc>2k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
+autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Esc>2kA{}<Esc>i
 autocmd FileType tex inoremap ;int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap ;sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
 

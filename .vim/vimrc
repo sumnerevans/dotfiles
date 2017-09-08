@@ -225,6 +225,10 @@ let g:ctrlp_open_new_file = 't'
 " Commenting
 noremap <F8> :Commentary<CR>
 
+" Run make
+nnoremap <F5> :make run<CR>
+nnoremap <S-F5> :make<CR>
+
 " Vim LaTeX
 let g:vimtex_view_method = 'zathura'
 autocmd Filetype tex,latex nnoremap <F5> :VimtexCompile<CR>
