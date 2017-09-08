@@ -22,7 +22,7 @@ bindsym $mod+Shift+F3 gaps inner all set 15
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka 12
+font pango:Iosevka 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
