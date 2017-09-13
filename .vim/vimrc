@@ -202,6 +202,7 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb,es_es
 autocmd BufRead $HOME/tmp/mutt-* setlocal tw=72
 autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb,es_es
 autocmd BufRead $HOME/tmp/mutt-* setlocal colorcolumn=72
+autocmd BufRead $HOME/tmp/mutt-* match Over100Length /\%73v.\+/
 
 " Make Powerline work
 set encoding=utf8
@@ -271,6 +272,7 @@ let g:ale_fixers = {
             \ 'cpp': ['remove_trailing_lines'],
             \ 'rust': ['remove_trailing_lines'],
             \ 'tex': ['remove_trailing_lines'],
+            \ 'md': ['remove_trailing_lines'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \}

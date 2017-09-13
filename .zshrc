@@ -107,7 +107,6 @@ hash -d widb=~proj/wireless-debugging
 
 # School
 hash -d sch=~/school
-hash -d vr=~sch/vr-independent-study
 hash -d ta=~sch/csci262-ta
 hash -d csci423=~sch/csci423
 hash -d csci441=~sch/csci441
@@ -115,6 +114,7 @@ hash -d csci442=~sch/csci442
 hash -d csci475=~sch/csci475
 hash -d csci499=~sch/csci499
 hash -d math307=~sch/math307
+hash -d vr=~sch/csci499
 
 # Kenzan
 hash -d jest=~proj/jest

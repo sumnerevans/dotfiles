@@ -21,9 +21,9 @@ autocmd FileType tex inoremap ;sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
 " HTML
 autocmd FileType html,xhtml,javascript.jsx inoremap ;s <strong></strong><Space>(<>)<Esc>FbT>i
 autocmd FileType html,xhtml,javascript.jsx inoremap ;em <em></em><Space>(<>)<Esc>FeT>i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Enter><Enter><p>(<>)<Esc>2k2hi
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Enter><Enter><p>(<>)<Esc>2k2hi
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Enter><Enter><p>(<>)<Esc>2k2hi
+autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Esc>F>a
+autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Esc>F>a
+autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Esc>F>a
 autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Enter><Enter>(<>)<Esc>02kf>a
 autocmd FileType html,xhtml,javascript.jsx inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
 autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter>(<>)<Esc>03k2f<i
@@ -56,3 +56,6 @@ autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
 
 " Rust
 autocmd FileType rust inoremap ;pl println!("{}", );<Esc>hi
+
+" C++
+autocmd FileType cpp inoremap ;cout cout << ;<Esc>a
