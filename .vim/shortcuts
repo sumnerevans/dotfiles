@@ -58,4 +58,4 @@ autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
 autocmd FileType rust inoremap ;pl println!("{}", );<Esc>hi
 
 " C++
-autocmd FileType cpp inoremap ;cout cout << ;<Esc>a
+autocmd FileType cpp inoremap ;cout cout << ;<Esc>i

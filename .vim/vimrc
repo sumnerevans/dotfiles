@@ -270,6 +270,7 @@ let g:templates_directory = '~/.vim/vim-templates'
 let g:ale_fixers = {
             \ 'html': ['remove_trailing_lines'],
             \ 'cpp': ['remove_trailing_lines'],
+            \ 'python': ['isort'],
             \ 'rust': ['remove_trailing_lines'],
             \ 'tex': ['remove_trailing_lines'],
             \ 'md': ['remove_trailing_lines'],
