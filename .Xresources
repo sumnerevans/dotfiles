@@ -31,7 +31,6 @@ URxvt*background:                       #0C0C0C
 URxvt*foreground:                       #E6E6E6
 
 !blue
-*color4:  #46aede
 *color12: #46aede
 
 URxvt*scrollBar:                        false
