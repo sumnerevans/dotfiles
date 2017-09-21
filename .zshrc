@@ -41,7 +41,7 @@ export RPS1='$(__git_prompt)'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export PDFVIEWER="zathura --fork"
-export VIDEOVIEWER=vlc
+export VIDEOVIEWER=mpv
 
 # History
 HISTFILE=~/.histfile
