@@ -6,6 +6,9 @@ source ~/.mutt/accounts/personal
 folder-hook Personal/*  source ~/.mutt/accounts/personal
 folder-hook Mines/*     source ~/.mutt/accounts/mines
 
+# Fetch mail
+macro index <F5> '!offlineimap -o^M'
+
 macro index M "<change-folder> =Mines/INBOX<enter>"  "go to Mines Inbox"
 macro index P "<change-folder> =Personal/INBOX<enter>"  "go to Personal Inbox"
 
@@ -46,6 +49,8 @@ set tilde
 unset markers
 
 # HTML
+unset implicit_autoview
+alternative_order text/plain text/html
 auto_view text/html
 
 # Composing
@@ -60,10 +65,7 @@ set forward_quote
 bind pager j next-line
 bind pager k previous-line
 
-# colors
-color hdrdefault brightwhite black
-color quoted cyan black
-color signature cyan black
+# ====== COLORS ======
 color attachment yellow black
 color prompt yellow black
 color message white black
@@ -74,9 +76,32 @@ color tree magenta black
 color normal white black
 color markers brightyellow black
 color search white black
-color tilde white black
 color index red black ~F # flagged
-color index brightwhite black "~N|~O" # new | old
+
+# Index
+color index brightwhite black ~N # unread
+color index white black ~O # read
+color index red black ~D # deleted
+
+# Header
+color hdrdefault white black
+color header    brightgreen black (^Subject\:)
+
+# Color Links blue
+color body      brightblue   default "(ftp|http|https)://[^ ]+"
+color body      brightblue   default [-a-z_0-9.]+@[-a-z_0-9.]+
+
+# Color signature verification
+color body      brightgreen  default "^(gpg: )?Good signature"
+color body      brightgreen  default "^(gpg: )?encrypted"
+color body      brightred    default "^(gpg: )?Bad signature"
+color body      red          default "^(gpg: )?Problem signature from:.*"
+color body      red          default "^(gpg: )?warning:"
+color body      red          default "^(gpg: ).*failed:"
+
+# Body
+color quoted cyan black
+color signature cyan black
 
 # Contacts
 bind editor <Tab> complete-query
@@ -85,3 +110,8 @@ macro index,pager a "<pipe-message>goobook add<return>" "add sender to google co
 
 # Aliases
 source ~/.mutt/aliases
+
+# GPG
+set crypt_use_gpgme             # Use GPGME for encryption
+set crypt_autosign              # Automatically sign all messages
+set crypt_verify_sig=yes        # Always verify signatures
