@@ -3,6 +3,7 @@
 
 # Unignore folders and gitignore
 !*/
+!.gitconfig
 !.gitignore
 !.gitmodules
 

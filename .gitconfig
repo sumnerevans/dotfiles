@@ -1,0 +1,16 @@
+[user]
+    email = sumner.evans98@gmail.com
+    name = Sumner Evans
+    signingkey = 8904527AB50022FD
+
+[core]
+    editor = vi
+
+[diff]
+    tool = vimdiff
+
+[merge]
+    tool = vimdiff
+
+[commit]
+    gpgsign = true
