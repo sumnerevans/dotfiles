@@ -44,7 +44,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Editing
 Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
-Plugin 'atweiden/vim-dragvisuals'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ervandew/supertab'
 Plugin 'gioele/vim-autoswap'
@@ -66,9 +65,6 @@ source $HOME/.vim/shortcuts " Shortcuts for the things I type a lot in insert mo
 
 let s:os = system('uname -s')
 
-" Color Scheme
-colorscheme monokai-phoenix
-
 " NERDTree Config
 let g:NERDTreeIndicatorMapCustom = {
             \'Modified': '✹', 'Staged': '✚', 'Untracked': '✭', 'Renamed': '➜', 'Unmerged': '═',
@@ -78,7 +74,7 @@ let g:NERDTreeIgnore=[
             \'.git$[[dir]]',
             \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
             \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
-            \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]'
+            \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]
 let g:NERDTreeWinSize=45
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -106,9 +102,14 @@ else
     map <A-l> <C-W><C-L>
 endif
 
-" History
+" History and Undo
 set history=1000
 set undolevels=1000
+set undofile
+
+" Put swap and undo files in .vim
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 set wildignore=*.swp,*.bak,*.pyc,*.out,*.git
 set title
@@ -122,11 +123,6 @@ else
 endif
 
 vnoremap <C-c> "+yy
-
-" Put swap and undo files in .vim
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-set undofile
 
 " Navigating with guides
 map <Space><Backspace> a(<>) <Esc>
@@ -145,6 +141,8 @@ set backspace=indent,eol,start
 set scrolloff=5
 set virtualedit=onemore
 set t_Co=256
+
+" Make j and k behave nicer when the line wraps
 noremap j gj
 noremap k gk
 
@@ -168,9 +166,6 @@ match Over100Length /\%101v.\+/
 " Highlight unwanted whitespace
 set list listchars=tab:\▶\ ,trail:␣,nbsp:␣
 
-set autoread
-au CursorHold * checktime
-
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/sumner/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src'
@@ -186,11 +181,11 @@ autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb,es_es
 
 " Associate *.tex with tex filetype (instead of plaintex)
-au BufRead,BufNewFile *.tex set filetype=tex
+autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " Associate .s and .spim files with MIPS
-au BufRead,BufNewFile *.s set filetype=mips
-au BufRead,BufNewFile *.spim set filetype=mips
+autocmd BufRead,BufNewFile *.s set filetype=mips
+autocmd BufRead,BufNewFile *.spim set filetype=mips
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML and PUG files
@@ -235,13 +230,7 @@ let g:vimtex_view_method = 'zathura'
 autocmd Filetype tex,latex nnoremap <F5> :VimtexCompile<CR>
 autocmd Filetype tex,latex nnoremap <F11> :VimtexTocToggle<CR>
 autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
-command WC :VimtexCountWords " Word Count
-
-" Drag visuals
-vmap <expr> <S-LEFT>  DVB_Drag('left')
-vmap <expr> <S-RIGHT> DVB_Drag('right')
-vmap <expr> <S-DOWN>  DVB_Drag('down')
-vmap <expr> <S-UP>    DVB_Drag('up')
+autocmd Filetype tex,latex command WC :VimtexCountWords " Word Count
 
 " List Trans
 nmap  <S-L> :call ListTrans_toggle_format()<CR>
@@ -256,9 +245,6 @@ let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 let g:jsdoc_underscore_private = 1
 let g:jsdoc_enable_es6 = 1
-
-" Jump to the main editor
-autocmd tabenter * wincmd p
 
 " JSX
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -279,7 +265,6 @@ let g:ale_fixers = {
             \ 'jsx': ['eslint'],
             \}
 let g:ale_open_list = 1
-let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
 " Map a shortcut to ALEFix
 if s:os ==# "Linux\n"
@@ -292,9 +277,13 @@ endif
 " https://stackoverflow.com/a/39010855/2319844
 autocmd QuickFixCmdPost [^l]* cwindow
 
-" Set to auto read when a file is changed from the outside
-set autoread
-au FocusGained * checktime
+" Color Scheme
+colorscheme lanox
+highlight LineNr ctermfg=grey
+highlight SpellBad ctermbg=160 ctermfg=white
+highlight SpellRare ctermbg=160 ctermfg=white
+highlight SpellLocal ctermbg=160 ctermfg=white
+highlight SpellCap ctermfg=234
 
-" Save on focus lost
-au FocusLost * silent! :wa
+" Jump to the main editor
+autocmd tabenter * wincmd p
