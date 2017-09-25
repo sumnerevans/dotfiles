@@ -1,7 +1,7 @@
 # vim: ft=muttrc
 set my_name   = "Sumner Evans"
 set realname  = "Sumner Evans"
-set from      = "sumner.evans98@gmail.com"
+set from      = "Sumner Evans <sumner.evans98@gmail.com>"
 set sendmail  = "/usr/bin/msmtp -a personal"
 set mbox      = "+Personal/archive"
 set postponed = "+Personal/drafts"

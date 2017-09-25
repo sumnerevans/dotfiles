@@ -10,9 +10,9 @@ autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}
 autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>kA\item<Space>
 autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>
 autocmd FileType tex inoremap ;li \item 
-autocmd FileType tex inoremap ;sec \section{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter>(<>)<Esc>2kf}i
-autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter>(<>)<Esc>2kf}i
+autocmd FileType tex inoremap ;sec \section{}<Esc>i
+autocmd FileType tex inoremap ;ssec \subsection{}<Esc>i
+autocmd FileType tex inoremap ;sssec \subsubsection{}<Esc>i
 autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Esc>2k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
 autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Esc>2kA{}<Esc>i
 autocmd FileType tex inoremap ;int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
@@ -24,12 +24,12 @@ autocmd FileType html,xhtml,javascript.jsx inoremap ;em <em></em><Space>(<>)<Esc
 autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Esc>F>a
 autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Esc>F>a
 autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Enter><Enter>(<>)<Esc>02kf>a
+autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Esc>3>i
 autocmd FileType html,xhtml,javascript.jsx inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
-autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter>(<>)<Esc>03k2f<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;li <Esc>o<li></li><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter>(<>)<Esc>03k2f<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;div <div class=""><Enter>(<>)<Enter></div><Enter><Enter>(<>)<Esc>04kf"a
+autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Esc>0k2f<i
+autocmd FileType html,xhtml,javascript.jsx inoremap ;li <li></li><Esc>F>a
+autocmd FileType html,xhtml,javascript.jsx inoremap ;ol <ol><Enter><li></li><Enter></ol><Esc>0k2f<i
+autocmd FileType html,xhtml,javascript.jsx inoremap ;div <div class=""><Enter>(<>)<Enter></div><Esc>02kf"a
 autocmd FileType html,xhtml,javascript.jsx inoremap ;tg <DELRN>(<>)</DELRN><Esc>0fR:MultipleCursorsFind<Space>DELRN<Enter>c
 autocmd FileType html,xhtml,javascript.jsx inoremap ;tr <tr></tr><Esc>F<i
 autocmd FileType html,xhtml,javascript.jsx inoremap ;td <td></td><Esc>F<i
