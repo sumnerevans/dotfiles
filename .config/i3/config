@@ -210,7 +210,6 @@ exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
-exec --no-startup-id rambox &
 exec --no-startup-id compton -fc --inactive-dim 0.25
 
 # Desktop Background

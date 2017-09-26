@@ -158,11 +158,6 @@ set ignorecase
 
 " Column Guides
 set colorcolumn=80,100,120
-highlight ColorColumn term=reverse ctermbg=8 guibg=#303030
-
-" Highlight past 100 characters
-highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
-match Over100Length /\%101v.\+/
 
 " Highlight unwanted whitespace
 set list listchars=tab:\▶\ ,trail:␣,nbsp:␣
@@ -285,6 +280,11 @@ highlight SpellBad ctermbg=160 ctermfg=white
 highlight SpellRare ctermbg=160 ctermfg=white
 highlight SpellLocal ctermbg=160 ctermfg=white
 highlight SpellCap ctermfg=234
+highlight ColorColumn ctermbg=8 guibg=#303030
+
+" Highlight past 100 characters
+highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
+match Over100Length /\%101v.\+/
 
 " Jump to the main editor
 autocmd tabenter * wincmd p
