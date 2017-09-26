@@ -24,6 +24,7 @@ school
 !.config/ranger/rc.conf
 !.config/pgcli/config
 !.config/vale/styles/**/*
+!.config/mdl/**/*
 
 !.mutt/**
 .mutt/temp
