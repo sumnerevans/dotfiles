@@ -281,6 +281,7 @@ highlight SpellRare ctermbg=160 ctermfg=white
 highlight SpellLocal ctermbg=160 ctermfg=white
 highlight SpellCap ctermfg=234
 highlight ColorColumn ctermbg=8 guibg=#303030
+highlight Visual ctermbg=67 ctermfg=231
 
 " Highlight past 100 characters
 highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
