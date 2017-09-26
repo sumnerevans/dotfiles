@@ -23,6 +23,7 @@ school
 !.config/i3status/*
 !.config/ranger/rc.conf
 !.config/pgcli/config
+!.config/vale/styles/**/*
 
 !.mutt/**
 .mutt/temp
