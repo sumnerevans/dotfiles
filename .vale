@@ -1,0 +1,20 @@
+# vim:ft=config
+# Core settings
+StylesPath = .config/vale/styles
+MinAlertLevel = suggestion # suggestion, warning or error
+
+# Global settings (applied to every syntax)
+[*]
+# List of styles to load
+BasedOnStyles = vale, joblint, proselint
+
+# Vale
+vale.GenderBias = NO # handled by Proselint
+
+# Joblint
+joblint.Competitive = NO
+joblint.Gendered = NO # not applicable for normal writing, I need to use pronouns
+
+# Proselint
+proselint.DateCase = NO
+proselint.DateSpacing = NO

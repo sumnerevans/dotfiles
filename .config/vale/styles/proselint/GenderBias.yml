@@ -3,14 +3,11 @@ message: Consider using '%s' instead of '%s'.
 ignorecase: true
 level: error
 swap:
-  (?:alumnae|alumni):          graduates
-  (?:alumna|alumnus):          graduate
   air(?:m[ae]n|wom[ae]n):      pilot(s)
   anchor(?:m[ae]n|wom[ae]n):   anchor(s)
   authoress:                   author
   camera(?:m[ae]n|wom[ae]n):   camera operator(s)
   chair(?:m[ae]n|wom[ae]n):    chair(s)
-  congress(?:m[ae]n|wom[ae]n): member(s) of congress
   door(?:m[ae]|wom[ae]n):      convierge(s)
   draft(?:m[ae]n|wom[ae]n):    drafter(s)
   fire(?:m[ae]n|wom[ae]n):     firefighter(s)
@@ -20,7 +17,6 @@ swap:
   lady lawyer:                 lawyer
   ladylike:                    courteous
   landlord:                    building manager
-  mail(?:m[ae]n|wom[ae]n):     mail carriers
   man and wife:                husband and wife
   man enough:                  strong enough
   mankind:                     human kind
