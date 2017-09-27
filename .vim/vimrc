@@ -277,8 +277,8 @@ autocmd QuickFixCmdPost [^l]* cwindow
 colorscheme lanox
 highlight LineNr ctermfg=grey
 highlight SpellBad ctermbg=160 ctermfg=white
-highlight SpellRare ctermbg=160 ctermfg=white
-highlight SpellLocal ctermbg=160 ctermfg=white
+highlight SpellRare ctermfg=234
+highlight SpellLocal ctermfg=234
 highlight SpellCap ctermfg=234
 highlight ColorColumn ctermbg=8 guibg=#303030
 highlight Visual ctermbg=67 ctermfg=231
