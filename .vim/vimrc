@@ -39,7 +39,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'reewr/vim-monokai-phoenix'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Editing
@@ -47,7 +46,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'aperezdc/vim-template'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ervandew/supertab'
-Plugin 'gioele/vim-autoswap'
+Plugin 'gioele/vim-autoswap' " requires wmctrl on Linux
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sumnerevans/vim-listtrans'
@@ -83,7 +82,7 @@ let g:nerdtree_tabs_synchronize_view = 0
 let g:NERDTreeWinPos = 'right'
 
 " Editor Tabs
-set showtabline=2
+set showtabline=2 " always show the tab bar
 map <c-h> :tabp<CR>
 map <c-l> :tabn<CR>
 map <c-t> :tabnew<CR>
@@ -223,10 +222,9 @@ nnoremap <S-F5> :make<CR>
 
 " Vim LaTeX
 let g:vimtex_view_method = 'zathura'
-autocmd Filetype tex,latex nnoremap <F5> :VimtexCompile<CR>
+autocmd Filetype tex,latex noremap <F5> :VimtexCompile<CR>
 autocmd Filetype tex,latex nnoremap <F11> :VimtexTocToggle<CR>
 autocmd Filetype tex,latex nnoremap <F12> :VimtexView<CR>
-autocmd Filetype tex,latex command WC :VimtexCountWords " Word Count
 
 " List Trans
 nmap  <S-L> :call ListTrans_toggle_format()<CR>

@@ -13,13 +13,16 @@
 set $mod Mod4
 set $term urxvt
 
-# gaps
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0
-gaps inner 15
+# i3-gaps =====================================================================
+# hide_edge_borders both
+# for_window [class="^.*"] border pixel 0
+gaps inner 8
 
 bindsym $mod+F3 gaps inner all set 0
-bindsym $mod+Shift+F3 gaps inner all set 15
+bindsym $mod+Shift+F3 gaps inner all set 8
+
+new_window 1pixel
+new_float 1pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -159,12 +162,22 @@ mode "  " {
 
 bindsym $mod+r mode "  "
 
+# Use custom colors for black
+set $black #282828
+set $darkblack #1d2021
+set $transparent #00000090
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:Iosevka, FontAwesome 10
+    font pango:Iosevka, FontAwesome 11
     position top
     status_command i3status
+    i3bar_command i3bar -t
+    colors {
+        background $transparent
+        separator #aaaaaa
+    }
     # status_command bumblebee-status -m nic disk memory pasink layout time sensors battery \
     #     -p nic.exclude=lo,vnet,virbr,docker,veth,br,enp \
     #     time.format="%a, %Y-%m-%d %H:%M:%S" \
