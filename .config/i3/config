@@ -163,8 +163,6 @@ mode "  " {
 bindsym $mod+r mode "  "
 
 # Use custom colors for black
-set $black #282828
-set $darkblack #1d2021
 set $transparent #00000090
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -223,7 +221,7 @@ exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
-exec --no-startup-id compton -fc --inactive-dim 0.25
+exec --no-startup-id compton -fcD 10 -i 0.85
 
 # Desktop Background
 exec_always ~/bin/set_bg.sh
