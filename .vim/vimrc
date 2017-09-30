@@ -217,8 +217,8 @@ let g:ctrlp_open_new_file = 't'
 noremap <F8> :Commentary<CR>
 
 " Run make
-nnoremap <F5> :make run<CR>
-nnoremap <S-F5> :make<CR>
+nnoremap <F5> :make<CR>
+nnoremap <S-F5> :make run<CR>
 
 " Vim LaTeX
 let g:vimtex_view_method = 'zathura'

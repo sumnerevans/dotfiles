@@ -42,6 +42,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export PDFVIEWER="zathura --fork"
 export VIDEOVIEWER=mpv
+export WINE=wine
 
 # History
 HISTFILE=~/.histfile
@@ -130,6 +131,7 @@ alias todo="todo.sh -c"
 
 # File Type Associations
 alias -s cpp=$EDITOR
+alias -s exe=$WINE
 alias -s h=$EDITOR
 alias -s md=$EDITOR
 alias -s mp4=$VIDEOVIEWER

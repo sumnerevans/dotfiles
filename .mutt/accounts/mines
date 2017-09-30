@@ -17,3 +17,4 @@ macro index S "<save-message>+Mines/Spam<enter>" "mark message as spam"
 macro index y "<save-message>+Mines/archive<enter>" "Archive"
 
 my_hdr Reply-To: jonathanevans@mines.edu
+alternates '^jonathanevans@mymail.mines.edu$'
