@@ -117,10 +117,6 @@ hash -d csci499=~sch/csci499
 hash -d math307=~sch/math307
 hash -d vr=~sch/csci499
 
-# Kenzan
-hash -d jest=~proj/jest
-hash -d rdt=~proj/react-devtools
-
 # ===== ALIASES =====
 alias tar="bsdtar"
 alias screen='screen -DR'
