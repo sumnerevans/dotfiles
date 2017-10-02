@@ -18,5 +18,3 @@ macro index S \
         "mark message as spam"
 
 macro index y "<save-message>+Personal/archive<enter>" "Archive"
-
-my_hdr Reply-To: sumner.evans98@gmail.com

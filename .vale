@@ -18,3 +18,4 @@ joblint.Gendered = NO # not applicable for normal writing, I need to use pronoun
 # Proselint
 proselint.DateCase = NO
 proselint.DateSpacing = NO
+proselint.Diacritical = NO
