@@ -194,8 +194,8 @@ function chpwd() {
     la
 }
 
-function wgitignore() {
-    wget "https://www.gitignore.io/api/$1" -O - >> .gitignore
+function del() {
+    mv $* $HOME/tmp
 }
 
 function md2pdf() {
@@ -208,8 +208,17 @@ function md2pdf() {
     pandoc -V geometry:margin=1in -o $filename.pdf $1
 }
 
-function del() {
-    mv $* $HOME/tmp
+function spell() {
+    if [[ -z "$2" ]]; then
+        lang="en_GB"
+    else
+        lang="$2"
+    fi
+    echo "$1" | aspell -a -l "$lang"
+}
+
+function wgitignore() {
+    wget "https://www.gitignore.io/api/$1" -O - >> .gitignore
 }
 
 # Custom Key Widgets
