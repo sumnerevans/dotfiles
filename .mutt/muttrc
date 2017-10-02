@@ -114,4 +114,5 @@ source ~/.mutt/aliases
 # GPG
 set crypt_use_gpgme             # Use GPGME for encryption
 set crypt_autosign              # Automatically sign all messages
+set crypt_opportunistic_encrypt # Automatically encrypt if possible
 set crypt_verify_sig=yes        # Always verify signatures
