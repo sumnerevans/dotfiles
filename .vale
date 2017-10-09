@@ -13,10 +13,11 @@ vale.GenderBias = NO # handled by Proselint
 
 # Joblint
 joblint.Competitive = NO
-joblint.Gendered = NO # not applicable for normal writing, I need to use pronouns
+joblint.Gendered = NO   # not applicable for normal writing, I need to use pronouns
+joblint.DevEnv = NO     # Not applicable for normal writing,I talk about my dev env a lot
 
 # Proselint
 proselint.DateCase = NO
 proselint.DateSpacing = NO
 proselint.Diacritical = NO
-proselint.Very = NO # handled by vale.Editorializing
+proselint.Very = NO     # handled by vale.Editorializing

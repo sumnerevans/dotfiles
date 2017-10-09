@@ -76,7 +76,7 @@ let g:NERDTreeIgnore=[
             \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=30
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_synchronize_view = 0
 let g:NERDTreeWinPos = 'right'
