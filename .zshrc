@@ -315,7 +315,7 @@ export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
 
 # Python Virtual Environment Wrapper
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper_lazy.sh
 
 # Do the thing so rust blows up verbosely
 export RUST_BACKTRACE=1

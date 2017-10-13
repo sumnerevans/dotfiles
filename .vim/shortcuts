@@ -55,7 +55,7 @@ autocmd FileType javascript inoremap ;im import  from '(<>)';<Esc>Ftla
 autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
 
 " Rust
-autocmd FileType rust inoremap ;pl println!("{}", );<Esc>hi
+autocmd FileType rust inoremap ;pr println!("{}", );<Esc>hi
 
 " C++
 autocmd FileType cpp inoremap ;pr cout <<  << endl;<Esc>2bhi
