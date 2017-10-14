@@ -97,6 +97,7 @@ hash -d tmp=~/tmp
 
 # Projects
 hash -d gchal=~proj/google-challenge
+hash -d fl=~proj/flight
 hash -d pray=~proj/pray-app
 hash -d res=~proj/resumes
 hash -d chai=~proj/chess-ai
