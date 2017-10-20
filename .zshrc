@@ -144,17 +144,19 @@ alias lpr='lpr -o coallate=true'
 alias hlpr='lpr -o Duplex=None'
 
 # Git
-alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an (%G? %GK)]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
-alias grhh="git reset --hard HEAD"
 alias ga="git add"
 alias gc="git commit"
 alias gca="git commit -a"
+alias gch="git checkout"
 alias gd="git diff"
-alias gs="git status"
 alias gfetch="git fetch"
+alias gl="glog"
+alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an (%G? %GK)]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
 alias gpull="git pull"
 alias gpush="git push"
-alias gch="git checkout"
+alias grhh="git reset --hard HEAD"
+alias gs="git status"
+alias gst="git stash"
 
 # Config
 alias i3conf="vim ~/.config/i3/config"
@@ -166,11 +168,9 @@ alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
 
-alias asmr='(vlc $(find $HOME/Documents/asmr -type f | shuf -n 1) &>/dev/null &)'
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
 alias extmon="xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5"
-alias gcall="g++ -Wall *.cpp -o a.out && ./a.out"
 alias iftop='sudo iftop'
 alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
@@ -195,10 +195,12 @@ function chpwd() {
     la
 }
 
+# "delete" files (use ~/tmp as a recycle bin)
 function del() {
     mv $* $HOME/tmp
 }
 
+# Convert MD files to PDF using pandoc
 function md2pdf() {
     filename=$(basename "$1")
     extension="${filename##*.}"
@@ -209,12 +211,11 @@ function md2pdf() {
     pandoc -V geometry:margin=1in -o $filename.pdf $1
 }
 
+# Check the spelling of a word using aspell
 function spell() {
-    if [[ -z "$2" ]]; then
-        lang="en_GB"
-    else
-        lang="$2"
-    fi
+    # Default to GB spelling, or if the second param exists, use it to specify
+    # a different language.
+    if [[ -z "$2" ]]; then; lang="en_GB"; else; lang="$2"; fi
     echo "$1" | aspell -a -l "$lang"
 }
 
