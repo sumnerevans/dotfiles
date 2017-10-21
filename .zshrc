@@ -170,7 +170,6 @@ alias zshrc="vim ~/.zshrc && reload"
 
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
-alias extmon="xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5"
 alias iftop='sudo iftop'
 alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
