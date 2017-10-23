@@ -3,9 +3,9 @@
 inoremap ;g (<>)
 
 " LaTeX
-autocmd FileType tex inoremap ;bf \textbf{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap ;it \textit{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap ;tt \texttt{}<Space>(<>)<Esc>T{i
+autocmd FileType tex inoremap ;bf \textbf{}<Esc>i
+autocmd FileType tex inoremap ;it \textit{}<Esc>i
+autocmd FileType tex inoremap ;tt \texttt{}<Esc>i
 autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Esc>2kA{}<Esc>i
 autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>kA\item<Space>
 autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>
