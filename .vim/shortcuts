@@ -3,59 +3,77 @@
 inoremap ;g (<>)
 
 " LaTeX
-autocmd FileType tex inoremap ;bf \textbf{}<Esc>i
-autocmd FileType tex inoremap ;it \textit{}<Esc>i
-autocmd FileType tex inoremap ;tt \texttt{}<Esc>i
-autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Esc>2kA{}<Esc>i
-autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>kA\item<Space>
-autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>
-autocmd FileType tex inoremap ;li \item 
-autocmd FileType tex inoremap ;sec \section{}<Esc>i
-autocmd FileType tex inoremap ;ssec \subsection{}<Esc>i
-autocmd FileType tex inoremap ;sssec \subsubsection{}<Esc>i
-autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Esc>2k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
-autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Esc>2kA{}<Esc>i
-autocmd FileType tex inoremap ;int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap ;sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+augroup LaTeX
+    autocmd!
+    autocmd FileType tex inoremap ;bf \textbf{}<Esc>i
+    autocmd FileType tex inoremap ;it \textit{}<Esc>i
+    autocmd FileType tex inoremap ;tt \texttt{}<Esc>i
+    autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Esc>2kA{}<Esc>i
+    autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>kA\item<Space>
+    autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>
+    autocmd FileType tex inoremap ;li \item
+    autocmd FileType tex inoremap ;sec \section{}<Esc>i
+    autocmd FileType tex inoremap ;ssec \subsection{}<Esc>i
+    autocmd FileType tex inoremap ;sssec \subsubsection{}<Esc>i
+    autocmd FileType tex inoremap ;be \begin{DELRN}(<>)<Enter>(<>)<Enter>\end{DELRN}<Esc>2k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
+    autocmd FileType tex inoremap ;min \begin{minted}{(<>)}<Enter>(<>)<Enter>\end{minted}<Esc>2kA{}<Esc>i
+    autocmd FileType tex inoremap ;int \int_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+    autocmd FileType tex inoremap ;sum \sum_{(<>)}^{(<>)}<Space>(<>)<Esc>T{i
+augroup END
 
 " HTML
-autocmd FileType html,xhtml,javascript.jsx inoremap ;s <strong></strong><Space>(<>)<Esc>FbT>i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;em <em></em><Space>(<>)<Esc>FeT>i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Esc>3>i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
-autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Esc>0k2f<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;li <li></li><Esc>F>a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;ol <ol><Enter><li></li><Enter></ol><Esc>0k2f<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;div <div class=""><Enter>(<>)<Enter></div><Esc>02kf"a
-autocmd FileType html,xhtml,javascript.jsx inoremap ;tg <DELRN>(<>)</DELRN><Esc>0fR:MultipleCursorsFind<Space>DELRN<Enter>c
-autocmd FileType html,xhtml,javascript.jsx inoremap ;tr <tr></tr><Esc>F<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;td <td></td><Esc>F<i
-autocmd FileType html,xhtml,javascript.jsx inoremap ;th <th></th><Esc>F<i
+augroup HTML
+    autocmd!
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;s <strong></strong><Space>(<>)<Esc>FbT>i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;em <em></em><Space>(<>)<Esc>FeT>i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Esc>F>a
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Esc>F>a
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Esc>F>a
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Esc>3>i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Esc>0k2f<i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;li <li></li><Esc>F>a
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;ol <ol><Enter><li></li><Enter></ol><Esc>0k2f<i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;div <div class=""><Enter>(<>)<Enter></div><Esc>02kf"a
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;tg <DELRN>(<>)</DELRN><Esc>0fR:MultipleCursorsFind<Space>DELRN<Enter>c
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;tr <tr></tr><Esc>F<i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;td <td></td><Esc>F<i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;th <th></th><Esc>F<i
+augroup END
 
 " Python
-autocmd FileType python inoremap ;def def ():<Enter><Space><Space><Space><Space>(<>)<Esc>0kf(i
-autocmd FileType python inoremap ;pr print()<Esc>F(a
-autocmd FileType python inoremap ;for for  in (<>):<Enter>(<>)<Esc>0kfrla
+augroup Python
+    autocmd!
+    autocmd FileType python inoremap ;def def ():<Enter><Space><Space><Space><Space>(<>)<Esc>0kf(i
+    autocmd FileType python inoremap ;pr print()<Esc>F(a
+    autocmd FileType python inoremap ;for for  in (<>):<Enter>(<>)<Esc>0kfrla
+augroup END
 
 " JavaScript
-autocmd FileType javascript inoremap ;$ $().(<>)<Esc>2F(a
-autocmd FileType javascript inoremap ;af <Space>=> (<>)<Esc>F=hi
-autocmd FileType javascript inoremap ;cf ((<>)) {<Enter>(<>)<Enter>}<Esc>02kf(i
-autocmd FileType javascript inoremap ;cl console.log();<Esc>F(a
-autocmd FileType javascript inoremap ;cs class  {<Enter>(<>)<Enter>}<Esc>2k$Fsla
-autocmd FileType javascript inoremap ;fn function() {<Enter>(<>)<Enter>}<Esc>2k$F(a
-autocmd FileType javascript inoremap ;for for () {<Enter>(<>)<Enter>}<Esc>02kf(a
-autocmd FileType javascript inoremap ;if if () {<Enter>(<>)<Enter>}<Esc>02kf(a
-autocmd FileType javascript inoremap ;let let  = (<>);<Esc>F=hi
-autocmd FileType javascript inoremap ;x extends<Space>
-autocmd FileType javascript inoremap ;im import  from '(<>)';<Esc>Ftla
-autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
+augroup JavaScript
+    autocmd!
+    autocmd FileType javascript inoremap ;$ $().(<>)<Esc>2F(a
+    autocmd FileType javascript inoremap ;af <Space>=> (<>)<Esc>F=hi
+    autocmd FileType javascript inoremap ;cf ((<>)) {<Enter>(<>)<Enter>}<Esc>02kf(i
+    autocmd FileType javascript inoremap ;cl console.log();<Esc>F(a
+    autocmd FileType javascript inoremap ;cs class  {<Enter>(<>)<Enter>}<Esc>2k$Fsla
+    autocmd FileType javascript inoremap ;fn function() {<Enter>(<>)<Enter>}<Esc>2k$F(a
+    autocmd FileType javascript inoremap ;for for () {<Enter>(<>)<Enter>}<Esc>02kf(a
+    autocmd FileType javascript inoremap ;if if () {<Enter>(<>)<Enter>}<Esc>02kf(a
+    autocmd FileType javascript inoremap ;let let  = (<>);<Esc>F=hi
+    autocmd FileType javascript inoremap ;x extends<Space>
+    autocmd FileType javascript inoremap ;im import  from '(<>)';<Esc>Ftla
+    autocmd FileType javascript inoremap ;var var  = (<>);<Esc>F=hi
+augroup END
 
 " Rust
-autocmd FileType rust inoremap ;pr println!("{}", );<Esc>hi
+augroup Rust
+    autocmd!
+    autocmd FileType rust inoremap ;pr println!("{}", );<Esc>hi
+augroup END
 
 " C++
-autocmd FileType cpp inoremap ;pr cout <<  << endl;<Esc>2bhi
+augroup CPP
+    autocmd!
+    autocmd FileType cpp inoremap ;pr cout <<  << endl;<Esc>2bhi
+augroup END

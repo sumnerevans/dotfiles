@@ -223,8 +223,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id compton -fcD 10 -i 0.85
 
-# Desktop Background
-exec_always ~/bin/set_bg.sh
-
 # External monitor
 exec_always xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
+
+# Desktop Background
+exec_always ~/bin/set_bg.sh
