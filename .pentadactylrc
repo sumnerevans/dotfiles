@@ -11,4 +11,6 @@ colorscheme solarized-dark
 map <S-J> :tabnext<CR>
 map <S-K> :tabprevious<CR>
 
-set complete=location,file,bookmark,search
+" Suggestions
+set complete=location,suggestion,bookmark,file
+set suggestengines=duckduckgo
