@@ -144,6 +144,7 @@ alias hlpr='lpr -o Duplex=None'
 
 # Git
 alias ga="git add"
+alias gaa="git add -A"
 alias gc="git commit"
 alias gca="git commit -a"
 alias gch="git checkout"
