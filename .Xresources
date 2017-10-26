@@ -59,5 +59,5 @@ XTerm.vt100.faceName: Iosevka Term:size=10
 XTerm.vt100.font: 7x13
 
 ! Scrensaver
-xscreensaver.logFile:/var/log/xscreensaver.log
+xscreensaver.logFile:/tmp/xscreensaver.log
 xscreensaver.verbose:true

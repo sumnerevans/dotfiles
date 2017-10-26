@@ -9,3 +9,9 @@ image/jpeg; feh %s
 image/pjpeg; feh %s
 image/png; feh %s
 image/gif; feh %s
+
+# Office Suites
+application/msword; libreoffice %s;
+application/vnd.ms-word.document.12; libreoffice %s;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s;
+application/vnd.oasis.opendocument.text; libreoffice %s;

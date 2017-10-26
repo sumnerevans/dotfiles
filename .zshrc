@@ -169,6 +169,7 @@ alias zshrc="vim ~/.zshrc && reload"
 
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
+alias grep="grep --color"
 alias iftop='sudo iftop'
 alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
