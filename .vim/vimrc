@@ -124,10 +124,6 @@ endif
 
 vnoremap <C-c> "+yy
 
-" Navigating with guides
-map <Space><Backspace> a(<>) <Esc>
-map <Space><Space> <Esc>/(<>)<Enter>"_c4l
-
 " Editing
 set tabstop=4
 set softtabstop=0
