@@ -163,7 +163,7 @@ alias i3conf="vim ~/.config/i3/config"
 alias muttrc='vim ~/.mutt/muttrc'
 alias reload=". ~/.zshrc && echo 'ZSH Config Reloaded from ~/.zshrc'"
 alias sshconf="vim ~/.ssh/config"
-alias vimrc="vim ~/.vim/vimrc"
+alias vimrc="realvim ~/.vim/vimrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
@@ -177,12 +177,14 @@ alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
 alias la="ls -a"
 alias ll="ls -lah"
-alias realvim='exec vim'
 alias ohea='echo "You need to either wake up or go to bed!"'
 [[ "$LINUX" == "1" ]] && alias open='(thunar &> /dev/null &)'
 [[ "$MACOS" == "1" ]] && alias open='open .'
 alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'
+
+# Use nvim by default
+alias realvim='command vim'
 alias vim='nvim'
 
 # Making GNU fileutils more verbose
