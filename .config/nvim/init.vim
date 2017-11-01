@@ -151,13 +151,12 @@ set scrolloff=5             " Always have 5 lines above/below the current line
 set virtualedit=onemore     " Allow the cursor to go one past the EOL
 set pastetoggle=<F2>        " Make C-S-V paste work better
 
-" Shortcuts for the things I type a lot in insert mode
-source $HOME/.vim/shortcuts
-
 " Tabs
-set tabstop=4               " A tab is four spaces
 set shiftwidth=4            " 4 is the only way
 set expandtab               " Insert spaces instead of tabs
+
+" Shortcuts for the things I type a lot in insert mode
+source $HOME/.vim/shortcuts
 
 " Make j and k behave nicer when the line wraps
 noremap j gj
@@ -206,5 +205,4 @@ autocmd BufRead $HOME/tmp/mutt-* setlocal colorcolumn=72
 autocmd BufRead $HOME/tmp/mutt-* match Over100Length /\%73v.\+/
 
 " Use TAB = 2 spaces for a few file types
-autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown set tabstop=2
 autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown set shiftwidth=2
