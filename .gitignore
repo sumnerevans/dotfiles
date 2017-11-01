@@ -12,6 +12,7 @@ programming
 presentations
 projects
 school
+.local
 
 !README.md
 
@@ -21,7 +22,7 @@ school
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
-!.config/nvim/*
+!.config/nvim/**/*
 !.config/ranger/rc.conf
 !.config/pgcli/config
 !.config/vale/styles/**/*
