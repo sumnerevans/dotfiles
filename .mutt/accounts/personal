@@ -3,18 +3,20 @@ set my_name   = "Sumner Evans"
 set realname  = "Sumner Evans"
 set from      = "Sumner Evans <sumner.evans98@gmail.com>"
 set sendmail  = "/usr/bin/msmtp -a personal"
-set mbox      = "+Personal/archive"
-set postponed = "+Personal/drafts"
+set mbox      = "+Personal/[Gmail].All Mail"
+set postponed = "+Personal/[Gmail].Drafts"
 set signature = ~/.mutt/signatures/personal
 
 color status green default
 
-macro index D \
-    "<save-message>+Personal/Trash<enter>" \
+bind editor <space> noop
+
+macro index d \
+    "<save-message>=Personal/[Gmail].Trash<enter>" \
     "move message to the trash"
 
 macro index S \
-    "<save-message>+Personal/Spam<enter>"  \
+    "<save-message>=Personal/[Gmail].Spam<enter>"  \
         "mark message as spam"
 
-macro index y "<save-message>+Personal/archive<enter>" "Archive"
+macro index y "<save-message>=Personal/[Gmail].All Mail<enter>" "Archive"

@@ -9,8 +9,8 @@ folder-hook Mines/*     source ~/.mutt/accounts/mines
 # Fetch mail
 macro index <F5> '!offlineimap -o^M'
 
-macro index M "<change-folder> =Mines/INBOX<enter>"  "go to Mines Inbox"
-macro index P "<change-folder> =Personal/INBOX<enter>"  "go to Personal Inbox"
+macro index M "<change-folder>=Mines/INBOX<enter>"  "go to Mines Inbox"
+macro index P "<change-folder>=Personal/INBOX<enter>"  "go to Personal Inbox"
 
 set mail_check = 0
 set envelope_from
@@ -35,9 +35,6 @@ set sort_re
 # Set up the mailboxes
 set imap_check_subscribed=yes
 macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
-
-# move to trash
-unset confirmappend # don't ask, just do
 
 # Look and feel
 set pager_index_lines   = 12

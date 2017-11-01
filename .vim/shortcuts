@@ -2,6 +2,10 @@
 
 inoremap ;g (<>)
 
+" Navigating with guides
+map <Space><Backspace> a(<>) <Esc>
+map <Space><Space> <Esc>/(<>)<Enter>"_c4l
+
 " LaTeX
 augroup LaTeX
     autocmd!

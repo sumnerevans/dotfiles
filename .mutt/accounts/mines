@@ -3,17 +3,19 @@ set my_name   = "Jonathan Sumner Evans"
 set realname  = "Jonathan Sumner Evans"
 set from      = "Jonathan Evans <jonathanevans@mines.edu>"
 set sendmail  = "/usr/bin/msmtp -a mines"
-set mbox      = "+Mines/archive"
-set postponed = "+Mines/drafts"
+set mbox      = "+Mines/[Gmail].All Mail"
+set postponed = "+Mines/[Gmail].Drafts"
 set signature = ~/.mutt/signatures/mines
 
 color status cyan default
 
-macro index D \
-    "<save-message>+Mines/Trash<enter>" \
+bind editor <space> noop
+
+macro index d \
+    "<save-message>=Mines/[Gmail].Trash<enter>" \
     "move message to the trash"
 
-macro index S "<save-message>+Mines/Spam<enter>" "mark message as spam"
-macro index y "<save-message>+Mines/archive<enter>" "Archive"
+macro index S "<save-message>+Mines/[Gmail].Spam<enter>" "mark message as spam"
+macro index y "<save-message>+Mines/[Gmail].All Mail<enter>" "Archive"
 
 alternates '^jonathanevans@mymail.mines.edu$'

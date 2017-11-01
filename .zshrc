@@ -38,7 +38,7 @@ function __git_prompt {
 export RPS1='$(__git_prompt)'
 
 # Global Variables
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PDFVIEWER="zathura --fork"
 export VIDEOVIEWER=mpv
@@ -164,6 +164,7 @@ alias muttrc='vim ~/.mutt/muttrc'
 alias reload=". ~/.zshrc && echo 'ZSH Config Reloaded from ~/.zshrc'"
 alias sshconf="vim ~/.ssh/config"
 alias vimrc="vim ~/.vim/vimrc"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
@@ -176,11 +177,13 @@ alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
 alias la="ls -a"
 alias ll="ls -lah"
+alias realvim='exec vim'
 alias ohea='echo "You need to either wake up or go to bed!"'
 [[ "$LINUX" == "1" ]] && alias open='(thunar &> /dev/null &)'
 [[ "$MACOS" == "1" ]] && alias open='open .'
 alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'
+alias vim='nvim'
 
 # Making GNU fileutils more verbose
 for c in cp rm chmod chown rename; do
@@ -321,6 +324,7 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 # Do the thing so rust blows up verbosely
 export RUST_BACKTRACE=1
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # Set up the ssh-agent if necesarry
 if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
