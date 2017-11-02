@@ -191,6 +191,7 @@ set directory=~/tmp/nvim/swap// " Store swap files in ~/tmp to aviod disk I/O
 " Enable spell check on TeX/LaTeX, Markdown, and text files
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb,es_es
+autocmd BufNewFile,BufRead *.tex nnoremap <F5> :LLPStartPreview<CR>
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML files

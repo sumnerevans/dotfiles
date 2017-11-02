@@ -182,6 +182,7 @@ alias ohea='echo "You need to either wake up or go to bed!"'
 [[ "$MACOS" == "1" ]] && alias open='open .'
 alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'
+alias zathura=$PDFVIEWER
 
 # Use nvim by default
 alias realvim='command vim'

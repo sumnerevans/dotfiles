@@ -220,6 +220,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id compton -fcD 10 -i 0.85
+exec --no-startup-id offlineimap 2>&1 | tee -a ~/tmp/offlineimap.out
 
 # External monitor
 exec_always xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
