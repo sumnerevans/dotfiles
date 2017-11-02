@@ -39,7 +39,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run -el
 bindsym F4 exec =
-bindsym F3 exec rofi -show window
+bindsym F3 exec passdmenu
 bindsym $mod+space exec rofi -show drun
 
 # change focus
@@ -215,7 +215,6 @@ exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 
 # Auto-Start Programs
 exec --no-startup-id palemoon
-exec --no-startup-id enpass
 exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
