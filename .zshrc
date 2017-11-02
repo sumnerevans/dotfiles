@@ -166,7 +166,7 @@ alias sshconf="vim ~/.ssh/config"
 alias vimrc="realvim ~/.vim/vimrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias vimshort="vim ~/.vim/shortcuts"
-alias xresources="vim ~/.Xresources && xrdb -load .Xresources && echo 'Xresources reloaded'"
+alias xresources="vim ~/.Xresources && xrdb -load ~/.Xresources && echo '~/Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
 
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
