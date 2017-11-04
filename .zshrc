@@ -90,6 +90,7 @@ hash -d doc=~/Documents
 hash -d db=~/Dropbox
 hash -d dl=~/Downloads
 hash -d gd=~/Google\ Drive
+hash -d pass=~/.password-store
 hash -d pics=~/Pictures
 hash -d proj=~/projects
 hash -d pres=~doc/presentations
