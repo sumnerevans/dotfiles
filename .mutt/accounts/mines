@@ -5,6 +5,7 @@ set from      = "Jonathan Evans <jonathanevans@mines.edu>"
 set sendmail  = "/usr/bin/msmtp -a mines"
 set mbox      = "+Mines/[Gmail].All Mail"
 set postponed = "+Mines/[Gmail].Drafts"
+set record    = "+Mines/[Gmail].Sent Mail"
 set signature = ~/.mutt/signatures/mines
 
 color status cyan default
