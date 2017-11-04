@@ -13,7 +13,6 @@ Plug 'luochen1990/rainbow'              " Color pairs of parentheses
 
 " Language Support
 Plug 'sheerun/vim-polyglot'             " Supports all of the languages
-Plug 'xuhdev/vim-latex-live-preview'    " Live editing of LaTeX files
 
 " UI
 Plug 'airblade/vim-gitgutter'           " Git integration in the gutter
@@ -68,7 +67,6 @@ match Over100Length /\%101v.\+/
 set colorcolumn=80,100,120                  " Column guides
 set mouse=a                                 " Enable mouse scrolling
 set number                                  " Show the current line number
-set relativenumber                          " Show numbers relative to the current line
 set signcolumn=yes                          " Always show the sign column for git gutter
 set title                                   " Override the terminal title
 set list listchars=tab:\▶\ ,trail:␣,nbsp:␣  " Highlight unwanted whitespace
@@ -98,10 +96,6 @@ let g:LanguageClient_autoStart = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <F12> :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F6> :call LanguageClient_textDocument_rename()<CR>
-
-" LaTeX Live Preview
-let g:livepreview_previewer = 'zathura'     " Use zathura for LaTeX live
-                                            " preview
 
 let g:NERDTreeIndicatorMapCustom = {
             \'Modified': '✹', 'Staged': '✚', 'Untracked': '✭', 'Renamed': '➜', 'Unmerged': '═',
@@ -191,7 +185,6 @@ set directory=~/tmp/nvim/swap// " Store swap files in ~/tmp to aviod disk I/O
 " Enable spell check on TeX/LaTeX, Markdown, and text files
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb,es_es
-autocmd BufNewFile,BufRead *.tex nnoremap <F5> :LLPStartPreview<CR>
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML files

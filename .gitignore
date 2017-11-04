@@ -22,11 +22,13 @@ school
 !.config/i3/*
 !.config/i3blocks/*
 !.config/i3status/*
-!.config/nvim/**/*
 !.config/ranger/rc.conf
 !.config/pgcli/config
 !.config/vale/styles/**/*
 !.config/mdl/**/*
+
+!.config/nvim/**/*
+*.spl
 
 !.mutt/**
 .mutt/temp

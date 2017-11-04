@@ -38,7 +38,7 @@ function __git_prompt {
 export RPS1='$(__git_prompt)'
 
 # Global Variables
-export VISUAL=nvim
+command -v nvim >/dev/null && export VISUAL=nvim || export VISUAL=vim
 export EDITOR="$VISUAL"
 export PDFVIEWER="zathura --fork"
 export VIDEOVIEWER=mpv
@@ -164,7 +164,7 @@ alias muttrc='vim ~/.mutt/muttrc'
 alias reload=". ~/.zshrc && echo 'ZSH Config Reloaded from ~/.zshrc'"
 alias sshconf="vim ~/.ssh/config"
 alias vimrc="realvim ~/.vim/vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
+command -v nvim >/dev/null && alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load ~/.Xresources && echo '~/Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
@@ -184,9 +184,8 @@ alias pdflatex='pdflatex -shell-escape'
 alias xelatex='xelatex -shell-escape'
 alias zathura=$PDFVIEWER
 
-# Use nvim by default
-alias realvim='command vim'
-alias vim='nvim'
+# Use nvim by default if it exists
+command -v nvim >/dev/null && alias realvim='command vim' && alias vim='nvim'
 
 # Making GNU fileutils more verbose
 for c in cp rm chmod chown rename; do
