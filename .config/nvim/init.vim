@@ -78,6 +78,13 @@ let g:airline_powerline_fonts = 1                   " Enable fancy chars
 " ALE - Linting
 let g:ale_open_list = 1         " Use the location list for ALE
 let g:ale_list_window_size = 5  " Limit the size of the ALE output to 5 lines
+let g:ale_fixers = {
+            \ 'cpp': ['clang-format'],
+            \ 'python': ['isort', 'yapf'],
+            \ 'javascript': ['eslint', 'standard'],
+            \ 'jsx': ['eslint'],
+            \}
+noremap <C-S-F> :ALEFix<CR>
 
 " CTRLP - Fuzzy finder
 " Ignore files ignored by git
@@ -184,17 +191,17 @@ set directory=~/tmp/nvim/swap// " Store swap files in ~/tmp to aviod disk I/O
 " files
 " Enable spell check on TeX/LaTeX, Markdown, and text files
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
-autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb,es_es
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML files
 autocmd BufNewFile,BufRead *.html setlocal tw=100
-autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb,es_es
+autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 
 " Automatically break lines at 80 characters when writing emails in mutt
 " Enable spell check for emails in mutt
 autocmd BufRead $HOME/tmp/mutt-* setlocal tw=72
-autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb,es_es
+autocmd BufRead $HOME/tmp/mutt-* setlocal spell spelllang=en_gb
 autocmd BufRead $HOME/tmp/mutt-* setlocal colorcolumn=72
 autocmd BufRead $HOME/tmp/mutt-* match Over100Length /\%73v.\+/
 

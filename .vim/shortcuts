@@ -33,7 +33,7 @@ augroup HTML
     autocmd FileType html,xhtml,javascript.jsx inoremap ;h1 <h1></h1><Esc>F>a
     autocmd FileType html,xhtml,javascript.jsx inoremap ;h2 <h2></h2><Esc>F>a
     autocmd FileType html,xhtml,javascript.jsx inoremap ;h3 <h3></h3><Esc>F>a
-    autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Esc>3>i
+    autocmd FileType html,xhtml,javascript.jsx inoremap ;p <p></p><Esc>F<i
     autocmd FileType html,xhtml,javascript.jsx inoremap ;a <a<Space>href="">(<>)</a><Space>(<>)<Esc>14hi
     autocmd FileType html,xhtml,javascript.jsx inoremap ;ul <ul><Enter><li></li><Enter></ul><Esc>0k2f<i
     autocmd FileType html,xhtml,javascript.jsx inoremap ;li <li></li><Esc>F>a

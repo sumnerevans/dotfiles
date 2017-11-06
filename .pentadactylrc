@@ -4,7 +4,7 @@
 " always open help in new tab
 set newtab+=help
 
-set hintkeys=fusntroheaidywcjklgmv
+set hintkeys=fusntrohea
 set hlfind
 colorscheme solarized-dark
 
