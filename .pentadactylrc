@@ -6,7 +6,12 @@ set newtab+=help
 
 set hintkeys=fusntrohea
 set hlfind
+
+" Colors
 colorscheme solarized-dark
+hi Hints font-size: 11; border: solid white 1px; color: #ccc !important; background-color: black; padding: 2px;
+hi -l Hints Hint
+hi -l Hints Hint[active]
 
 map <S-J> :tabnext<CR>
 map <S-K> :tabprevious<CR>
