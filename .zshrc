@@ -89,7 +89,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 hash -d doc=~/Documents
 hash -d db=~/Dropbox
 hash -d dl=~/Downloads
-hash -d gd=~/Google\ Drive
 hash -d pass=~/.password-store
 hash -d pics=~/Pictures
 hash -d proj=~/projects
@@ -151,6 +150,7 @@ alias gc="git commit"
 alias gca="git commit -a"
 alias gch="git checkout"
 alias gd="git diff"
+alias gdc="git diff --cached"
 alias gfetch="git fetch"
 alias gl="glog"
 alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an (%G? %GK)]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
