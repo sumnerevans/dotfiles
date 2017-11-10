@@ -17,5 +17,5 @@ map <S-J> :tabnext<CR>
 map <S-K> :tabprevious<CR>
 
 " Suggestions
-set complete=location,suggestion,bookmark,file
+set complete=suggestion,bookmark,file
 set suggestengines=duckduckgo

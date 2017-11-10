@@ -17,8 +17,6 @@ Plug 'sheerun/vim-polyglot'             " Supports all of the languages
 " UI
 Plug 'airblade/vim-gitgutter'           " Git integration in the gutter
 Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy finder
-Plug 'gioele/vim-autoswap'              " Switch to the file if it's already
-                                        "   opened (requires wmctrl on Linux)
 Plug 'jistr/vim-nerdtree-tabs'          " File tree compatibilty with tabs
 Plug 'scrooloose/nerdtree'              " File tree
 Plug 'vim-airline/vim-airline'          " Cooler status bar
