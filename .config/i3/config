@@ -219,8 +219,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id compton -fcD 10 -i 0.85
-exec --no-startup-id offlineimap -a Personal 2>&1 | tee -a ~/tmp/offlineimap.out
-exec --no-startup-id offlineimap -a Mines 2>&1 | tee -a ~/tmp/offlineimap.out
 exec --no-startup-id kdeconnect-indicator
 
 # External monitor
