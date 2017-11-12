@@ -89,19 +89,23 @@ noremap <C-S-F> :ALEFix<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Language Client - Handling autocomplete for many languages
-set hidden 	" Required for operations modifying multiple buffers like rename.
+" Required for operations modifying multiple buffers like rename.
+set hidden
+set omnifunc=LanguageClient#complete    " Use LanguageClient as the completion engine
+let g:LanguageClient_autoStart = 1      " Automatically start language servers.
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'cpp': ['clangd'],
+    \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['/usr/bin/javascript-typescript-stdio'],
     \ 'python': ['pyls'],
-    \ }
-
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+\ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <F12> :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F6> :call LanguageClient_textDocument_rename()<CR>
 
+" NERD Tree
 let g:NERDTreeIndicatorMapCustom = {
             \'Modified': '✹', 'Staged': '✚', 'Untracked': '✭', 'Renamed': '➜', 'Unmerged': '═',
             \'Deleted': '✖', 'Dirty': '✗', 'Clean': '✔︎', 'Unknown': '?' }
@@ -109,6 +113,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = [
             \'.git$[[dir]]',
             \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
+            \'.nyc_output$[[dir]]', '.tmp$[[dir]]',
             \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]
