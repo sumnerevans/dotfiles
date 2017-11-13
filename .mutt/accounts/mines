@@ -6,7 +6,7 @@ set sendmail  = "/usr/bin/msmtp -a mines"
 set mbox      = "+Mines/[Gmail].All Mail"
 set postponed = "+Mines/[Gmail].Drafts"
 set record    = "+Mines/[Gmail].Sent Mail"
-set signature = ~/.mutt/signatures/mines
+set signature = "python3 ~/.mutt/signatures/mines|"
 
 color status cyan default
 

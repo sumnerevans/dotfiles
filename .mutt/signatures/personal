@@ -1,7 +1,16 @@
-Sumner Evans
-2 Chronicles 7:14
+#!/usr/bin/python3
+# vim ft=python
+import subprocess
 
-Email:      sumner.evans98@gmail.com
-Homepage:   https://sumnerevans.com
-Cell:       +1 (720) 459-1501
-GPG:        B50022FD
+quotes_cmd = ['fortune', '/home/sumner/.mutt/quotes']
+quote = subprocess.check_output(quotes_cmd).decode('utf-8')
+
+print('Sumner Evans')
+print('2 Chronicles 7:14')
+print()
+print('Email:      sumner.evans98@gmail.com')
+print('Homepage:   https://sumnerevans.com')
+print('Cell:       +1 (720) 459-1501')
+print('GPG:        B50022FD')
+print()
+print(quote.strip('\n'))

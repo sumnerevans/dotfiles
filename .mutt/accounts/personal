@@ -6,7 +6,7 @@ set sendmail  = "/usr/bin/msmtp -a personal"
 set mbox      = "+Personal/[Gmail].All Mail"
 set postponed = "+Personal/[Gmail].Drafts"
 set record    = "+Personal/[Gmail].Sent Mail"
-set signature = ~/.mutt/signatures/personal
+set signature = "python3 ~/.mutt/signatures/personal|"
 
 color status green default
 
@@ -16,8 +16,5 @@ macro index d \
     "<save-message>=Personal/[Gmail].Trash<enter>" \
     "move message to the trash"
 
-macro index S \
-    "<save-message>=Personal/[Gmail].Spam<enter>"  \
-        "mark message as spam"
-
+macro index S "<save-message>=Personal/[Gmail].Spam<enter>" "mark message as spam"
 macro index y "<save-message>=Personal/[Gmail].All Mail<enter>" "Archive"

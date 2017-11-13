@@ -1,11 +1,19 @@
-Jonathan Sumner Evans
-Colorado School of Mines
-B.S. Computer Science
-Vice President, Mines ACM Chapter
-Secretary, Mines Linux Users Group (LUG)
-Teachers Assistant, Data Structures
+#!/usr/bin/python3
+import subprocess
 
-Email:      jonathanevans@mines.edu
-Homepage:   https://sumnerevans.com
-Cell:       +1 (720) 459-1501
-GPG:        B50022FD
+quotes_cmd = ['fortune', '/home/sumner/.mutt/quotes']
+quote = subprocess.check_output(quotes_cmd).decode('utf-8')
+
+print('Jonathan Sumner Evans')
+print('Colorado School of Mines')
+print('B.S. Computer Science')
+print('Vice President, Mines ACM Chapter')
+print('Secretary, Mines Linux Users Group (LUG)')
+print('Teachers Assistant, Data Structures')
+print()
+print('Email:      jonathanevans@mines.edu')
+print('Homepage:   https://sumnerevans.com')
+print('Cell:       +1 (720) 459-1501')
+print('GPG:        B50022FD')
+print()
+print(quote.strip('\n'))

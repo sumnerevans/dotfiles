@@ -15,13 +15,13 @@ set $term urxvt
 # i3-gaps =====================================================================
 # hide_edge_borders both
 # for_window [class="^.*"] border pixel 0
-gaps inner 8
+# gaps inner 8
 
-bindsym $mod+F3 gaps inner all set 0
-bindsym $mod+Shift+F3 gaps inner all set 8
+# bindsym $mod+F3 gaps inner all set 0
+# bindsym $mod+Shift+F3 gaps inner all set 8
 
-new_window 1pixel
-new_float 1pixel
+# new_window 1pixel
+# new_float 1pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
