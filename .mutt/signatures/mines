@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-import subprocess
+from sig_helper import get_quote, print_contact_info
 
-quotes_cmd = ['fortune', '/home/sumner/.mutt/quotes']
-quote = subprocess.check_output(quotes_cmd).decode('utf-8')
+titles = [
+    ('Vice President', 'Mines Student ACM Chapter'),
+    ('Secretary', 'Mines Linux Users Group (LUG)'),
+    ('Teachers Assistant', 'Data Structures'),
+]
 
 print('Jonathan Sumner Evans')
 print('Colorado School of Mines')
 print('B.S. Computer Science')
-print('Vice President, Mines ACM Chapter')
-print('Secretary, Mines Linux Users Group (LUG)')
-print('Teachers Assistant, Data Structures')
-print()
-print('Email:      jonathanevans@mines.edu')
-print('Homepage:   https://sumnerevans.com')
-print('Cell:       +1 (720) 459-1501')
-print('GPG:        B50022FD')
-print()
-print(quote.strip('\n'))
+for title in titles:
+    print('{0}, {1}'.format(*title))
+print_contact_info('jonathanevans@mines.edu')
+print(get_quote())
