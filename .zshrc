@@ -162,6 +162,7 @@ alias gs="git status"
 alias gst="git stash"
 
 # Config
+alias getquote="fortune ~/.mutt/quotes"
 alias i3conf="vim ~/.config/i3/config"
 alias muttrc='vim ~/.mutt/muttrc'
 alias quotesfile="vim ~/.mutt/quotes && strfile -r ~/.mutt/quotes"
