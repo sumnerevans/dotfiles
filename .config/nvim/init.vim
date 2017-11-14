@@ -76,16 +76,17 @@ let g:airline_powerline_fonts = 1                   " Enable fancy chars
 " ALE - Linting
 let g:ale_open_list = 1                 " Use the location list for ALE
 let g:ale_list_window_size = 5          " Limit the size of the ALE output to 5 lines
-let g:ale_linters = {'rust': ['rls']}   " Use Rust Language Server for linting Rust
 let g:ale_sign_error = '✖'              " Consistent sign column with Language Client
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
+let g:ale_linters = {'rust': ['rls']}   " Use Rust Language Server for linting Rust
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
             \ 'python': ['isort', 'yapf'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \}
+let g:ale_tex_chktex_options = '-I -n18 -n44'
 noremap <C-S-F> :ALEFix<CR>
 
 " CTRLP - Fuzzy finder
