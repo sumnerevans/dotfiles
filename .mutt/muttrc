@@ -109,7 +109,9 @@ macro index,pager a "<pipe-message>goobook add<return>" "add sender to google co
 source ~/.mutt/aliases
 
 # GPG
-set crypt_use_gpgme             # Use GPGME for encryption
-set crypt_autosign              # Automatically sign all messages
-set crypt_opportunistic_encrypt # Automatically encrypt if possible
-set crypt_verify_sig=yes        # Always verify signatures
+set crypt_use_gpgme                     # Use GPGME for encryption
+set crypt_autosign                      # Automatically sign all messages
+set crypt_opportunistic_encrypt         # Automatically encrypt if possible
+set crypt_verify_sig=yes                # Always verify signatures
+set pgp_self_encrypt    = yes           # encrypt to self
+set pgp_self_encrypt_as = B50022FD
