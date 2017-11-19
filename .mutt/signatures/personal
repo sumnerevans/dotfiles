@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# vim ft=python
 from sig_helper import get_quote, print_contact_info
 
 print('Sumner Evans')

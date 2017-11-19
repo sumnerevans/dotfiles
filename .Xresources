@@ -39,12 +39,11 @@ URxvt*font:                             xft:Iosevka Term:size=10,\
                                         xft:DejaVu Sans Mono For Powerline Nerd Font:size=10:antialias=true:hinting=true,\
                                         xft:SauceCodePro Nerd Font:size=10:antialias=true:hinting=true
 URxvt*title:                            Terminal
-URxvt*perl-ext-common:                  default,matcher,font-size,clipboard
+URxvt*perl-ext-common:                  default,matcher,font-size
 URxvt*matcher.button:                   1
 URxvt*url-launcher:                     /usr/bin/xdg-open
 
 URxvt.iso14755:                         False
-URxvt.keysym.C-S-V:                     perl:clipboard:paste
 URxvt.keysym.C-Up:                      font-size:increase
 URxvt.keysym.C-Down:                    font-size:decrease
 URxvt.keysym.C-S-Up:                    font-size:incglobal

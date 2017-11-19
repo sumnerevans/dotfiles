@@ -86,6 +86,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 [[ $MACOS == 1 ]] && export CLICOLOR=1
 
 # Directory Hashes
+hash -d cheat=~/Documents/cheatsheets
 hash -d doc=~/Documents
 hash -d db=~/Dropbox
 hash -d dl=~/Downloads
