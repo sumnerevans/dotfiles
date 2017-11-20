@@ -79,7 +79,10 @@ let g:ale_list_window_size = 5          " Limit the size of the ALE output to 5 
 let g:ale_sign_error = '✖'              " Consistent sign column with Language Client
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
-let g:ale_linters = {'rust': ['rls']}   " Use Rust Language Server for linting Rust
+let g:ale_linters = {
+            \ 'rust': ['rls'],
+            \ 'python': ['pyls'],
+            \}
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
             \ 'python': ['isort', 'yapf'],

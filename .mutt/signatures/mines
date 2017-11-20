@@ -10,7 +10,6 @@ titles = [
 print('Jonathan Sumner Evans')
 print('Colorado School of Mines')
 print('B.S. Computer Science')
-for title in titles:
-    print('{0}, {1}'.format(*title))
+print('\n'.join('{0}, {1}'.format(*t) for t in titles))
 print_contact_info('jonathanevans@mines.edu')
 print(get_quote())

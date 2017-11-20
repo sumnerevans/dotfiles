@@ -11,6 +11,7 @@ gpg = 'B50022FD'
 def get_quote():
     quotes_cmd = ['fortune', '/home/sumner/.mutt/quotes']
     quote = ''
+    # Not sure why, but sometimes fortune returns an empty fortune.
     while len(quote) == 0:
         quote = subprocess.check_output(quotes_cmd).decode('utf-8').strip()
 
