@@ -328,11 +328,11 @@ export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
 
 # Python Virtual Environment Wrapper
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper_lazy.sh
+command -v /usr/bin/virtualenvwrapper_lazy.sh >/dev/null && source /usr/bin/virtualenvwrapper_lazy.sh
 
 # Do the thing so rust blows up verbosely
-export RUST_BACKTRACE=1
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+command -v rustc >/dev/null && export RUST_BACKTRACE=1
+command -v rustc >/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # Set up the ssh-agent if necesarry
 if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
