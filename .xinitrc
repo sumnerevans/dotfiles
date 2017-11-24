@@ -46,4 +46,6 @@ xrandr --dpi 160x160
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 exec i3

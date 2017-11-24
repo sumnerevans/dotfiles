@@ -102,8 +102,7 @@ color signature cyan black
 
 # Contacts
 bind editor <Tab> complete-query
-set query_command="goobook query %s"
-macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+set query_command="~/.mutt/contact_query.py %s"
 
 # Aliases
 source ~/.mutt/aliases

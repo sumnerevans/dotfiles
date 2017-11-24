@@ -319,10 +319,9 @@ elif [[ $MACOS == "1" ]]; then
 fi
 
 # Add to PATH
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
 
