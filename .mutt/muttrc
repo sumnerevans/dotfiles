@@ -102,7 +102,7 @@ color signature cyan black
 
 # Contacts
 bind editor <Tab> complete-query
-set query_command="~/.mutt/contact_query.py %s"
+set query_command="~/bin/contact_query %s"
 
 # Aliases
 source ~/.mutt/aliases
