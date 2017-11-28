@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -el
 bindsym F4 exec =
 bindsym F3 exec passdmenu
-bindsym $mod+space exec dmenu -show drun
+bindsym $mod+space exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left

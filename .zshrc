@@ -97,6 +97,7 @@ hash -d pics=~/Pictures
 hash -d proj=~/projects
 hash -d pres=~doc/presentations
 hash -d tmp=~/tmp
+hash -d ut=~/projects/up-tempo
 
 # Projects
 hash -d gchal=~proj/google-challenge
@@ -321,6 +322,7 @@ export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
 
 # Python Virtual Environment Wrapper
