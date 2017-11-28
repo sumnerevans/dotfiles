@@ -19,3 +19,4 @@ map <S-K> :tabprevious<CR>
 " Suggestions
 set complete=location,suggestion,bookmark,file
 set suggestengines=duckduckgo
+set defsearch=duckduckgo

@@ -79,15 +79,19 @@ let g:ale_list_window_size = 5          " Limit the size of the ALE output to 5 
 let g:ale_sign_error = '✖'              " Consistent sign column with Language Client
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
+" let g:ale_linters = {
+"             \ 'python': ['pyls'],
+"             \ 'rust': ['rls'],
+"             \}
 let g:ale_linters = {
-            \ 'rust': ['rls'],
             \ 'python': ['pyls'],
             \}
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
-            \ 'python': ['isort', 'yapf'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
+            \ 'python': ['isort', 'yapf'],
+            \ 'rust': ['rustfmt']
             \}
 let g:ale_tex_chktex_options = '-I -n18 -n44'
 noremap <C-S-F> :ALEFix<CR>
@@ -122,7 +126,7 @@ let g:NERDTreeIgnore = [
             \'.git$[[dir]]',
             \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
             \'.nyc_output$[[dir]]', '.tmp$[[dir]]',
-            \'.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
+            \'.bk$[[file]]', '.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]
 let g:NERDTreeWinSize = 30

@@ -86,11 +86,12 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 [[ $MACOS == 1 ]] && export CLICOLOR=1
 
 # Directory Hashes
-hash -d cheat=~/Documents/cheatsheets
+hash -d ch=~/Documents/cheatsheets
 hash -d doc=~/Documents
 hash -d db=~/Dropbox
 hash -d dl=~/Downloads
 hash -d kattis=~/projects/kattis
+hash -d no=~/Documents/notes
 hash -d pass=~/.password-store
 hash -d pics=~/Pictures
 hash -d proj=~/projects
@@ -123,9 +124,6 @@ hash -d vr=~sch/csci499
 alias tar="bsdtar"
 alias screen='screen -DR'
 alias pwd="pwd && pwd -P"
-
-# Todo.sh
-alias todo="todo.sh -c"
 
 # File Type Associations
 alias -s cpp=$EDITOR

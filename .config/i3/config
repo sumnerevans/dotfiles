@@ -13,12 +13,12 @@ set $mod Mod4
 set $term urxvt
 
 # i3-gaps =====================================================================
-# hide_edge_borders both
-# for_window [class="^.*"] border pixel 0
-# gaps inner 8
+hide_edge_borders both
+for_window [class="^.*"] border pixel 0
+gaps inner 8
 
-# bindsym $mod+F3 gaps inner all set 0
-# bindsym $mod+Shift+F3 gaps inner all set 8
+bindsym $mod+F3 gaps inner all set 0
+bindsym $mod+Shift+F3 gaps inner all set 8
 
 # new_window 1pixel
 # new_float 1pixel
@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -el
 bindsym F4 exec =
 bindsym F3 exec passdmenu
-bindsym $mod+space exec rofi -show drun
+bindsym $mod+space exec dmenu -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -98,7 +98,7 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9"
+set $workspace9 "9: &#xf0e0;"
 
 # Music
 set $workspace10 "10: &#xf001;"
@@ -214,7 +214,7 @@ exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 
 # Auto-Start Programs
 exec --no-startup-id palemoon
-exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
+# exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
@@ -222,6 +222,7 @@ exec --no-startup-id compton -fcD 10 -i 0.85
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id ~/bin/antioffice.sh
 exec --no-startup-id wire-desktop
+exec --no-startup-id albert
 
 # External monitor
 exec_always xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
