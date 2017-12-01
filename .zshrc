@@ -30,6 +30,24 @@ function __git_prompt {
             echo -n $UNMERGED
         fi
         echo -n `git branch | grep '* ' | sed 's/..//' || echo 'No Branch'`
+
+        # Determine if need to pull or not
+        UPSTREAM=${1:-'@{u}'}
+        LOCAL=$(git rev-parse @)
+        REMOTE=$(git rev-parse "$UPSTREAM")
+        BASE=$(git merge-base @ "$UPSTREAM")
+
+        if [ $LOCAL != $REMOTE ]; then
+            echo -n " ("
+            if [ $LOCAL = $BASE ]; then
+                echo -n "v" # Need to pull
+            elif [ $REMOTE = $BASE ]; then
+                echo -n "^" # Need to push
+            else
+                echo -n "^v" # Diverged
+            fi
+            echo -n ")"
+        fi
         echo -n $RESET
         echo -n "]"
     fi
