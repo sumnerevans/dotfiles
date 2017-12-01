@@ -1,0 +1,3 @@
+#compdef wgitignore
+
+_arguments '1:Ignore Type:($(curl -s https://www.gitignore.io/api/list | cut -d, -f1))'
