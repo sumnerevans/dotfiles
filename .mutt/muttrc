@@ -1,6 +1,6 @@
-set spoolfile           = "+Personal/INBOX"
+set spoolfile           = "+Mines/INBOX"
 
-source ~/.mutt/accounts/personal
+source ~/.mutt/accounts/mines
 
 # Switching between accounts
 folder-hook Personal/*  source ~/.mutt/accounts/personal
@@ -63,42 +63,42 @@ bind pager j next-line
 bind pager k previous-line
 
 # ====== COLORS ======
-color attachment yellow black
-color prompt yellow black
-color message white black
-color error red black
-color indicator black yellow
-color status brightwhite blue
-color tree magenta black
-color normal white black
-color markers brightyellow black
-color search white black
-color index red black ~F # flagged
+color attachment        yellow          black
+color prompt            yellow          black
+color message           white           black
+color error             red             black
+color indicator         black           yellow
+color status            brightwhite     blue
+color tree              magenta         black
+color normal            white           black
+color markers           brightyellow    black
+color search            white           black
 
 # Index
-color index brightwhite black ~N # unread
-color index white black ~O # read
-color index red black ~D # deleted
+color index             brightwhite     black   ~N # unread
+color index             white           black   ~O # read
+color index             red             black   ~F # flagged
+color index             red             black   ~D # deleted
 
 # Header
-color hdrdefault white black
-color header    brightgreen black (^Subject\:)
+color hdrdefault        white           black
+color header            brightgreen     black   (^Subject\:)
 
 # Color Links blue
-color body      brightblue   default "(ftp|http|https)://[^ ]+"
-color body      brightblue   default [-a-z_0-9.]+@[-a-z_0-9.]+
+color body              brightblue      default "(ftp|http|https)://[^ ]+"
+color body              brightblue      default [-a-z_0-9.]+@[-a-z_0-9.]+
 
 # Color signature verification
-color body      brightgreen  default "^(gpg: )?Good signature"
-color body      brightgreen  default "^(gpg: )?encrypted"
-color body      brightred    default "^(gpg: )?Bad signature"
-color body      red          default "^(gpg: )?Problem signature from:.*"
-color body      red          default "^(gpg: )?warning:"
-color body      red          default "^(gpg: ).*failed:"
+color body              brightgreen     default "^(gpg: )?Good signature"
+color body              brightgreen     default "^(gpg: )?encrypted"
+color body              brightred       default "^(gpg: )?Bad signature"
+color body              red             default "^(gpg: )?Problem signature from:.*"
+color body              red             default "^(gpg: )?warning:"
+color body              red             default "^(gpg: ).*failed:"
 
 # Body
-color quoted cyan black
-color signature cyan black
+color quoted            cyan            black
+color signature         cyan            black
 
 # Contacts
 bind editor <Tab> complete-query

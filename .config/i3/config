@@ -11,6 +11,7 @@
 
 set $mod Mod4
 set $term urxvt
+set $dmenu_opts -i -fn 'Isoveka Term 10' -dim 0.5 -l 10
 
 # i3-gaps =====================================================================
 hide_edge_borders both
@@ -37,10 +38,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -el
-bindsym F4 exec =
-bindsym F3 exec passdmenu
-bindsym $mod+space exec rofi -show drun
+bindsym $mod+d exec dmenu_run $dmenu_opts
+bindsym F4 exec = --dmenu=dmenu -- $dmenu_opts
+bindsym F3 exec passdmenu -- $dmenu_opts
+bindsym $mod+space exec i3-dmenu-desktop --dmenu="dmenu $dmenu_opts"
 
 # change focus
 bindsym $mod+h focus left
@@ -184,10 +185,13 @@ bar {
 }
 
 # Custom Keybindings
-bindsym --release $mod+c exec "CM_LAUNCHER=rofi clipmenu"
-bindsym --release $mod+shift+c exec "maim -s /home/sumner/tmp/$(date +%Y-%m-%d-%T).png"
+bindsym --release $mod+c exec clipmenu $dmenu_opts
+bindsym --release $mod+shift+c exec "maim -us /home/sumner/tmp/$(date +%Y-%m-%d-%T).png"
 bindsym $mod+m exec xrandr --auto
 bindcode 49 exec ~/bin/mutt_helper.sh
+bindcode 34 exec echo "sumner.evans98@gmail.com" | xclip
+bindcode 35 exec echo "jonathanevans@mines.edu" | xclip
+
 
 # Program classes
 for_window [instance="skype"] floating enable

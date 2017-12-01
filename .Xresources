@@ -8,7 +8,7 @@ Xft.lcdfilter:  lcddefault
 ! }}}
 
 ! Cursor
-Xcursor.theme:                          Capitaine
+Xcursor.theme:                          Breeze
 Xcursor.size:                           16
 
 ! Rofi
