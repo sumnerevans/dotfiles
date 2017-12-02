@@ -127,7 +127,7 @@ hash -d res=~proj/resumes
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
 hash -d acm=~proj/acm-website
-hash -d sws=~proj/sumnerevans.github.io
+hash -d sws=~proj/sumnerevans.com
 hash -d tef=~proj/the-evans.family
 hash -d widb=~proj/wireless-debugging
 
@@ -224,6 +224,9 @@ done
 function chpwd() {
     emulate -L zsh
     la
+
+    # Fetch Git if this is a Git repo
+    [ -d .git ] && (git fetch &)
 }
 
 # "delete" files (use ~/tmp as a recycle bin)
