@@ -133,6 +133,7 @@ hash -d widb=~proj/wireless-debugging
 
 # School
 hash -d sch=~/school
+hash -d lug=~sch/lug
 hash -d ta=~sch/csci262-ta
 hash -d csci423=~sch/csci423
 hash -d csci441=~sch/csci441

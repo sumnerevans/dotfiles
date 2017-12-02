@@ -79,12 +79,9 @@ let g:ale_list_window_size = 5          " Limit the size of the ALE output to 5 
 let g:ale_sign_error = '✖'              " Consistent sign column with Language Client
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
-" let g:ale_linters = {
-"             \ 'python': ['pyls'],
-"             \ 'rust': ['rls'],
-"             \}
 let g:ale_linters = {
             \ 'python': ['pyls'],
+            \ 'rust': ['rls'],
             \}
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
@@ -99,6 +96,7 @@ noremap <C-S-F> :ALEFix<CR>
 " CTRLP - Fuzzy finder
 " Ignore files ignored by git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_root_markers = ['Makefile']
 
 " Language Client - Handling autocomplete for many languages
 " Required for operations modifying multiple buffers like rename.
@@ -218,7 +216,7 @@ autocmd BufNewFile,BufRead *.html setlocal spell spelllang=en_gb
 " Enable spell check for emails in mutt and quotes file
 autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes setlocal tw=72
 autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes setlocal spell spelllang=en_gb
-autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes setlocal colorcolumn=72
+autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes setlocal colorcolumn=72,80
 autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes match Over100Length /\%73v.\+/
 
 " Use TAB = 2 spaces for a few file types
