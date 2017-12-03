@@ -114,3 +114,4 @@ set crypt_opportunistic_encrypt         # Automatically encrypt if possible
 set crypt_verify_sig=yes                # Always verify signatures
 set pgp_self_encrypt    = yes           # encrypt to self
 set pgp_self_encrypt_as = B50022FD
+set my_msmtp_pass=`gpg -d ~/.password-store/Mail/Offlineimap-Mines.gpg`
