@@ -186,7 +186,7 @@ bar {
 
 # Custom Keybindings
 bindsym --release $mod+c exec clipmenu $dmenu_opts
-bindsym --release $mod+shift+c exec "maim -us /home/sumner/tmp/$(date +%Y-%m-%d-%T).png"
+bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindsym $mod+m exec xrandr --auto
 bindcode 49 exec ~/bin/mutt_helper.sh
 bindcode 34 exec echo "sumner.evans98@gmail.com" | xclip
