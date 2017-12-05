@@ -34,6 +34,7 @@ set sort_re
 
 # Set up the mailboxes
 set imap_check_subscribed=yes
+source ~/.mutt/mailboxes
 macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
 # Look and feel
@@ -100,6 +101,10 @@ color body              red             default "^(gpg: ).*failed:"
 color quoted            cyan            black
 color signature         cyan            black
 
+# Sidebar
+color sidebar_highlight white           color8
+color sidebar_new       cyan            black
+
 # Contacts
 bind editor <Tab> complete-query
 set query_command="~/bin/contact_query %s"
@@ -115,3 +120,10 @@ set crypt_verify_sig=yes                # Always verify signatures
 set pgp_self_encrypt    = yes           # encrypt to self
 set pgp_self_encrypt_as = B50022FD
 set my_msmtp_pass=`gpg -d ~/.password-store/Mail/Offlineimap-Mines.gpg`
+
+# Sidebar
+set sidebar_visible=yes
+set sidebar_width=30
+bind index,pager \Cp sidebar-prev # Move the highlight to the previous mailbox
+bind index,pager \Cn sidebar-next # Move the highlight to the next mailbox
+bind index,pager \Co sidebar-open # Open the highlighted mailbox

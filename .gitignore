@@ -36,6 +36,7 @@ school
 .mutt/aliases
 .mutt/signatures/__pycache__
 .mutt/signatures/.ropeproject
+.mutt/mailboxes
 
 .vim/bundle/*
 !.vim/colors/*

@@ -51,3 +51,11 @@ remoteuser = jonathanevans@mymail.mines.edu
 remotepasseval = get_pass('Offlineimap-Mines')
 realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
