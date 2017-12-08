@@ -1,3 +1,0 @@
-[submodule ".password-store"]
-	path = .password-store
-	url = git@github.com:sumnerevans/.password-store.git

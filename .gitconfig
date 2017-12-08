@@ -5,7 +5,7 @@
 
 [core]
     editor = vi
-    excludesfile = ~/Dropbox/.gitignore_global
+    excludesfile = ~/dotfiles/.gitignore_global
 
 [diff]
     tool = vimdiff
