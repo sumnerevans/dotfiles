@@ -130,7 +130,6 @@ let g:NERDTreeIgnore = [
 let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_synchronize_view = 0
-let g:NERDTreeWinPos = 'right'
 map <S-T> <plug>NERDTreeTabsToggle<CR>
 
 " Rainbow - Parentheses coloring
@@ -189,6 +188,7 @@ noremap <F8> :Commentary<CR>
 " Run make
 nnoremap <F5> :make<CR>
 nnoremap <S-F5> :make run<CR>
+cmap = w
 
 " Search
 set ignorecase  " ignore case...
