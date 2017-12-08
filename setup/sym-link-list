@@ -12,6 +12,7 @@
 .eslintrc.js
 fonts.config
 .gitconfig
+.gnupg/gpg-agent.conf
 .gvimrc
 .ideavimrc
 .jsbeautifyrc
@@ -23,8 +24,10 @@ fonts.config
 .mutt/quotes
 .mutt/signatures
 .offlineimaprc
+.pentadactylrc
 .pylintrc
 .stylelintrc
+.ssh/config
 .urxvt
 .vale
 .vim/colors
@@ -34,6 +37,7 @@ fonts.config
 .vimperator/colors
 .vimperatorrc
 .xbindkeysrc
+.xinitrc
 .Xmodmap
 .Xresources
 .ycm_extra_conf.py
