@@ -109,6 +109,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 hash -d ch=~/Documents/cheatsheets
 hash -d doc=~/Documents
 hash -d db=~/Dropbox
+hash -d df=~/dotfiles
 hash -d dl=~/Downloads
 hash -d kattis=~/projects/kattis
 hash -d no=~/Documents/notes
