@@ -225,11 +225,11 @@ exec --no-startup-id dropbox-cli start
 exec --no-startup-id compton -fcD 10 -i 0.85
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id ~/bin/antioffice.sh
-exec --no-startup-id wire-desktop
+exec --no-startup-window wire-desktop
 exec --no-startup-id albert
 
 # External monitor
-exec_always xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
+exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
 
 # Desktop Background
-exec_always ~/bin/set_bg.sh
+exec_always --no-startup-id ~/bin/set_bg.sh

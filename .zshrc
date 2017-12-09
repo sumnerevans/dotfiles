@@ -33,11 +33,11 @@ function __git_prompt {
 
         # Determine if need to pull or not
         UPSTREAM=${1:-'@{u}'}
-        LOCAL=$(git rev-parse @)
-        REMOTE=$(git rev-parse "$UPSTREAM")
-        BASE=$(git merge-base @ "$UPSTREAM")
+        LOCAL=$(git rev-parse @ 2&>/dev/null)
+        REMOTE=$(git rev-parse "$UPSTREAM" 2&>/dev/null)
+        BASE=$(git merge-base @ "$UPSTREAM" 2&>/dev/null)
 
-        if [ $LOCAL != $REMOTE ]; then
+        if [[ $LOCAL != $REMOTE && $REMOTE != "" ]]; then
             echo -n " ("
             if [ $LOCAL = $BASE ]; then
                 echo -n "v" # Need to pull
