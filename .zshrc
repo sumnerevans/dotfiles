@@ -227,7 +227,7 @@ function chpwd() {
     la
 
     # Fetch Git if this is a Git repo
-    [ -d .git ] && (git fetch &)
+    [ -d .git ] && (git fetch 2&>/dev/null &)
 }
 
 # "delete" files (use ~/tmp as a recycle bin)

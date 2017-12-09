@@ -43,3 +43,4 @@ fonts.config
 .ycm_extra_conf.py
 .zsh
 .zshrc
+.config/dunst
