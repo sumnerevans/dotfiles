@@ -226,7 +226,6 @@ exec --no-startup-id compton -fcD 10 -i 0.85
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id ~/bin/antioffice.sh
 exec --no-startup-window wire-desktop
-exec --no-startup-id albert
 
 # External monitor
 exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
