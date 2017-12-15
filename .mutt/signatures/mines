@@ -2,13 +2,13 @@
 from sig_helper import get_quote, print_contact_info
 
 titles = [
-    ('Vice President', 'Mines Student ACM Chapter'),
-    ('Secretary', 'Mines Linux Users Group (LUG)'),
-    ('Teachers Assistant', 'Data Structures'),
+    ('Vice President', 'ACM'),
+    ('Secretary', 'LUG'),
+    ('TA', 'Data Structures'),
 ]
 
 print('Jonathan Sumner Evans')
-print('Colorado School of Mines - B.S. Computer Science')
-print('\n'.join('{0}, {1}'.format(*t) for t in titles))
+print('Colorado School of Mines ~ B.S. Computer Science')
+print(' ~ '.join('{0}, {1}'.format(*t) for t in titles))
 print_contact_info('jonathanevans@mines.edu')
 print(get_quote())

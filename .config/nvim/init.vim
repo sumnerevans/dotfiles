@@ -35,7 +35,7 @@ Plug 'vim-scripts/a.vim'                " Switch between .h and .cpp files
 " Code Completion
 Plug 'autozimu/LanguageClient-neovim',  " Language Server Protocol
             \{ 'do': ':UpdateRemotePlugins' }
-Plug 'roxma/ncm-clang'                  " Code completion for C++
+" Plug 'roxma/ncm-clang'                  " Code completion for C++
 Plug 'roxma/nvim-completion-manager'    " Code completion Manager
 
 " Linting
@@ -99,8 +99,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:ctrlp_root_markers = ['Makefile']
 
 " Language Client - Handling autocomplete for many languages
-" Required for operations modifying multiple buffers like rename.
-set hidden
 set omnifunc=LanguageClient#complete    " Use LanguageClient as the completion engine
 let g:LanguageClient_autoStart = 1      " Automatically start language servers.
 let g:LanguageClient_serverCommands = {
