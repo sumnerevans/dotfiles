@@ -85,6 +85,7 @@ let g:ale_linters = {
             \}
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
+            \ 'css': ['stylelint'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \ 'python': ['isort', 'yapf'],
@@ -121,7 +122,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = [
             \'.git$[[dir]]',
             \'.sass-cache$[[dir]]', '__pycache__$[[dir]]', '.pyc',
-            \'.nyc_output$[[dir]]', '.tmp$[[dir]]',
+            \'.nyc_output$[[dir]]', '.tmp$[[dir]]', '.ropeproject$[[dir]]',
             \'.bk$[[file]]', '.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]

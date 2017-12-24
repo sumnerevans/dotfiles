@@ -16,7 +16,7 @@ function __git_prompt {
     local RESET="%{$terminfo[sgr0]%}"
     git rev-parse --git-dir >& /dev/null
 
-    if [[ $? == 0  ]]; then
+    if [[ $? == 0 ]]; then
         echo -n "["
 
         if [[ `git ls-files -u >& /dev/null` == '' ]]; then
@@ -119,12 +119,13 @@ hash -d proj=~/projects
 hash -d pres=~doc/presentations
 hash -d tmp=~/tmp
 hash -d ut=~/projects/up-tempo
+hash -d vid=~db/Videos
 
 # Projects
 hash -d gchal=~proj/google-challenge
 hash -d fl=~proj/flight
 hash -d pray=~proj/pray-app
-hash -d res=~proj/resumes
+hash -d res=~doc/resume
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
 hash -d acm=~proj/acm-website

@@ -1,4 +1,7 @@
 .ropeproject
+.style.yapf
+*.vim-template:*
+.stylelintrc
 
 # Created by https://www.gitignore.io/api/linux,vim,macos
 
