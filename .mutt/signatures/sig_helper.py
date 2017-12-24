@@ -18,8 +18,5 @@ def get_quote():
     return quote
 
 
-def print_contact_info(email):
-    print()
-    print('Email: {0:30} Homepage: {1}'.format(email, homepage))
-    print('Cell:  {0:30} GPG:      {1}'.format(cell, gpg))
-    print()
+def print_contact_info():
+    print(' | '.join([homepage, cell, 'GPG: {}'.format(gpg)]))

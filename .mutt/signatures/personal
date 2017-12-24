@@ -3,5 +3,7 @@ from sig_helper import get_quote, print_contact_info
 
 print('Sumner Evans')
 print('2 Chronicles 7:14')
-print_contact_info('sumner.evans98@gmail.com')
+print()
+print_contact_info()
+print()
 print(get_quote())
