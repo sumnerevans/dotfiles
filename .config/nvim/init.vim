@@ -187,6 +187,12 @@ noremap <F8> :Commentary<CR>
 " Run make
 nnoremap <F5> :make<CR>
 nnoremap <S-F5> :make run<CR>
+
+" Clean up paragraph
+noremap <C-c> vipgq<CR>
+
+" Map = to w because I sometimes don't get my pinky off of the SYM key on 3l
+" in time.
 cmap = w
 
 " Search

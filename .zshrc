@@ -112,6 +112,7 @@ hash -d db=~/Dropbox
 hash -d df=~/dotfiles
 hash -d dl=~/Downloads
 hash -d kattis=~/projects/kattis
+hash -d nc=~/Nextcloud
 hash -d no=~/Documents/notes
 hash -d pass=~/.password-store
 hash -d pics=~/Pictures
@@ -122,6 +123,7 @@ hash -d ut=~/projects/up-tempo
 hash -d vid=~db/Videos
 
 # Projects
+hash -d algo=~proj/algobowl
 hash -d gchal=~proj/google-challenge
 hash -d fl=~proj/flight
 hash -d pray=~proj/pray-app
@@ -137,11 +139,11 @@ hash -d widb=~proj/wireless-debugging
 hash -d sch=~/school
 hash -d lug=~sch/lug
 hash -d ta=~sch/csci262-ta
-hash -d csci423=~sch/csci423
-hash -d csci441=~sch/csci441
-hash -d csci442=~sch/csci442
-hash -d csci475=~sch/csci475
-hash -d csci499=~sch/csci499
+hash -d csci400=~sch/csci400
+hash -d csci404=~sch/csci404
+hash -d math300=~sch/math300
+hash -d csci274=~sch/csci274
+hash -d lais498c=~sch/lais498c
 hash -d vr=~sch/csci499
 
 # ===== ALIASES =====
@@ -336,8 +338,12 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 
 # Syntax Highlighting and Auto-suggestions
 if [[ $LINUX == "1" ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    fi
+    if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    fi
 elif [[ $MACOS == "1" ]]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
