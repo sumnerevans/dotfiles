@@ -157,3 +157,13 @@ I am an inherently visual person; it takes a lot of brain power to
 process human language.
     -- Sam Sartor
 %
+Social Liberalism says that we are all different, but we have to be
+tolerant of those differences.
+
+Social Conservatism says that we are all equal, so our differences don't
+matter.
+%
+Theoreticaly you just need to install OpenGL, GLU, and FreeGLUT then run
+make. How does that work in practice? Not sure. Good luck I guess.
+    -- Sam Sartor (in a README)
+

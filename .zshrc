@@ -112,7 +112,6 @@ hash -d db=~/Dropbox
 hash -d df=~/dotfiles
 hash -d dl=~/Downloads
 hash -d kattis=~/projects/kattis
-hash -d nc=~/Nextcloud
 hash -d no=~/Documents/notes
 hash -d pass=~/.password-store
 hash -d pics=~/Pictures
@@ -199,6 +198,7 @@ alias vimshort="vim ~/.vim/shortcuts"
 alias xresources="vim ~/.Xresources && xrdb -load ~/.Xresources && echo '~/Xresources reloaded'"
 alias zshrc="vim ~/.zshrc && reload"
 
+alias antioffice='libreoffice --headless --convert-to pdf'
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
 alias grep="grep --color"

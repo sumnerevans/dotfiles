@@ -208,9 +208,9 @@ set directory=~/tmp/nvim/swap// " Store swap files in ~/tmp to aviod disk I/O
 " Automatically break lines at 80 characters on TeX/LaTeX, Markdown, and text
 " files
 " Enable spell check on TeX/LaTeX, Markdown, and text files
-autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal tw=80
-autocmd BufNewFile,BufRead *.tex,*.md,*.txt setlocal spell spelllang=en_gb
-autocmd BufRead $HOME/tmp/mutt-* match Over100Length /\%81v.\+/
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal tw=80
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal spell spelllang=en_gb
+autocmd BufRead *.tex,*.md,*.txt,*.rst match Over100Length /\%81v.\+/
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML files
