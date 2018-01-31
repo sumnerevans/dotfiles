@@ -191,10 +191,6 @@ nnoremap <S-F5> :make run<CR>
 " Clean up paragraph
 noremap <C-c> vipgq<CR>
 
-" Map = to w because I sometimes don't get my pinky off of the SYM key on 3l
-" in time.
-cmap = w
-
 " Search
 set ignorecase  " ignore case...
 set smartcase   " unless the search string has uppercase letters

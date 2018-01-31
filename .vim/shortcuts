@@ -12,6 +12,7 @@ augroup LaTeX
     autocmd FileType tex inoremap ;bf \textbf{}<Esc>i
     autocmd FileType tex inoremap ;it \textit{}<Esc>i
     autocmd FileType tex inoremap ;tt \texttt{}<Esc>i
+    autocmd FileType tex inoremap ;bb \mathbb{}<Esc>i
     autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Esc>2kA{}<Esc>i
     autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>kA\item<Space>
     autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kA\item<Space>

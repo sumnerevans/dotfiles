@@ -129,10 +129,11 @@ hash -d pray=~proj/pray-app
 hash -d res=~doc/resume
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
-hash -d acm=~proj/acm-website
+hash -d moz=~proj/mozzarella
 hash -d sws=~proj/sumnerevans.com
 hash -d tef=~proj/the-evans.family
 hash -d widb=~proj/wireless-debugging
+hash -d vis=~proj/visplay
 
 # School
 hash -d sch=~/school
@@ -355,7 +356,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/school/mines-csci-makefiles/CSCI-262:$PATH"
+export PATH="/var/lib/snapd/snap/bin:$PATH"
 
 # Python Virtual Environment Wrapper
 export WORKON_HOME=$HOME/.virtualenvs
