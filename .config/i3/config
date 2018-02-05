@@ -217,8 +217,8 @@ exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 # exec xscreensaver -no-splash &
 
 # Auto-Start Programs
-exec --no-startup-id firefox-nightly
-exec --no-startup-id "(spotify --force-device-scale-factor=1.5 &> /dev/null &)"
+# exec --no-startup-id firefox-nightly
+exec --no-startup-id flatpak run --command=spotify --file-forwarding com.spotify.Client --force-device-scale-factor=1.5
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
