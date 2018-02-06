@@ -137,6 +137,7 @@ hash -d vis=~proj/visplay
 
 # School
 hash -d sch=~/school
+hash -d acm=~sch/acm
 hash -d lug=~sch/lug
 hash -d ta=~sch/csci262-ta
 hash -d csci400=~sch/csci400
