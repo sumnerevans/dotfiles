@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term urxvt
+set $term terminator
 set $dmenu_opts -i -fn 'Isoveka Term 10' -dim 0.5 -l 10
 
 # i3-gaps =====================================================================
@@ -203,7 +203,7 @@ for_window [instance="pinentry"] floating enable
 
 # Default Workspaces
 assign [class="Pale moon"] $workspace1
-assign [class="Rambox"] $workspace9
+assign [class="Firefox"] $workspace1
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
@@ -217,7 +217,7 @@ exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
 # exec xscreensaver -no-splash &
 
 # Auto-Start Programs
-# exec --no-startup-id firefox-nightly
+exec --no-startup-id palemoon
 exec --no-startup-id flatpak run --command=spotify --file-forwarding com.spotify.Client --force-device-scale-factor=1.5
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
