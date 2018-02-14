@@ -44,3 +44,4 @@ fonts.config
 .zsh
 .zshrc
 .config/dunst
+.config/terminator
