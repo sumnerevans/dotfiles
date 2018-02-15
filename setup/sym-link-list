@@ -10,7 +10,7 @@
 .config/vale
 .cups
 .eslintrc.js
-fonts.config
+.config/fontconfig/fonts.config
 .gitconfig
 .gnupg/gpg-agent.conf
 .gvimrc
@@ -27,7 +27,6 @@ fonts.config
 .pentadactylrc
 .pylintrc
 .stylelintrc
-.ssh/config
 .urxvt
 .vale
 .vim/colors
