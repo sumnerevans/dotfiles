@@ -54,4 +54,17 @@ echo "Clone Bin Directory"
 if [[ ! $(command -v git) ]]; then
     read -p "ERROR: git not installed. Please install it before proceeding."
 fi
-git clone $BIN_REPO $BIN_DIR
+if [[ -d "$BIN_DIR" ]]; then
+    echo "bin already exists."
+    read -p "    Would you like to override? (y/N) " override </dev/tty
+    case "$override" in
+        y|Y|yes|Yes|YES )
+            echo "    Deleting $BIN_DIR."
+            rm -rf $BIN_DIR
+            git clone $BIN_REPO $BIN_DIR
+            ;;
+        *) continue
+    esac
+else
+    git clone $BIN_REPO $BIN_DIR
+fi

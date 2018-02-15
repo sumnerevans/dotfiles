@@ -194,11 +194,9 @@ bindcode 35 exec echo "jonathanevans@mines.edu" | xclip
 
 
 # Program classes
-for_window [instance="skype"] floating enable
 for_window [instance="lxappearance"] floating enable
 for_window [instance="xscreensaver-demo"] floating enable
 for_window [instance="extcalc"] floating enable
-for_window [instance="enpass"] floating enable
 for_window [instance="pinentry"] floating enable
 
 # Default Workspaces

@@ -45,4 +45,4 @@ fonts.config
 .zshrc
 .config/dunst
 .config/terminator
-.pentadactyl
+.pentadactyl/colors
