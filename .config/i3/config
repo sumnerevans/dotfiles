@@ -11,7 +11,7 @@
 
 set $mod Mod4
 set $term terminator
-set $dmenu_opts -i -fn 'Isoveka Term 10' -dim 0.5 -l 10
+set $dmenu_opts -i -fn 'Isoveka 10' -dim 0.5 -l 10
 
 # i3-gaps =====================================================================
 hide_edge_borders both

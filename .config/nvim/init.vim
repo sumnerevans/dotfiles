@@ -86,6 +86,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
             \ 'css': ['stylelint'],
+            \ 'haskell': ['brittany'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \ 'python': ['isort', 'yapf'],
