@@ -1,6 +1,7 @@
 [global_config]
   borderless = True
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  extra_styling = False
 [keybindings]
   close_term = None
   close_window = None
@@ -13,6 +14,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""

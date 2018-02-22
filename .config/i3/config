@@ -189,6 +189,7 @@ bindsym --release $mod+c exec clipmenu $dmenu_opts
 bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindsym $mod+m exec xrandr --auto
 bindcode 49 exec ~/bin/mutt_helper.sh
+bindcode $mod+49 exec wire-desktop
 bindcode 34 exec echo "sumner.evans98@gmail.com" | xclip
 bindcode 35 exec echo "jonathanevans@mines.edu" | xclip
 
@@ -203,6 +204,7 @@ for_window [instance="pinentry"] floating enable
 assign [class="Pale moon"] $workspace1
 assign [class="Firefox"] $workspace1
 assign [class="Wire"] $workspace9
+assign [class="yakyak"] $workspace9
 for_window [class="Spotify"] move container to workspace $workspace10
 
 # Screensaver
@@ -225,6 +227,7 @@ exec --no-startup-id compton -fcD 10 -i 0.85
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id ~/bin/antioffice.sh
 exec --no-startup-id wire-desktop
+exec --no-startup-id yakyak
 
 # External monitor
 exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
