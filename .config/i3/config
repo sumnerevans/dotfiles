@@ -187,12 +187,9 @@ bar {
 # Custom Keybindings
 bindsym --release $mod+c exec clipmenu $dmenu_opts
 bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
-bindsym $mod+m exec xrandr --auto
-bindcode 49 exec ~/bin/mutt_helper.sh
-bindcode $mod+49 exec wire-desktop
-bindcode 34 exec echo "sumner.evans98@gmail.com" | xclip
-bindcode 35 exec echo "jonathanevans@mines.edu" | xclip
-
+bindcode $mod+34 exec ~/bin/mutt_helper.sh
+bindcode $mod+35 exec wire-desktop
+bindcode $mod+51 exec yakyak
 
 # Program classes
 for_window [instance="lxappearance"] floating enable
@@ -230,7 +227,7 @@ exec --no-startup-id wire-desktop
 exec --no-startup-id yakyak
 
 # External monitor
-exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto
+exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 --rotate left || xrandr --auto
 
 # Desktop Background
 exec_always --no-startup-id ~/bin/set_bg.sh

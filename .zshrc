@@ -171,6 +171,7 @@ alias lpr='lpr -o coallate=true'
 alias hlpr='lpr -o Duplex=None'
 
 # Git
+alias git="hub"
 alias ga="git add"
 alias gaa="git add -A"
 alias gc="git commit"
