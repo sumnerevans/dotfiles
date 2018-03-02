@@ -190,7 +190,7 @@ nnoremap <F5> :make<CR>
 nnoremap <S-F5> :make run<CR>
 
 " Clean up paragraph
-noremap <C-c> vipgq<CR>
+noremap <C-c> vipgq
 
 " Search
 set ignorecase  " ignore case...
@@ -223,3 +223,6 @@ autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes match Over100Length /\%73v.\
 
 " Use TAB = 2 spaces for a few file types
 autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown set shiftwidth=2
+
+" Make spelling a top level syntax element
+autocmd FileType * syntax spell toplevel
