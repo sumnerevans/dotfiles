@@ -8,7 +8,11 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Colors
-Plug 'lanox/lanox-vim-theme'            " Colorscheme
+Plug 'lanox/lanox-vim-theme'
+Plug 'iCyMind/NeoSolarized'
+Plug 'dracula/vim'
+Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 Plug 'luochen1990/rainbow'              " Color pairs of parentheses
 
 " Language Support
@@ -29,8 +33,8 @@ Plug 'aperezdc/vim-template'            " Templates for various types of files
 Plug 'ervandew/supertab'                " Use tab for autocomplete
 Plug 'terryma/vim-multiple-cursors'     " Allow multiple cursors
 Plug 'tpope/vim-commentary'             " Easy commenting of lines
+Plug 'tpope/vim-surround'               " Manipulate surrounding delimiters
 Plug 'jiangmiao/auto-pairs'             " Automatically close parentheses, etc.
-Plug 'vim-scripts/a.vim'                " Switch between .h and .cpp files
 
 " Code Completion
 Plug 'autozimu/LanguageClient-neovim',  " Language Server Protocol
@@ -48,14 +52,9 @@ let s:os = system('uname -s')
 let $PLUGIN_CONFIG_ROOT = '$HOME/.config/nvim/plugin_configs'
 
 " COLOR SCHEME ===============================================================
-colorscheme lanox
-highlight LineNr ctermfg=grey
-highlight SpellBad ctermbg=160 ctermfg=white
-highlight SpellRare ctermfg=234
-highlight SpellLocal ctermfg=234
-highlight SpellCap ctermfg=234
-highlight ColorColumn ctermbg=8 guibg=#303030
-highlight Visual ctermbg=67 ctermfg=231
+set termguicolors
+colorscheme onedark
+set background=dark
 
 " Highlight past 100 characters
 highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
@@ -71,7 +70,7 @@ set list listchars=tab:\▶\ ,trail:␣,nbsp:␣  " Highlight unwanted whitespac
 
 " PLUGIN CONFIGURATIONS ======================================================
 " Airline - Status bar
-let g:airline_powerline_fonts = 1                   " Enable fancy chars
+let g:airline_powerline_fonts = 1       " Enable fancy chars
 
 " ALE - Linting
 let g:ale_open_list = 1                 " Use the location list for ALE
@@ -128,7 +127,7 @@ let g:NERDTreeIgnore = [
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \]
 let g:NERDTreeWinSize = 30
-let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_synchronize_view = 0
 map <S-T> <plug>NERDTreeTabsToggle<CR>
 

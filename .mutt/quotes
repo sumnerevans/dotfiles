@@ -25,10 +25,6 @@ All the greatest things are simple, and many can be expressed in a
 single word: freedom; justice; honour; duty; mercy; hope.
     -- Winston Churchill
 %
-We cannot undo the past, but we are bound to pass it in review in order
-to draw from it such lessons as may be applicable to the future.
-    -- Winston Churchill
-%
 Never look down on anybody unless you're helping them up.
     -- Jesse Jackson
 %
@@ -81,9 +77,6 @@ without a soul is a nation that cannot live.
     -- Winston Churchill
 %
 The glory of light cannot exist without its shadows.
-    -- Winston Churchill
-%
-We are all worms. But I do believe that I am a glow-worm.
     -- Winston Churchill
 %
 I have derived continued benefit from criticism at all periods in my
@@ -146,10 +139,6 @@ tolerant of those differences.
 Social Conservatism says that we are all equal, so our differences don't
 matter.
 %
-Theoretically you just need to install OpenGL, GLU, and FreeGLUT then
-run make. How does that work in practice? Not sure. Good luck I guess.
-    -- Sam Sartor (in a README)
-%
 Bubbleware (n.): Software designed for hipsters designing software.
 Typically delivered "as a service" since hipsters would not know how to
 use it otherwise.
@@ -163,8 +152,8 @@ You really need to monitor him while he's coding, you can't just let him
 go off on his own.
     -- John Cornish (referring to Sam Sartor)
 %
-Mutability and Immutability are actually a words in English, but we use
-them more than anybody.
+"Mutability" and "Immutability" are actually a words in English, but we
+use them more than anybody.
     -- Paul Christopher (referring to Software Engineers)
 %
 Defense is the service industry of the tech industry.
@@ -175,4 +164,7 @@ All models are wrong, some are useful.
 %
 Don't call me a professor. That's an insult to professors everywhere.
     -- Jack Rosenthal (Programming Languages, Spring 2018)
+%
+A "pacman -Syu" fixed it! G** damn it Arch Linux!
+    -- Sam Sartor
 %
