@@ -35,7 +35,7 @@ URxvt*foreground:                       #E6E6E6
 URxvt*scrollBar:                        false
 !URxvt*font:                             xft:Iosevka Nerd Font:size=10,Iosevka Term:size=10,
 URxvt*font:                             xft:Iosevka Term:size=10,\
-                                        xft:DejaVu Sans Mono For Powerline Nerd Font:size=10:antialias=true:hinting=true,\
+                                        xft:DejaVu Sans Mono For Powerline:size=10:antialias=true:hinting=true,\
                                         xft:SauceCodePro Nerd Font:size=10:antialias=true:hinting=true
 URxvt*title:                            Terminal
 URxvt*perl-ext-common:                  default,matcher,font-size

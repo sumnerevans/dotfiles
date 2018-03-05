@@ -89,7 +89,7 @@ map <c-t> :tabnew<CR>
 " Navigation between buffers in tab
 set splitbelow
 set splitright
-if $TERM ==# 'rxvt-unicode-256color' && !has('gui_running')
+if $TERM ==# 'xterm-256color' && !has('gui_running')
     map <Esc>k <C-W><C-K>
     map <Esc>j <C-W><C-J>
     map <Esc>h <C-W><C-H>

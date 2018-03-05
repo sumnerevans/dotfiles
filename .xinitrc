@@ -45,7 +45,7 @@ xrandr --dpi 160x160
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export TERMINAL=terminator
+export TERMINAL=urxvt
 
 export PATH="$HOME/.local/bin:$PATH"
 

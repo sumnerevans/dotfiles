@@ -17,6 +17,7 @@ Plug 'luochen1990/rainbow'              " Color pairs of parentheses
 
 " Language Support
 Plug 'sheerun/vim-polyglot'             " Supports all of the languages
+Plug 'idris-hackers/idris-vim'          " Idris Support
 
 " UI
 Plug 'airblade/vim-gitgutter'           " Git integration in the gutter
@@ -39,7 +40,6 @@ Plug 'jiangmiao/auto-pairs'             " Automatically close parentheses, etc.
 " Code Completion
 Plug 'autozimu/LanguageClient-neovim',  " Language Server Protocol
             \{ 'do': ':UpdateRemotePlugins' }
-" Plug 'roxma/ncm-clang'                  " Code completion for C++
 Plug 'roxma/nvim-completion-manager'    " Code completion Manager
 
 " Linting
@@ -52,9 +52,14 @@ let s:os = system('uname -s')
 let $PLUGIN_CONFIG_ROOT = '$HOME/.config/nvim/plugin_configs'
 
 " COLOR SCHEME ===============================================================
-set termguicolors
+if $TERM == 'xterm-256color' && !has('gui_running')
+    set termguicolors
+endif
 colorscheme onedark
 set background=dark
+
+highlight NonText guifg=#aa3333
+highlight Comment guifg=#6a6a6a
 
 " Highlight past 100 characters
 highlight Over100Length ctermbg=red ctermfg=white guibg=#BD4F4F
@@ -125,6 +130,7 @@ let g:NERDTreeIgnore = [
             \'.nyc_output$[[dir]]', '.tmp$[[dir]]', '.ropeproject$[[dir]]',
             \'.bk$[[file]]', '.out$[[file]]', '.aux$[[file]]', '.log$[[file]]', '_minted-*',
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
+            \'.ibc$[[file]]', '.o$[[file]]',
             \]
 let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_open_on_console_startup = 0

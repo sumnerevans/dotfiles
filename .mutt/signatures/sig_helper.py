@@ -1,6 +1,6 @@
-'''
+"""
 Signature Helper
-'''
+"""
 import subprocess
 
 homepage = 'https://sumnerevans.com'
