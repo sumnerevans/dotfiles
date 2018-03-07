@@ -10,7 +10,7 @@
 .config/vale
 .cups
 .eslintrc.js
-.config/fontconfig/fonts.config
+.config/fontconfig/fonts.conf
 .gitconfig
 .gnupg/gpg-agent.conf
 .gvimrc
