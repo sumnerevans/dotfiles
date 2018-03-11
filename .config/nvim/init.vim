@@ -158,10 +158,10 @@ map <c-t> :tabnew<CR>
 " Navigation between buffers in tab
 set splitbelow          " Split below, rather than above
 set splitright          " Split to the right, rather than the left
-map <A-k> <C-W><C-K>
-map <A-j> <C-W><C-J>
-map <A-h> <C-W><C-H>
-map <A-l> <C-W><C-L>
+map <S-k> <C-W><C-K>
+map <S-j> <C-W><C-J>
+map <S-h> <C-W><C-H>
+map <S-l> <C-W><C-L>
 
 " EDITING ====================================================================
 set hidden                  " Don't close when switching buffers
@@ -227,7 +227,7 @@ autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes setlocal colorcolumn=72,80
 autocmd BufRead $HOME/tmp/mutt-*,$HOME/.mutt/quotes match Over100Length /\%73v.\+/
 
 " Use TAB = 2 spaces for a few file types
-autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown set shiftwidth=2
+autocmd FileType javascript,xhtml,html,scss,yaml,css,markdown,rst set shiftwidth=2
 
 " Make spelling a top level syntax element
 autocmd FileType * syntax spell toplevel
