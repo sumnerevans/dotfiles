@@ -158,10 +158,10 @@ map <c-t> :tabnew<CR>
 " Navigation between buffers in tab
 set splitbelow          " Split below, rather than above
 set splitright          " Split to the right, rather than the left
-map <S-k> <C-W><C-K>
-map <S-j> <C-W><C-J>
-map <S-h> <C-W><C-H>
-map <S-l> <C-W><C-L>
+map <A-k> <C-W><C-K>
+map <A-j> <C-W><C-J>
+map <A-h> <C-W><C-H>
+map <A-l> <C-W><C-L>
 
 " EDITING ====================================================================
 set hidden                  " Don't close when switching buffers
