@@ -94,7 +94,7 @@ let g:ale_fixers = {
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
             \ 'python': ['isort', 'yapf'],
-            \ 'rust': ['rustfmt']
+            \ 'rust': ['rustfmt'],
             \}
 let g:ale_tex_chktex_options = '-I -n18 -n44'
 noremap <C-S-F> :ALEFix<CR>
@@ -102,7 +102,7 @@ noremap <C-S-F> :ALEFix<CR>
 " CTRLP - Fuzzy finder
 " Ignore files ignored by git
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_root_markers = ['Makefile']
+let g:ctrlp_root_markers = ['Makefile', 'ctrlp-root']
 
 " Language Client - Handling autocomplete for many languages
 set omnifunc=LanguageClient#complete    " Use LanguageClient as the completion engine
@@ -117,6 +117,7 @@ let g:LanguageClient_serverCommands = {
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <F12> :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <C-g> :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F6> :call LanguageClient_textDocument_rename()<CR>
 
 " NERD Tree
@@ -132,7 +133,7 @@ let g:NERDTreeIgnore = [
             \'.gz$[[file]]', '.fls$[[file]]', '.fdb_latexmk$[[file]]',
             \'.ibc$[[file]]', '.o$[[file]]',
             \]
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 40
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_synchronize_view = 0
 map <S-T> <plug>NERDTreeTabsToggle<CR>

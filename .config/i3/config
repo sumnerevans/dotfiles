@@ -14,8 +14,8 @@ set $term terminator
 set $dmenu_opts -i -fn 'Isoveka 10' -dim 0.5 -l 10
 
 # i3-gaps =====================================================================
-# hide_edge_borders both
-# for_window [class="^.*"] border pixel 0
+hide_edge_borders both
+for_window [class="^.*"] border pixel 0
 gaps inner 8
 
 bindsym $mod+F3 gaps inner all set 0
@@ -197,7 +197,6 @@ bindsym --release $mod+c exec clipmenu $dmenu_opts
 bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindcode $mod+34 exec ~/bin/mutt_helper.sh
 bindcode $mod+35 exec wire-desktop
-bindcode $mod+51 exec yakyak
 
 # Program classes
 for_window [instance="lxappearance"] floating enable
