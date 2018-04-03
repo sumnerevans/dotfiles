@@ -347,8 +347,8 @@ if [[ $LINUX == "1" ]]; then
     if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
         source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     fi
-    if [[ -f /home/sumner/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]]; then
-        source /home/sumner/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
+    if [[ -f /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh ]]; then
+        source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
         export YSU_HARDCORE=1
     fi
 elif [[ $MACOS == "1" ]]; then
@@ -371,6 +371,9 @@ command -v /usr/bin/virtualenvwrapper_lazy.sh >/dev/null && source /usr/bin/virt
 # Do the thing so rust blows up verbosely
 command -v rustc >/dev/null && export RUST_BACKTRACE=1
 command -v rustc >/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# Set fuzzy finder to use fd
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # Set up the ssh-agent if necesarry
 if [ ! -S ~/.ssh/ssh_auth_sock  ]; then

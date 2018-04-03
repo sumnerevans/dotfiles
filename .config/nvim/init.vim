@@ -21,8 +21,8 @@ Plug 'idris-hackers/idris-vim'          " Idris Support
 
 " UI
 Plug 'airblade/vim-gitgutter'           " Git integration in the gutter
-Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy finder
 Plug 'jistr/vim-nerdtree-tabs'          " File tree compatibilty with tabs
+Plug 'junegunn/fzf'                     " Fuzzy finder
 Plug 'scrooloose/nerdtree'              " File tree
 Plug 'vim-airline/vim-airline'          " Cooler status bar
 Plug 'vim-airline/vim-airline-themes'   " Status bar themes
@@ -99,10 +99,11 @@ let g:ale_fixers = {
 let g:ale_tex_chktex_options = '-I -n18 -n44'
 noremap <C-S-F> :ALEFix<CR>
 
-" CTRLP - Fuzzy finder
-" Ignore files ignored by git
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_root_markers = ['Makefile', 'ctrlp-root']
+" FZF - Fuzzy finder
+nnoremap <C-p> :FZF<CR>
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " Language Client - Handling autocomplete for many languages
 set omnifunc=LanguageClient#complete    " Use LanguageClient as the completion engine
@@ -116,9 +117,10 @@ let g:LanguageClient_serverCommands = {
 \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <F12> :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <C-g> :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F6> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> @ :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_references()<CR>
 
 " NERD Tree
 let g:NERDTreeIndicatorMapCustom = {
