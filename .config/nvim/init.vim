@@ -84,7 +84,7 @@ let g:ale_sign_error = '✖'              " Consistent sign column with Language
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
 let g:ale_linters = {
-            \ 'python': ['pyls'],
+            \ 'python': ['flake8', 'pydocstyle'],
             \ 'rust': ['rls'],
             \}
 let g:ale_fixers = {

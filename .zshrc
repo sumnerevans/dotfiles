@@ -29,7 +29,7 @@ function __git_prompt {
         else
             echo -n $UNMERGED
         fi
-        echo -n `git branch | grep '* ' | sed 's/..//' || echo 'No Branch'`
+        echo -n `git branch | command grep '* ' | sed 's/..//' || echo 'No Branch'`
 
         # Determine if need to pull or not
         UPSTREAM=${1:-'@{u}'}
@@ -58,6 +58,7 @@ export RPS1='$(__git_prompt)'
 # Global Variables
 command -v nvim >/dev/null && export VISUAL=nvim || export VISUAL=vim
 export EDITOR="$VISUAL"
+export OFFICE=libreoffice
 export PDFVIEWER="zathura --fork"
 export VIDEOVIEWER=mpv
 export WINE=wine
@@ -154,14 +155,20 @@ alias pwd="pwd && pwd -P"
 
 # File Type Associations
 alias -s cpp=$EDITOR
+alias -s doc=$OFFICE
+alias -s docx=$OFFICE
 alias -s exe=$WINE
 alias -s h=$EDITOR
 alias -s md=$EDITOR
 alias -s mp4=$VIDEOVIEWER
 alias -s mkv=$VIDEOVIEWER
 alias -s pdf=$PDFVIEWER
+alias -s ppt=$OFFICE
+alias -s pptx=$OFFICE
 alias -s tex=$EDITOR
 alias -s txt=$EDITOR
+alias -s xls=$OFFICE
+alias -s xlsx=$OFFICE
 
 ##### Command Shortcuts #####
 # Printing
@@ -204,7 +211,7 @@ alias zshrc="vim ~/.zshrc && reload"
 alias antioffice='libreoffice --headless --convert-to pdf'
 alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
-alias grep="grep --color"
+alias grep="grep --color -n"
 alias iftop='sudo iftop'
 alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
