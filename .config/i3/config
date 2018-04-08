@@ -133,8 +133,8 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
-bindsym $mod+Shift+= move container to workspace $workspace11
-bindsym $mod+Shift+_ move container to workspace $workspace12
+bindcode $mod+Shift+20 move container to workspace $workspace11
+bindcode $mod+Shift+21 move container to workspace $workspace12
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
