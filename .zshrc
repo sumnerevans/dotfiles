@@ -14,8 +14,17 @@ function __git_prompt {
     local UNMERGED="%{$fg[red]%}"
 
     local RESET="%{$terminfo[sgr0]%}"
-    git rev-parse --git-dir >& /dev/null
 
+    if [[ -v VIRTUAL_ENV ]]; then
+        echo -n "["
+        echo -n $CLEAN
+        echo -n "VE: "
+        echo -n "$(basename $VIRTUAL_ENV)"
+        echo -n $RESET
+        echo -n "]"
+    fi
+
+    git rev-parse --git-dir >& /dev/null
     if [[ $? == 0 ]]; then
         echo -n "["
 
@@ -240,7 +249,14 @@ function chpwd() {
     la
 
     # Fetch Git if this is a Git repo
-    [ -d .git ] && (git fetch 2&>/dev/null &)
+    (git fetch 2&>/dev/null &)
+
+    # Automatically activate the virtualenv if it exists.
+    current_ve=$(basename "$VIRTUAL_ENV")
+    if [[ -f .virtualenv && ( ! -v "VIRTUAL_ENV" || "$(cat .virtualenv)" != "$current_ve" ) ]]; then
+        workon "$(cat .virtualenv)"
+        echo -e "\nThe '$(cat .virtualenv)' virtual environment has been activated."
+    fi
 }
 
 # "delete" files (use ~/tmp as a recycle bin)

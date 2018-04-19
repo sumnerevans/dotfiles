@@ -1,3 +1,4 @@
+.virtualenv
 .ropeproject
 .style.yapf
 *.vim-template:*

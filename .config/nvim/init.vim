@@ -7,6 +7,9 @@
 " PLUG: https://github.com/junegunn/vim-plug =================================
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Workspace
+Plug 'airblade/vim-rooter'
+
 " Colors
 Plug 'lanox/lanox-vim-theme'
 Plug 'iCyMind/NeoSolarized'
@@ -74,6 +77,9 @@ set title                                   " Override the terminal title
 set list listchars=tab:\▶\ ,trail:␣,nbsp:␣  " Highlight unwanted whitespace
 
 " PLUGIN CONFIGURATIONS ======================================================
+" Vim Rooter
+let g:rooter_patterns = ['Makefile', '.git/', 'setup.py', 'Cargo.toml', '__init__.py']
+
 " Airline - Status bar
 let g:airline_powerline_fonts = 1       " Enable fancy chars
 
@@ -84,7 +90,7 @@ let g:ale_sign_error = '✖'              " Consistent sign column with Language
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = '➤'
 let g:ale_linters = {
-            \ 'python': ['flake8', 'pydocstyle'],
+            \ 'python': ['pyls'],
             \ 'rust': ['rls'],
             \}
 let g:ale_fixers = {
@@ -108,10 +114,11 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 " Language Client - Handling autocomplete for many languages
 set omnifunc=LanguageClient#complete    " Use LanguageClient as the completion engine
 let g:LanguageClient_autoStart = 1      " Automatically start language servers.
+let g:LanguageClient_loadSettings = 1   " Load the settings from settings.json
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
-    \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['/usr/bin/javascript-typescript-stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rls'],
 \ }
