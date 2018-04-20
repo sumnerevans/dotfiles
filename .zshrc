@@ -325,20 +325,14 @@ function __zkey_prepend_vim {
 zle -N prepend-vim __zkey_prepend_vim
 
 function __zkey_append_dir_up {
-    if [[ $BUFFER = *..  ]]; then
-        BUFFER="$BUFFER/.."
-        CURSOR+=3
-    else
-        BUFFER="$LBUFFER.$RBUFFER"
-        CURSOR+=1
-    fi
+    [[ $LBUFFER = *.. ]] && LBUFFER+="/.." || LBUFFER+="."
 }
 zle -N append-dir-up __zkey_append_dir_up
 
 function __zkey_delete_dir_up {
-    if [[ $BUFFER = */..  ]] then
+    if [[ $LBUFFER = */..  ]] then
         CURSOR=CURSOR-3
-        BUFFER="$LBUFFER"
+        BUFFER="$LBUFFER${RBUFFER:${CURSOR+3}}"
     else
         # Move the cursor back and reset delete the previous character from the buffer.
         CURSOR=CURSOR-1
