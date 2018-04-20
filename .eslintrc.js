@@ -3,13 +3,10 @@ module.exports = {
     browser: true,
     es6: true,
     jquery: true,
-    mocha: true,
     node: true,
   },
 
-  plugins: [
-    'mocha',
-  ],
+  plugins: [],
 
   parserOptions: {
     ecmaVersion: 6,
@@ -271,17 +268,6 @@ module.exports = {
     'symbol-description': 1,
     'template-curly-spacing': 2,
     'yield-star-spacing': 2,
-
-    //
-    // eslint-plugin-mocha
-    //
-    'mocha/handle-done-callback': 2,
-    'mocha/no-global-tests': 2,
-    'mocha/no-identical-title': 2,
-    'mocha/no-pending-tests': 1,
-    'mocha/no-sibling-hooks': 2,
-    'mocha/valid-suite-description': [1, '.'],
-    'mocha/valid-test-description': [1, '^should\\s.+'],
   },
 
   globals: {},

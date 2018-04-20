@@ -185,6 +185,7 @@ alias alpr='ssh isengard lpr -P bb136-printer -o coallate=true'
 alias alprd='ssh isengard lpr -P bb136-printer -o coallate=true -o Duplex=DuplexNoTumble'
 alias lpr='lpr -o coallate=true'
 alias hlpr='lpr -o Duplex=None'
+alias hlprd='lpr -o Duplex=None -o Duplex=DuplexNoTumble'
 
 # Git
 alias git="hub"
@@ -243,19 +244,24 @@ done
 
 ##### Custom Functions #####
 
-# Always ls -a after cd
+# Things to perform after a directory change.
 function chpwd() {
     emulate -L zsh
     la
 
     # Fetch Git if this is a Git repo
-    (git fetch 2&>/dev/null &)
+    [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1
+    if [[ "$?" == "0" ]]; then
+        echo -e "Fetching from git in the background..."
+        (git fetch 2&>/dev/null &)
+    fi
 
     # Automatically activate the virtualenv if it exists.
     current_ve=$(basename "$VIRTUAL_ENV")
     if [[ -f .virtualenv && ( ! -v "VIRTUAL_ENV" || "$(cat .virtualenv)" != "$current_ve" ) ]]; then
+        echo -e "\nActivating the '$(cat .virtualenv)' virtual environment..."
         workon "$(cat .virtualenv)"
-        echo -e "\nThe '$(cat .virtualenv)' virtual environment has been activated."
+        echo -e "The '$(cat .virtualenv)' virtual environment has been activated."
     fi
 }
 

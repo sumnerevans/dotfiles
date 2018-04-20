@@ -117,10 +117,13 @@ let g:LanguageClient_autoStart = 1      " Automatically start language servers.
 let g:LanguageClient_loadSettings = 1   " Load the settings from settings.json
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rls'],
+    \ 'sh': ['bash-language-server', 'start'],
 \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
