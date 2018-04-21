@@ -8,14 +8,25 @@ prompt adam1
 setopt prompt_subst
 autoload colors zsh/terminfo
 colors
-function __git_prompt {
+function __rprompt {
+    # Capture result of last command
+    if [[ $? -eq 0 ]]; then
+        RESULT="[%{$fg_no_bold[green]%}%?%{$reset_color%}]"
+    else
+        RESULT="[%{$fg_bold[red]%}%?%{$reset_color%}]"
+    fi
+
     local DIRTY="%{$fg[yellow]%}"
     local CLEAN="%{$fg[green]%}"
     local UNMERGED="%{$fg[red]%}"
 
     local RESET="%{$terminfo[sgr0]%}"
 
-    if [[ -v VIRTUAL_ENV ]]; then
+    if [[ -n $SSH_CONNECTION ]]; then
+        echo -n "[${CLEAN}SSH: $(hostname)$RESET]"
+    fi
+
+    if [[ -n $VIRTUAL_ENV ]]; then
         echo -n "["
         echo -n $CLEAN
         echo -n "VE: "
@@ -60,9 +71,11 @@ function __git_prompt {
         echo -n $RESET
         echo -n "]"
     fi
+
+    echo -n $RESULT
 }
 
-export RPS1='$(__git_prompt)'
+export RPS1='$(__rprompt)'
 
 # Global Variables
 command -v nvim >/dev/null && export VISUAL=nvim || export VISUAL=vim
@@ -373,6 +386,10 @@ if [[ $LINUX == "1" ]]; then
     if [[ -f /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh ]]; then
         source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
         export YSU_HARDCORE=1
+    fi
+
+    if [[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+        source /usr/share/doc/pkgfile/command-not-found.zsh
     fi
 elif [[ $MACOS == "1" ]]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

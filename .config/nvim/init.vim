@@ -78,7 +78,7 @@ set list listchars=tab:\▶\ ,trail:␣,nbsp:␣  " Highlight unwanted whitespac
 
 " PLUGIN CONFIGURATIONS ======================================================
 " Vim Rooter
-let g:rooter_patterns = ['Makefile', '.git/', 'setup.py', 'Cargo.toml', '__init__.py']
+let g:rooter_patterns = ['rooter_root', 'Makefile', '.git/', 'setup.py', 'Cargo.toml', '__init__.py']
 
 " Airline - Status bar
 let g:airline_powerline_fonts = 1       " Enable fancy chars
