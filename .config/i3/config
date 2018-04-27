@@ -213,7 +213,7 @@ for_window [class="Spotify"] move container to workspace $workspace12
 
 # Screensaver
 bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
-exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' &
+exec --no-startup-id xautolock -time 5 -locker '~/bin/fuzzy_lock_sleep.sh' -corners +000 -cornerdelay 3 -cornerredelay 10000 &
 
 # bindsym $mod+Shift+x exec "xscreensaver-command --lock"
 # exec xautolock -time 5 -locker 'xscreensaver-command --lock' &

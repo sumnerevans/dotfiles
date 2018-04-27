@@ -152,7 +152,6 @@ hash -d pray=~proj/pray-app
 hash -d res=~doc/resume
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
-hash -d moz=~proj/mozzarella
 hash -d sws=~proj/sumnerevans.com
 hash -d tef=~proj/the-evans.family
 hash -d widb=~proj/wireless-debugging
@@ -160,6 +159,7 @@ hash -d vis=~proj/visplay
 
 # School
 hash -d sch=~/school
+hash -d scharch=~/school/archive
 hash -d acm=~sch/acm
 hash -d lug=~sch/lug
 hash -d ta=~sch/csci262-ta
@@ -184,6 +184,8 @@ alias -s h=$EDITOR
 alias -s md=$EDITOR
 alias -s mp4=$VIDEOVIEWER
 alias -s mkv=$VIDEOVIEWER
+alias -s ods=$OFFICE
+alias -s odt=$OFFICE
 alias -s pdf=$PDFVIEWER
 alias -s ppt=$OFFICE
 alias -s pptx=$OFFICE
@@ -210,8 +212,7 @@ alias gch="git checkout"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gfetch="git fetch"
-alias gl="glog"
-alias glog="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an (%G? %GK)]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
+alias gl="git log --pretty=format:'%C(auto)%h %ad %C(green)%s%Creset %C(auto)%d [%an (%G? %GK)]' --graph --date=format:'%Y-%m-%d %H:%M' --all"
 alias gpull="git pull"
 alias gpush="git push"
 alias grhh="git reset --hard HEAD"
