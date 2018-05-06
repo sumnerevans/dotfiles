@@ -4,6 +4,7 @@
 *.vim-template:*
 .stylelintrc
 ctrlp-root
+.rooter_root
 
 # Created by https://www.gitignore.io/api/linux,vim,macos
 

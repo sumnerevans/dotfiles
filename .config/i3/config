@@ -196,8 +196,8 @@ bar {
 bindsym --release $mod+c exec clipmenu $dmenu_opts
 bindsym --release $mod+shift+c exec "scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/tmp'"
 bindcode $mod+34 exec ~/bin/mutt_helper.sh
-bindcode $mod+35 exec wire-desktop
-bindcode $mod+51 exec riot-desktop
+bindcode $mod+35 exec riot-desktop
+bindcode $mod+51 exec wire-desktop
 
 # Program classes
 for_window [instance="lxappearance"] floating enable
