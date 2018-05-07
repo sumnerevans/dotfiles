@@ -45,3 +45,4 @@
 .config/dunst
 .config/terminator
 .pentadactyl/colors
+.emacs.d
