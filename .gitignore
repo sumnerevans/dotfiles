@@ -2,3 +2,6 @@ __pycache__/
 *.spl
 .config/ranger/*
 .emacs.d/elpa
+.emacs.d/anaconda-mode
+.emacs.d/url
+.emacs.d/recentf

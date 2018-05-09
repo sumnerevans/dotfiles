@@ -1,6 +1,9 @@
 ;;; setup-packages --- Setup packages
 ;;;
+;;; Commentary:
 ;;; Setup package archives for later config
+
+;;; Code:
 
 (require 'package)
 (require 'tls)
@@ -30,3 +33,4 @@
   (package-install 'use-package))
 
 (require 'use-package)
+;;; setup-packages ends here

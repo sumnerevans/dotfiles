@@ -1,6 +1,9 @@
 ;;; setup-keys --- Setup keys
 ;;;
-;;; Setup keybindings
+;;; Commentary:
+;;; Setup keybindings how I like them.
+
+;;; Code:
 
 ;;; Evil (Extensible VI Layer)
 (use-package evil
@@ -25,12 +28,7 @@
       scroll-margin 5
       delete-selection-mode 1)
 
-(use-package evil-collection
-  :ensure t
-  :init
-  (evil-collection-init))
-
-;;; Easily surround text
+;;; Easily surround text. Like vim-surround.
 (use-package evil-surround
   :ensure t
   :after evil
@@ -57,3 +55,4 @@
 ;;; Function keys
 
 (provide 'setup-keys)
+;;; setup-keys.el ends here

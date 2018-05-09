@@ -1,4 +1,9 @@
 ;;; setup-dev --- Setup packages for easy development
+;;;
+;;; Commentary:
+;;; Setup really nice things for making development nice.
+;;;
+;;; Code:
 
 (require 'evil)
 
@@ -57,3 +62,4 @@
 
 
 (provide 'setup-dev)
+;;; setup-dev.el ends here

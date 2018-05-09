@@ -123,7 +123,6 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rls'],
-    \ 'sh': ['bash-language-server', 'start'],
 \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

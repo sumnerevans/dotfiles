@@ -1,4 +1,9 @@
 ;;; setup-apearance --- Setup how Emacs looks
+;;;
+;;; Commentary:
+;;; Setup the appearance of Emacs
+
+;;; Code:
 
 (setq frame-title-format "emacs")
 
@@ -26,6 +31,9 @@
 ;;; Show column number next to line number in mode line
 (column-number-mode)
 
+;;; Column Marker
+;(use-package 'column-marker)
+
 ;;; Highlight parentheses
 (show-paren-mode)
 
@@ -42,6 +50,10 @@
 (load-theme 'atom-one-dark t t)
 (when (display-graphic-p)
   (enable-theme 'atom-one-dark))
+;; Alternate theme (bright)
+(unless (package-installed-p 'leuven-theme)
+  (package-install 'leuven-theme))
+(load-theme 'leuven t t)
 
 ;;; Make symbols look nice in the buffer.
 (use-package pretty-mode
@@ -49,3 +61,4 @@
   :hook ((emacs-lisp-mode python) . turn-on-pretty-mode))
 
 (provide 'setup-appearance)
+;;; setup-appearance.el ends here
