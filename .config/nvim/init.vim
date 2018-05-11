@@ -58,8 +58,8 @@ let $PLUGIN_CONFIG_ROOT = '$HOME/.config/nvim/plugin_configs'
 if $TERM == 'xterm-256color' && !has('gui_running')
     set termguicolors
 endif
-colorscheme onedark
-set background=dark
+colorscheme OceanicNext
+" set background=dark
 
 highlight NonText guifg=#aa3333
 highlight Comment guifg=#6a6a6a

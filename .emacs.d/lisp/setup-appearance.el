@@ -1,6 +1,7 @@
 ;;; setup-apearance --- Setup how Emacs looks
 ;;;
 ;;; Commentary:
+;;;
 ;;; Setup the appearance of Emacs
 
 ;;; Code:
@@ -45,11 +46,12 @@
 
 ;;; Custom themes
 ;; Default theme
+(unless (package-installed-p 'oceanic-theme)
+  (package-install 'oceanic-theme))
+(load-theme 'oceanic t)
+
 (unless (package-installed-p 'atom-one-dark-theme)
   (package-install 'atom-one-dark-theme))
-(load-theme 'atom-one-dark t t)
-(when (display-graphic-p)
-  (enable-theme 'atom-one-dark))
 ;; Alternate theme (bright)
 (unless (package-installed-p 'leuven-theme)
   (package-install 'leuven-theme))

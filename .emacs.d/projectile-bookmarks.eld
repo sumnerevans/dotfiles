@@ -1,1 +1,0 @@
-("~/dotfiles/" "~/Dropbox/projects/battleshipjs/" "~/Dropbox/school/" "~/bin/" "~/tmp/david-emacs/" "~/Dropbox/projects/visplay/")

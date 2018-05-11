@@ -5,3 +5,4 @@ __pycache__/
 .emacs.d/anaconda-mode
 .emacs.d/url
 .emacs.d/recentf
+.emacs.d/projectile-bookmarks.eld
