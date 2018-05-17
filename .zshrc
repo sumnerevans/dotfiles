@@ -145,17 +145,15 @@ hash -d ut=~/projects/up-tempo
 hash -d vid=~db/Videos
 
 # Projects
-hash -d algo=~proj/algobowl
+hash -d algo=~proj/acm/algobowl
 hash -d gchal=~proj/google-challenge
-hash -d fl=~proj/flight
 hash -d pray=~proj/pray-app
 hash -d res=~doc/resume
 hash -d chai=~proj/chess-ai
 hash -d stw=~proj/summation-tech-website
 hash -d sws=~proj/sumnerevans.com
 hash -d tef=~proj/the-evans.family
-hash -d widb=~proj/wireless-debugging
-hash -d vis=~proj/visplay
+hash -d vis=~proj/acm/visplay
 
 # School
 hash -d sch=~/school
@@ -233,11 +231,9 @@ alias xresources="vim ~/.Xresources && xrdb -load ~/.Xresources && echo '~/Xreso
 alias zshrc="vim ~/.zshrc && reload"
 
 alias antioffice='libreoffice --headless --convert-to pdf'
-alias backupzshrc='scp ~/.zshrc tef:/home/evansfamilywebsite/the-evans.family/sumner'
 alias dbs="dropbox-cli status"
 alias grep="grep --color -n"
 alias iftop='sudo iftop'
-alias lclean="rm -rf *.aux & rm -rf *.log & rm -rf *.out & rm -rf _minted*"
 [[ "$LINUX" == "1" ]] && alias ls="ls --color -F"
 alias la="ls -a"
 alias ll="ls -lah"
