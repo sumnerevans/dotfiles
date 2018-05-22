@@ -146,6 +146,7 @@ hash -d vid=~db/Videos
 
 # Projects
 hash -d algo=~proj/acm/algobowl
+hash -d fl=~proj/flight
 hash -d gchal=~proj/google-challenge
 hash -d pray=~proj/pray-app
 hash -d res=~doc/resume
@@ -160,13 +161,6 @@ hash -d sch=~/school
 hash -d scharch=~/school/archive
 hash -d acm=~sch/acm
 hash -d lug=~sch/lug
-hash -d ta=~sch/csci262-ta
-hash -d csci400=~sch/csci400
-hash -d csci404=~sch/csci404
-hash -d math300=~sch/math300
-hash -d csci274=~sch/csci274
-hash -d lais498c=~sch/lais498c
-hash -d vr=~sch/csci499
 
 # ===== ALIASES =====
 alias tar="bsdtar"
