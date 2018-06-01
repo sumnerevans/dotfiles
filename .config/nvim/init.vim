@@ -99,6 +99,7 @@ let g:ale_fixers = {
             \ 'haskell': ['brittany'],
             \ 'javascript': ['eslint', 'standard'],
             \ 'jsx': ['eslint'],
+            \ 'markdown': ['prettier'],
             \ 'python': ['isort', 'yapf'],
             \ 'rust': ['rustfmt'],
             \}
@@ -123,6 +124,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rls'],
+    \ 'typescript': ['javascript-typescript-stdio'],
 \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
@@ -223,8 +225,10 @@ set directory=~/tmp/nvim/swap// " Store swap files in ~/tmp to aviod disk I/O
 " files
 " Enable spell check on TeX/LaTeX, Markdown, and text files
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal tw=80
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal linebreak breakindent
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal showbreak=↩\ 
 autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst setlocal spell spelllang=en_gb
-autocmd BufRead *.tex,*.md,*.txt,*.rst match Over100Length /\%81v.\+/
+autocmd BufNewFile,BufRead *.tex,*.md,*.txt,*.rst highlight Over100Length none
 
 " Automatically break lines at 100 characters when writing HTML files
 " Enable spell check on HTML files

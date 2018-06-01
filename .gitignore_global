@@ -5,6 +5,7 @@
 .stylelintrc
 ctrlp-root
 .rooter_root
+*.orig
 
 # Created by https://www.gitignore.io/api/linux,vim,macos
 

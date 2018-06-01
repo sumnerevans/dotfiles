@@ -49,4 +49,5 @@ export TERMINAL=urxvt
 
 export PATH="$HOME/.local/bin:$PATH"
 
+export XKB_DEFAULT_LAYOUT=3l
 exec i3

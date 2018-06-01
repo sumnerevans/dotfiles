@@ -211,6 +211,7 @@ assign [class="Firefox"] $workspace1
 assign [class="Wire"] $workspace11
 assign [class="HexChat"] $workspace11
 assign [class="Riot"] $workspace11
+assign [class="Slack"] $workspace11
 for_window [class="Spotify"] move container to workspace $workspace12
 
 # Screensaver/Lock
@@ -224,16 +225,16 @@ bindsym $mod+Shift+x exec "~/bin/fuzzy_lock_sleep.sh"
 # exec xscreensaver -no-splash &
 
 # Auto-Start Programs
-exec --no-startup-id palemoon
+exec --no-startup-id firefox
 exec --no-startup-id (spotify --force-device-scale-factor=1.5 &)
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id compton -fc -i 0.85
 exec --no-startup-id kdeconnect-indicator
-exec --no-startup-id ~/bin/antioffice.sh
 exec --no-startup-id wire-desktop
 exec --no-startup-id riot-desktop
+exec --no-startup-id slack
 
 # External monitor
 exec_always --no-startup-id xrandr | grep 'DP-3 connected' && xrandr --output DP-3 --mode 1920x1200 --right-of DP-2 --scale 1.5x1.5 || xrandr --auto

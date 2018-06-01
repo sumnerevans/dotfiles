@@ -1,3 +1,5 @@
+# vim:ft=config
+
 [general]
 ui = ttyui
 accounts = Personal,Mines

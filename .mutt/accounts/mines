@@ -2,7 +2,7 @@
 set my_name   = "Jonathan Sumner Evans"
 set realname  = "Jonathan Sumner Evans"
 set from      = "Jonathan Sumner Evans <jonathanevans@mines.edu>"
-set sendmail  = "/usr/bin/msmtp -a mines"
+set sendmail  = "offlinemsmtp -o ~/.offlinemsmtp-outbox -a mines"
 set mbox      = "+Mines/[Gmail].All Mail"
 set postponed = "+Mines/[Gmail].Drafts"
 set record    = "+Mines/[Gmail].Sent Mail"

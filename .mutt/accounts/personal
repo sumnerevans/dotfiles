@@ -2,7 +2,7 @@
 set my_name   = "Sumner Evans"
 set realname  = "Sumner Evans"
 set from      = "Sumner Evans <sumner.evans98@gmail.com>"
-set sendmail  = "/usr/bin/msmtp -a personal"
+set sendmail  = "offlinemsmtp -o ~/.offlinemsmtp-outbox -a personal"
 set mbox      = "+Personal/[Gmail].All Mail"
 set postponed = "+Personal/[Gmail].Drafts"
 set record    = "+Personal/[Gmail].Sent Mail"

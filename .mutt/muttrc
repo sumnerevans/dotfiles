@@ -7,7 +7,7 @@ folder-hook Personal/*  source ~/.mutt/accounts/personal
 folder-hook Mines/*     source ~/.mutt/accounts/mines
 
 # Fetch mail
-macro index <F5> '!offlineimap -o^M'
+macro index <F5> '!/home/sumner/bin/mailfetch.sh^M'
 
 macro index M "<change-folder>=Mines/INBOX<enter>"  "go to Mines Inbox"
 macro index P "<change-folder>=Personal/INBOX<enter>"  "go to Personal Inbox"
